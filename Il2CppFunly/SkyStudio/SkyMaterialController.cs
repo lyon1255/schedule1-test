@@ -1,0 +1,6563 @@
+﻿using System;
+using Il2CppInterop.Common.Attributes;
+using Il2CppInterop.Runtime;
+using Il2CppInterop.Runtime.Runtime;
+using Il2CppSystem;
+using UnityEngine;
+
+namespace Il2CppFunly.SkyStudio
+{
+	// Token: 0x02000118 RID: 280
+	public class SkyMaterialController : Il2CppSystem.Object
+	{
+		// Token: 0x0600164D RID: 5709 RVA: 0x000B5250 File Offset: 0x000B3450
+		// Note: this type is marked as 'beforefieldinit'.
+		static SkyMaterialController()
+		{
+			Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr = IL2CPP.GetIl2CppClass("Assembly-CSharp.dll", "Funly.SkyStudio", "SkyMaterialController");
+			IL2CPP.il2cpp_runtime_class_init(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr);
+			SkyMaterialController.NativeFieldInfoPtr__skyboxMaterial = IL2CPP.GetIl2CppField(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, "_skyboxMaterial");
+			SkyMaterialController.NativeFieldInfoPtr__skyColor = IL2CPP.GetIl2CppField(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, "_skyColor");
+			SkyMaterialController.NativeFieldInfoPtr__skyMiddleColor = IL2CPP.GetIl2CppField(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, "_skyMiddleColor");
+			SkyMaterialController.NativeFieldInfoPtr__horizonColor = IL2CPP.GetIl2CppField(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, "_horizonColor");
+			SkyMaterialController.NativeFieldInfoPtr__gradientFadeBegin = IL2CPP.GetIl2CppField(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, "_gradientFadeBegin");
+			SkyMaterialController.NativeFieldInfoPtr__gradientFadeLength = IL2CPP.GetIl2CppField(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, "_gradientFadeLength");
+			SkyMaterialController.NativeFieldInfoPtr__skyMiddlePosition = IL2CPP.GetIl2CppField(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, "_skyMiddlePosition");
+			SkyMaterialController.NativeFieldInfoPtr__backgroundCubemap = IL2CPP.GetIl2CppField(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, "_backgroundCubemap");
+			SkyMaterialController.NativeFieldInfoPtr__starFadeBegin = IL2CPP.GetIl2CppField(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, "_starFadeBegin");
+			SkyMaterialController.NativeFieldInfoPtr__starFadeLength = IL2CPP.GetIl2CppField(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, "_starFadeLength");
+			SkyMaterialController.NativeFieldInfoPtr__horizonDistanceScale = IL2CPP.GetIl2CppField(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, "_horizonDistanceScale");
+			SkyMaterialController.NativeFieldInfoPtr__starBasicCubemap = IL2CPP.GetIl2CppField(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, "_starBasicCubemap");
+			SkyMaterialController.NativeFieldInfoPtr__starBasicTwinkleSpeed = IL2CPP.GetIl2CppField(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, "_starBasicTwinkleSpeed");
+			SkyMaterialController.NativeFieldInfoPtr__starBasicTwinkleAmount = IL2CPP.GetIl2CppField(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, "_starBasicTwinkleAmount");
+			SkyMaterialController.NativeFieldInfoPtr__starBasicOpacity = IL2CPP.GetIl2CppField(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, "_starBasicOpacity");
+			SkyMaterialController.NativeFieldInfoPtr__starBasicTintColor = IL2CPP.GetIl2CppField(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, "_starBasicTintColor");
+			SkyMaterialController.NativeFieldInfoPtr__starBasicExponent = IL2CPP.GetIl2CppField(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, "_starBasicExponent");
+			SkyMaterialController.NativeFieldInfoPtr__starBasicIntensity = IL2CPP.GetIl2CppField(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, "_starBasicIntensity");
+			SkyMaterialController.NativeFieldInfoPtr__starLayer1Texture = IL2CPP.GetIl2CppField(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, "_starLayer1Texture");
+			SkyMaterialController.NativeFieldInfoPtr__starLayer1DataTexture = IL2CPP.GetIl2CppField(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, "_starLayer1DataTexture");
+			SkyMaterialController.NativeFieldInfoPtr__starLayer1Color = IL2CPP.GetIl2CppField(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, "_starLayer1Color");
+			SkyMaterialController.NativeFieldInfoPtr__starLayer1MaxRadius = IL2CPP.GetIl2CppField(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, "_starLayer1MaxRadius");
+			SkyMaterialController.NativeFieldInfoPtr__starLayer1TwinkleAmount = IL2CPP.GetIl2CppField(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, "_starLayer1TwinkleAmount");
+			SkyMaterialController.NativeFieldInfoPtr__starLayer1TwinkleSpeed = IL2CPP.GetIl2CppField(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, "_starLayer1TwinkleSpeed");
+			SkyMaterialController.NativeFieldInfoPtr__starLayer1RotationSpeed = IL2CPP.GetIl2CppField(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, "_starLayer1RotationSpeed");
+			SkyMaterialController.NativeFieldInfoPtr__starLayer1EdgeFeathering = IL2CPP.GetIl2CppField(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, "_starLayer1EdgeFeathering");
+			SkyMaterialController.NativeFieldInfoPtr__starLayer1BloomFilterBoost = IL2CPP.GetIl2CppField(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, "_starLayer1BloomFilterBoost");
+			SkyMaterialController.NativeFieldInfoPtr__starLayer1SpriteDimensions = IL2CPP.GetIl2CppField(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, "_starLayer1SpriteDimensions");
+			SkyMaterialController.NativeFieldInfoPtr__starLayer1SpriteItemCount = IL2CPP.GetIl2CppField(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, "_starLayer1SpriteItemCount");
+			SkyMaterialController.NativeFieldInfoPtr__starLayer1SpriteAnimationSpeed = IL2CPP.GetIl2CppField(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, "_starLayer1SpriteAnimationSpeed");
+			SkyMaterialController.NativeFieldInfoPtr__starLayer2Texture = IL2CPP.GetIl2CppField(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, "_starLayer2Texture");
+			SkyMaterialController.NativeFieldInfoPtr__starLayer2DataTexture = IL2CPP.GetIl2CppField(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, "_starLayer2DataTexture");
+			SkyMaterialController.NativeFieldInfoPtr__starLayer2Color = IL2CPP.GetIl2CppField(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, "_starLayer2Color");
+			SkyMaterialController.NativeFieldInfoPtr__starLayer2MaxRadius = IL2CPP.GetIl2CppField(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, "_starLayer2MaxRadius");
+			SkyMaterialController.NativeFieldInfoPtr__starLayer2TwinkleAmount = IL2CPP.GetIl2CppField(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, "_starLayer2TwinkleAmount");
+			SkyMaterialController.NativeFieldInfoPtr__starLayer2TwinkleSpeed = IL2CPP.GetIl2CppField(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, "_starLayer2TwinkleSpeed");
+			SkyMaterialController.NativeFieldInfoPtr__starLayer2RotationSpeed = IL2CPP.GetIl2CppField(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, "_starLayer2RotationSpeed");
+			SkyMaterialController.NativeFieldInfoPtr__starLayer2EdgeFeathering = IL2CPP.GetIl2CppField(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, "_starLayer2EdgeFeathering");
+			SkyMaterialController.NativeFieldInfoPtr__starLayer2BloomFilterBoost = IL2CPP.GetIl2CppField(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, "_starLayer2BloomFilterBoost");
+			SkyMaterialController.NativeFieldInfoPtr__starLayer2SpriteDimensions = IL2CPP.GetIl2CppField(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, "_starLayer2SpriteDimensions");
+			SkyMaterialController.NativeFieldInfoPtr__starLayer2SpriteItemCount = IL2CPP.GetIl2CppField(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, "_starLayer2SpriteItemCount");
+			SkyMaterialController.NativeFieldInfoPtr__starLayer2SpriteAnimationSpeed = IL2CPP.GetIl2CppField(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, "_starLayer2SpriteAnimationSpeed");
+			SkyMaterialController.NativeFieldInfoPtr__starLayer3Texture = IL2CPP.GetIl2CppField(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, "_starLayer3Texture");
+			SkyMaterialController.NativeFieldInfoPtr__starLayer3DataTexture = IL2CPP.GetIl2CppField(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, "_starLayer3DataTexture");
+			SkyMaterialController.NativeFieldInfoPtr__starLayer3Color = IL2CPP.GetIl2CppField(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, "_starLayer3Color");
+			SkyMaterialController.NativeFieldInfoPtr__starLayer3MaxRadius = IL2CPP.GetIl2CppField(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, "_starLayer3MaxRadius");
+			SkyMaterialController.NativeFieldInfoPtr__starLayer3TwinkleAmount = IL2CPP.GetIl2CppField(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, "_starLayer3TwinkleAmount");
+			SkyMaterialController.NativeFieldInfoPtr__starLayer3TwinkleSpeed = IL2CPP.GetIl2CppField(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, "_starLayer3TwinkleSpeed");
+			SkyMaterialController.NativeFieldInfoPtr__starLayer3RotationSpeed = IL2CPP.GetIl2CppField(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, "_starLayer3RotationSpeed");
+			SkyMaterialController.NativeFieldInfoPtr__starLayer3EdgeFeathering = IL2CPP.GetIl2CppField(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, "_starLayer3EdgeFeathering");
+			SkyMaterialController.NativeFieldInfoPtr__starLayer3BloomFilterBoost = IL2CPP.GetIl2CppField(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, "_starLayer3BloomFilterBoost");
+			SkyMaterialController.NativeFieldInfoPtr__starLayer3SpriteDimensions = IL2CPP.GetIl2CppField(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, "_starLayer3SpriteDimensions");
+			SkyMaterialController.NativeFieldInfoPtr__starLayer3SpriteItemCount = IL2CPP.GetIl2CppField(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, "_starLayer3SpriteItemCount");
+			SkyMaterialController.NativeFieldInfoPtr__starLayer3SpriteAnimationSpeed = IL2CPP.GetIl2CppField(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, "_starLayer3SpriteAnimationSpeed");
+			SkyMaterialController.NativeFieldInfoPtr__moonTexture = IL2CPP.GetIl2CppField(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, "_moonTexture");
+			SkyMaterialController.NativeFieldInfoPtr__moonRotationSpeed = IL2CPP.GetIl2CppField(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, "_moonRotationSpeed");
+			SkyMaterialController.NativeFieldInfoPtr__moonColor = IL2CPP.GetIl2CppField(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, "_moonColor");
+			SkyMaterialController.NativeFieldInfoPtr__moonDirection = IL2CPP.GetIl2CppField(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, "_moonDirection");
+			SkyMaterialController.NativeFieldInfoPtr__moonWorldToLocalMatrix = IL2CPP.GetIl2CppField(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, "_moonWorldToLocalMatrix");
+			SkyMaterialController.NativeFieldInfoPtr__moonSize = IL2CPP.GetIl2CppField(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, "_moonSize");
+			SkyMaterialController.NativeFieldInfoPtr__moonEdgeFeathering = IL2CPP.GetIl2CppField(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, "_moonEdgeFeathering");
+			SkyMaterialController.NativeFieldInfoPtr__moonBloomFilterBoost = IL2CPP.GetIl2CppField(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, "_moonBloomFilterBoost");
+			SkyMaterialController.NativeFieldInfoPtr__moonSpriteDimensions = IL2CPP.GetIl2CppField(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, "_moonSpriteDimensions");
+			SkyMaterialController.NativeFieldInfoPtr__moonSpriteItemCount = IL2CPP.GetIl2CppField(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, "_moonSpriteItemCount");
+			SkyMaterialController.NativeFieldInfoPtr__moonSpriteAnimationSpeed = IL2CPP.GetIl2CppField(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, "_moonSpriteAnimationSpeed");
+			SkyMaterialController.NativeFieldInfoPtr__moonAlpha = IL2CPP.GetIl2CppField(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, "_moonAlpha");
+			SkyMaterialController.NativeFieldInfoPtr__sunTexture = IL2CPP.GetIl2CppField(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, "_sunTexture");
+			SkyMaterialController.NativeFieldInfoPtr__sunColor = IL2CPP.GetIl2CppField(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, "_sunColor");
+			SkyMaterialController.NativeFieldInfoPtr__sunRotationSpeed = IL2CPP.GetIl2CppField(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, "_sunRotationSpeed");
+			SkyMaterialController.NativeFieldInfoPtr__sunDirection = IL2CPP.GetIl2CppField(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, "_sunDirection");
+			SkyMaterialController.NativeFieldInfoPtr__sunWorldToLocalMatrix = IL2CPP.GetIl2CppField(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, "_sunWorldToLocalMatrix");
+			SkyMaterialController.NativeFieldInfoPtr__sunSize = IL2CPP.GetIl2CppField(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, "_sunSize");
+			SkyMaterialController.NativeFieldInfoPtr__sunEdgeFeathering = IL2CPP.GetIl2CppField(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, "_sunEdgeFeathering");
+			SkyMaterialController.NativeFieldInfoPtr__sunBloomFilterBoost = IL2CPP.GetIl2CppField(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, "_sunBloomFilterBoost");
+			SkyMaterialController.NativeFieldInfoPtr__sunSpriteDimensions = IL2CPP.GetIl2CppField(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, "_sunSpriteDimensions");
+			SkyMaterialController.NativeFieldInfoPtr__sunSpriteItemCount = IL2CPP.GetIl2CppField(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, "_sunSpriteItemCount");
+			SkyMaterialController.NativeFieldInfoPtr__sunSpriteAnimationSpeed = IL2CPP.GetIl2CppField(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, "_sunSpriteAnimationSpeed");
+			SkyMaterialController.NativeFieldInfoPtr__sunAlpha = IL2CPP.GetIl2CppField(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, "_sunAlpha");
+			SkyMaterialController.NativeFieldInfoPtr__cloudBegin = IL2CPP.GetIl2CppField(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, "_cloudBegin");
+			SkyMaterialController.NativeFieldInfoPtr__cloudTextureTiling = IL2CPP.GetIl2CppField(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, "_cloudTextureTiling");
+			SkyMaterialController.NativeFieldInfoPtr__cloudColor = IL2CPP.GetIl2CppField(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, "_cloudColor");
+			SkyMaterialController.NativeFieldInfoPtr__cloudTexture = IL2CPP.GetIl2CppField(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, "_cloudTexture");
+			SkyMaterialController.NativeFieldInfoPtr__artCloudCustomTexture = IL2CPP.GetIl2CppField(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, "_artCloudCustomTexture");
+			SkyMaterialController.NativeFieldInfoPtr__cloudDensity = IL2CPP.GetIl2CppField(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, "_cloudDensity");
+			SkyMaterialController.NativeFieldInfoPtr__cloudSpeed = IL2CPP.GetIl2CppField(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, "_cloudSpeed");
+			SkyMaterialController.NativeFieldInfoPtr__cloudDirection = IL2CPP.GetIl2CppField(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, "_cloudDirection");
+			SkyMaterialController.NativeFieldInfoPtr__cloudHeight = IL2CPP.GetIl2CppField(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, "_cloudHeight");
+			SkyMaterialController.NativeFieldInfoPtr__cloudColor1 = IL2CPP.GetIl2CppField(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, "_cloudColor1");
+			SkyMaterialController.NativeFieldInfoPtr__cloudColor2 = IL2CPP.GetIl2CppField(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, "_cloudColor2");
+			SkyMaterialController.NativeFieldInfoPtr__cloudFadePosition = IL2CPP.GetIl2CppField(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, "_cloudFadePosition");
+			SkyMaterialController.NativeFieldInfoPtr__cloudFadeAmount = IL2CPP.GetIl2CppField(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, "_cloudFadeAmount");
+			SkyMaterialController.NativeFieldInfoPtr__cloudAlpha = IL2CPP.GetIl2CppField(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, "_cloudAlpha");
+			SkyMaterialController.NativeFieldInfoPtr__cloudCubemap = IL2CPP.GetIl2CppField(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, "_cloudCubemap");
+			SkyMaterialController.NativeFieldInfoPtr__cloudCubemapRotationSpeed = IL2CPP.GetIl2CppField(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, "_cloudCubemapRotationSpeed");
+			SkyMaterialController.NativeFieldInfoPtr__cloudCubemapDoubleLayerCustomTexture = IL2CPP.GetIl2CppField(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, "_cloudCubemapDoubleLayerCustomTexture");
+			SkyMaterialController.NativeFieldInfoPtr__cloudCubemapDoubleLayerRotationSpeed = IL2CPP.GetIl2CppField(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, "_cloudCubemapDoubleLayerRotationSpeed");
+			SkyMaterialController.NativeFieldInfoPtr__cloudCubemapDoubleLayerHeight = IL2CPP.GetIl2CppField(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, "_cloudCubemapDoubleLayerHeight");
+			SkyMaterialController.NativeFieldInfoPtr__cloudCubemapDoubleLayerTintColor = IL2CPP.GetIl2CppField(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, "_cloudCubemapDoubleLayerTintColor");
+			SkyMaterialController.NativeFieldInfoPtr__cloudCubemapTintColor = IL2CPP.GetIl2CppField(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, "_cloudCubemapTintColor");
+			SkyMaterialController.NativeFieldInfoPtr__cloudCubemapHeight = IL2CPP.GetIl2CppField(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, "_cloudCubemapHeight");
+			SkyMaterialController.NativeFieldInfoPtr__cloudCubemapNormalTexture = IL2CPP.GetIl2CppField(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, "_cloudCubemapNormalTexture");
+			SkyMaterialController.NativeFieldInfoPtr__cloudCubemapNormalLitColor = IL2CPP.GetIl2CppField(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, "_cloudCubemapNormalLitColor");
+			SkyMaterialController.NativeFieldInfoPtr__cloudCubemapNormalShadowColor = IL2CPP.GetIl2CppField(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, "_cloudCubemapNormalShadowColor");
+			SkyMaterialController.NativeFieldInfoPtr__cloudCubemapNormalRotationSpeed = IL2CPP.GetIl2CppField(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, "_cloudCubemapNormalRotationSpeed");
+			SkyMaterialController.NativeFieldInfoPtr__cloudCubemapNormalHeight = IL2CPP.GetIl2CppField(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, "_cloudCubemapNormalHeight");
+			SkyMaterialController.NativeFieldInfoPtr__cloudCubemapNormalAmbientItensity = IL2CPP.GetIl2CppField(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, "_cloudCubemapNormalAmbientItensity");
+			SkyMaterialController.NativeFieldInfoPtr__cloudCubemapNormalDoubleLayerCustomTexture = IL2CPP.GetIl2CppField(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, "_cloudCubemapNormalDoubleLayerCustomTexture");
+			SkyMaterialController.NativeFieldInfoPtr__cloudCubemapNormalDoubleLayerRotationSpeed = IL2CPP.GetIl2CppField(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, "_cloudCubemapNormalDoubleLayerRotationSpeed");
+			SkyMaterialController.NativeFieldInfoPtr__cloudCubemapNormalDoubleLayerHeight = IL2CPP.GetIl2CppField(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, "_cloudCubemapNormalDoubleLayerHeight");
+			SkyMaterialController.NativeFieldInfoPtr__cloudCubemapNormalDoubleLayerLitColor = IL2CPP.GetIl2CppField(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, "_cloudCubemapNormalDoubleLayerLitColor");
+			SkyMaterialController.NativeFieldInfoPtr__cloudCubemapNormalDoubleLayerShadowColor = IL2CPP.GetIl2CppField(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, "_cloudCubemapNormalDoubleLayerShadowColor");
+			SkyMaterialController.NativeFieldInfoPtr__cloudCubemapNormalLightDirection = IL2CPP.GetIl2CppField(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, "_cloudCubemapNormalLightDirection");
+			SkyMaterialController.NativeFieldInfoPtr__fogColor = IL2CPP.GetIl2CppField(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, "_fogColor");
+			SkyMaterialController.NativeFieldInfoPtr__fogDensity = IL2CPP.GetIl2CppField(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, "_fogDensity");
+			SkyMaterialController.NativeFieldInfoPtr__fogHeight = IL2CPP.GetIl2CppField(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, "_fogHeight");
+			SkyMaterialController.NativeMethodInfoPtr_get_SkyboxMaterial_Public_get_Material_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665626);
+			SkyMaterialController.NativeMethodInfoPtr_set_SkyboxMaterial_Public_set_Void_Material_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665627);
+			SkyMaterialController.NativeMethodInfoPtr_get_SkyColor_Public_get_Color_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665628);
+			SkyMaterialController.NativeMethodInfoPtr_set_SkyColor_Public_set_Void_Color_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665629);
+			SkyMaterialController.NativeMethodInfoPtr_get_SkyMiddleColor_Public_get_Color_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665630);
+			SkyMaterialController.NativeMethodInfoPtr_set_SkyMiddleColor_Public_set_Void_Color_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665631);
+			SkyMaterialController.NativeMethodInfoPtr_get_HorizonColor_Public_get_Color_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665632);
+			SkyMaterialController.NativeMethodInfoPtr_set_HorizonColor_Public_set_Void_Color_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665633);
+			SkyMaterialController.NativeMethodInfoPtr_get_GradientFadeBegin_Public_get_Single_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665634);
+			SkyMaterialController.NativeMethodInfoPtr_set_GradientFadeBegin_Public_set_Void_Single_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665635);
+			SkyMaterialController.NativeMethodInfoPtr_get_GradientFadeLength_Public_get_Single_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665636);
+			SkyMaterialController.NativeMethodInfoPtr_set_GradientFadeLength_Public_set_Void_Single_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665637);
+			SkyMaterialController.NativeMethodInfoPtr_get_SkyMiddlePosition_Public_get_Single_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665638);
+			SkyMaterialController.NativeMethodInfoPtr_set_SkyMiddlePosition_Public_set_Void_Single_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665639);
+			SkyMaterialController.NativeMethodInfoPtr_get_BackgroundCubemap_Public_get_Cubemap_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665640);
+			SkyMaterialController.NativeMethodInfoPtr_set_BackgroundCubemap_Public_set_Void_Cubemap_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665641);
+			SkyMaterialController.NativeMethodInfoPtr_get_StarFadeBegin_Public_get_Single_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665642);
+			SkyMaterialController.NativeMethodInfoPtr_set_StarFadeBegin_Public_set_Void_Single_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665643);
+			SkyMaterialController.NativeMethodInfoPtr_get_StarFadeLength_Public_get_Single_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665644);
+			SkyMaterialController.NativeMethodInfoPtr_set_StarFadeLength_Public_set_Void_Single_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665645);
+			SkyMaterialController.NativeMethodInfoPtr_get_HorizonDistanceScale_Public_get_Single_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665646);
+			SkyMaterialController.NativeMethodInfoPtr_set_HorizonDistanceScale_Public_set_Void_Single_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665647);
+			SkyMaterialController.NativeMethodInfoPtr_get_StarBasicCubemap_Public_get_Texture_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665648);
+			SkyMaterialController.NativeMethodInfoPtr_set_StarBasicCubemap_Public_set_Void_Texture_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665649);
+			SkyMaterialController.NativeMethodInfoPtr_get_StarBasicTwinkleSpeed_Public_get_Single_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665650);
+			SkyMaterialController.NativeMethodInfoPtr_set_StarBasicTwinkleSpeed_Public_set_Void_Single_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665651);
+			SkyMaterialController.NativeMethodInfoPtr_get_StarBasicTwinkleAmount_Public_get_Single_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665652);
+			SkyMaterialController.NativeMethodInfoPtr_set_StarBasicTwinkleAmount_Public_set_Void_Single_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665653);
+			SkyMaterialController.NativeMethodInfoPtr_get_StarBasicOpacity_Public_get_Single_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665654);
+			SkyMaterialController.NativeMethodInfoPtr_set_StarBasicOpacity_Public_set_Void_Single_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665655);
+			SkyMaterialController.NativeMethodInfoPtr_get_StarBasicTintColor_Public_get_Color_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665656);
+			SkyMaterialController.NativeMethodInfoPtr_set_StarBasicTintColor_Public_set_Void_Color_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665657);
+			SkyMaterialController.NativeMethodInfoPtr_get_StarBasicExponent_Public_get_Single_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665658);
+			SkyMaterialController.NativeMethodInfoPtr_set_StarBasicExponent_Public_set_Void_Single_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665659);
+			SkyMaterialController.NativeMethodInfoPtr_get_StarBasicIntensity_Public_get_Single_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665660);
+			SkyMaterialController.NativeMethodInfoPtr_set_StarBasicIntensity_Public_set_Void_Single_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665661);
+			SkyMaterialController.NativeMethodInfoPtr_get_StarLayer1Texture_Public_get_Texture_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665662);
+			SkyMaterialController.NativeMethodInfoPtr_set_StarLayer1Texture_Public_set_Void_Texture_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665663);
+			SkyMaterialController.NativeMethodInfoPtr_get_StarLayer1DataTexture_Public_get_Texture2D_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665664);
+			SkyMaterialController.NativeMethodInfoPtr_set_StarLayer1DataTexture_Public_set_Void_Texture2D_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665665);
+			SkyMaterialController.NativeMethodInfoPtr_get_StarLayer1Color_Public_get_Color_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665666);
+			SkyMaterialController.NativeMethodInfoPtr_set_StarLayer1Color_Public_set_Void_Color_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665667);
+			SkyMaterialController.NativeMethodInfoPtr_get_StarLayer1MaxRadius_Public_get_Single_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665668);
+			SkyMaterialController.NativeMethodInfoPtr_set_StarLayer1MaxRadius_Public_set_Void_Single_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665669);
+			SkyMaterialController.NativeMethodInfoPtr_get_StarLayer1TwinkleAmount_Public_get_Single_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665670);
+			SkyMaterialController.NativeMethodInfoPtr_set_StarLayer1TwinkleAmount_Public_set_Void_Single_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665671);
+			SkyMaterialController.NativeMethodInfoPtr_get_StarLayer1TwinkleSpeed_Public_get_Single_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665672);
+			SkyMaterialController.NativeMethodInfoPtr_set_StarLayer1TwinkleSpeed_Public_set_Void_Single_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665673);
+			SkyMaterialController.NativeMethodInfoPtr_get_StarLayer1RotationSpeed_Public_get_Single_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665674);
+			SkyMaterialController.NativeMethodInfoPtr_set_StarLayer1RotationSpeed_Public_set_Void_Single_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665675);
+			SkyMaterialController.NativeMethodInfoPtr_get_StarLayer1EdgeFeathering_Public_get_Single_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665676);
+			SkyMaterialController.NativeMethodInfoPtr_set_StarLayer1EdgeFeathering_Public_set_Void_Single_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665677);
+			SkyMaterialController.NativeMethodInfoPtr_get_StarLayer1BloomFilterBoost_Public_get_Single_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665678);
+			SkyMaterialController.NativeMethodInfoPtr_set_StarLayer1BloomFilterBoost_Public_set_Void_Single_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665679);
+			SkyMaterialController.NativeMethodInfoPtr_SetStarLayer1SpriteDimensions_Public_Void_Int32_Int32_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665680);
+			SkyMaterialController.NativeMethodInfoPtr_GetStarLayer1SpriteDimensions_Public_Vector2_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665681);
+			SkyMaterialController.NativeMethodInfoPtr_get_StarLayer1SpriteItemCount_Public_get_Int32_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665682);
+			SkyMaterialController.NativeMethodInfoPtr_set_StarLayer1SpriteItemCount_Public_set_Void_Int32_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665683);
+			SkyMaterialController.NativeMethodInfoPtr_get_StarLayer1SpriteAnimationSpeed_Public_get_Single_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665684);
+			SkyMaterialController.NativeMethodInfoPtr_set_StarLayer1SpriteAnimationSpeed_Public_set_Void_Single_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665685);
+			SkyMaterialController.NativeMethodInfoPtr_get_StarLayer2Texture_Public_get_Texture_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665686);
+			SkyMaterialController.NativeMethodInfoPtr_set_StarLayer2Texture_Public_set_Void_Texture_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665687);
+			SkyMaterialController.NativeMethodInfoPtr_get_StarLayer2DataTexture_Public_get_Texture2D_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665688);
+			SkyMaterialController.NativeMethodInfoPtr_set_StarLayer2DataTexture_Public_set_Void_Texture2D_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665689);
+			SkyMaterialController.NativeMethodInfoPtr_get_StarLayer2Color_Public_get_Color_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665690);
+			SkyMaterialController.NativeMethodInfoPtr_set_StarLayer2Color_Public_set_Void_Color_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665691);
+			SkyMaterialController.NativeMethodInfoPtr_get_StarLayer2MaxRadius_Public_get_Single_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665692);
+			SkyMaterialController.NativeMethodInfoPtr_set_StarLayer2MaxRadius_Public_set_Void_Single_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665693);
+			SkyMaterialController.NativeMethodInfoPtr_get_StarLayer2TwinkleAmount_Public_get_Single_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665694);
+			SkyMaterialController.NativeMethodInfoPtr_set_StarLayer2TwinkleAmount_Public_set_Void_Single_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665695);
+			SkyMaterialController.NativeMethodInfoPtr_get_StarLayer2TwinkleSpeed_Public_get_Single_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665696);
+			SkyMaterialController.NativeMethodInfoPtr_set_StarLayer2TwinkleSpeed_Public_set_Void_Single_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665697);
+			SkyMaterialController.NativeMethodInfoPtr_get_StarLayer2RotationSpeed_Public_get_Single_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665698);
+			SkyMaterialController.NativeMethodInfoPtr_set_StarLayer2RotationSpeed_Public_set_Void_Single_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665699);
+			SkyMaterialController.NativeMethodInfoPtr_get_StarLayer2EdgeFeathering_Public_get_Single_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665700);
+			SkyMaterialController.NativeMethodInfoPtr_set_StarLayer2EdgeFeathering_Public_set_Void_Single_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665701);
+			SkyMaterialController.NativeMethodInfoPtr_get_StarLayer2BloomFilterBoost_Public_get_Single_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665702);
+			SkyMaterialController.NativeMethodInfoPtr_set_StarLayer2BloomFilterBoost_Public_set_Void_Single_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665703);
+			SkyMaterialController.NativeMethodInfoPtr_SetStarLayer2SpriteDimensions_Public_Void_Int32_Int32_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665704);
+			SkyMaterialController.NativeMethodInfoPtr_GetStarLayer2SpriteDimensions_Public_Vector2_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665705);
+			SkyMaterialController.NativeMethodInfoPtr_get_StarLayer2SpriteItemCount_Public_get_Int32_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665706);
+			SkyMaterialController.NativeMethodInfoPtr_set_StarLayer2SpriteItemCount_Public_set_Void_Int32_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665707);
+			SkyMaterialController.NativeMethodInfoPtr_get_StarLayer2SpriteAnimationSpeed_Public_get_Single_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665708);
+			SkyMaterialController.NativeMethodInfoPtr_set_StarLayer2SpriteAnimationSpeed_Public_set_Void_Single_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665709);
+			SkyMaterialController.NativeMethodInfoPtr_get_StarLayer3Texture_Public_get_Texture_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665710);
+			SkyMaterialController.NativeMethodInfoPtr_set_StarLayer3Texture_Public_set_Void_Texture_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665711);
+			SkyMaterialController.NativeMethodInfoPtr_get_StarLayer3DataTexture_Public_get_Texture2D_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665712);
+			SkyMaterialController.NativeMethodInfoPtr_set_StarLayer3DataTexture_Public_set_Void_Texture2D_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665713);
+			SkyMaterialController.NativeMethodInfoPtr_get_StarLayer3Color_Public_get_Color_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665714);
+			SkyMaterialController.NativeMethodInfoPtr_set_StarLayer3Color_Public_set_Void_Color_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665715);
+			SkyMaterialController.NativeMethodInfoPtr_get_StarLayer3MaxRadius_Public_get_Single_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665716);
+			SkyMaterialController.NativeMethodInfoPtr_set_StarLayer3MaxRadius_Public_set_Void_Single_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665717);
+			SkyMaterialController.NativeMethodInfoPtr_get_StarLayer3TwinkleAmount_Public_get_Single_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665718);
+			SkyMaterialController.NativeMethodInfoPtr_set_StarLayer3TwinkleAmount_Public_set_Void_Single_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665719);
+			SkyMaterialController.NativeMethodInfoPtr_get_StarLayer3TwinkleSpeed_Public_get_Single_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665720);
+			SkyMaterialController.NativeMethodInfoPtr_set_StarLayer3TwinkleSpeed_Public_set_Void_Single_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665721);
+			SkyMaterialController.NativeMethodInfoPtr_get_StarLayer3RotationSpeed_Public_get_Single_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665722);
+			SkyMaterialController.NativeMethodInfoPtr_set_StarLayer3RotationSpeed_Public_set_Void_Single_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665723);
+			SkyMaterialController.NativeMethodInfoPtr_get_StarLayer3EdgeFeathering_Public_get_Single_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665724);
+			SkyMaterialController.NativeMethodInfoPtr_set_StarLayer3EdgeFeathering_Public_set_Void_Single_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665725);
+			SkyMaterialController.NativeMethodInfoPtr_get_StarLayer3BloomFilterBoost_Public_get_Single_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665726);
+			SkyMaterialController.NativeMethodInfoPtr_set_StarLayer3BloomFilterBoost_Public_set_Void_Single_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665727);
+			SkyMaterialController.NativeMethodInfoPtr_SetStarLayer3SpriteDimensions_Public_Void_Int32_Int32_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665728);
+			SkyMaterialController.NativeMethodInfoPtr_GetStarLayer3SpriteDimensions_Public_Vector2_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665729);
+			SkyMaterialController.NativeMethodInfoPtr_get_StarLayer3SpriteItemCount_Public_get_Int32_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665730);
+			SkyMaterialController.NativeMethodInfoPtr_set_StarLayer3SpriteItemCount_Public_set_Void_Int32_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665731);
+			SkyMaterialController.NativeMethodInfoPtr_get_StarLayer3SpriteAnimationSpeed_Public_get_Single_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665732);
+			SkyMaterialController.NativeMethodInfoPtr_set_StarLayer3SpriteAnimationSpeed_Public_set_Void_Single_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665733);
+			SkyMaterialController.NativeMethodInfoPtr_get_MoonTexture_Public_get_Texture_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665734);
+			SkyMaterialController.NativeMethodInfoPtr_set_MoonTexture_Public_set_Void_Texture_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665735);
+			SkyMaterialController.NativeMethodInfoPtr_get_MoonRotationSpeed_Public_get_Single_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665736);
+			SkyMaterialController.NativeMethodInfoPtr_set_MoonRotationSpeed_Public_set_Void_Single_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665737);
+			SkyMaterialController.NativeMethodInfoPtr_get_MoonColor_Public_get_Color_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665738);
+			SkyMaterialController.NativeMethodInfoPtr_set_MoonColor_Public_set_Void_Color_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665739);
+			SkyMaterialController.NativeMethodInfoPtr_get_MoonDirection_Public_get_Vector3_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665740);
+			SkyMaterialController.NativeMethodInfoPtr_set_MoonDirection_Public_set_Void_Vector3_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665741);
+			SkyMaterialController.NativeMethodInfoPtr_get_MoonWorldToLocalMatrix_Public_get_Matrix4x4_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665742);
+			SkyMaterialController.NativeMethodInfoPtr_set_MoonWorldToLocalMatrix_Public_set_Void_Matrix4x4_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665743);
+			SkyMaterialController.NativeMethodInfoPtr_get_MoonSize_Public_get_Single_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665744);
+			SkyMaterialController.NativeMethodInfoPtr_set_MoonSize_Public_set_Void_Single_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665745);
+			SkyMaterialController.NativeMethodInfoPtr_get_MoonEdgeFeathering_Public_get_Single_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665746);
+			SkyMaterialController.NativeMethodInfoPtr_set_MoonEdgeFeathering_Public_set_Void_Single_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665747);
+			SkyMaterialController.NativeMethodInfoPtr_get_MoonBloomFilterBoost_Public_get_Single_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665748);
+			SkyMaterialController.NativeMethodInfoPtr_set_MoonBloomFilterBoost_Public_set_Void_Single_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665749);
+			SkyMaterialController.NativeMethodInfoPtr_SetMoonSpriteDimensions_Public_Void_Int32_Int32_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665750);
+			SkyMaterialController.NativeMethodInfoPtr_GetMoonSpriteDimensions_Public_Vector2_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665751);
+			SkyMaterialController.NativeMethodInfoPtr_get_MoonSpriteItemCount_Public_get_Int32_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665752);
+			SkyMaterialController.NativeMethodInfoPtr_set_MoonSpriteItemCount_Public_set_Void_Int32_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665753);
+			SkyMaterialController.NativeMethodInfoPtr_get_MoonSpriteAnimationSpeed_Public_get_Single_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665754);
+			SkyMaterialController.NativeMethodInfoPtr_set_MoonSpriteAnimationSpeed_Public_set_Void_Single_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665755);
+			SkyMaterialController.NativeMethodInfoPtr_get_MoonAlpha_Public_get_Single_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665756);
+			SkyMaterialController.NativeMethodInfoPtr_set_MoonAlpha_Public_set_Void_Single_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665757);
+			SkyMaterialController.NativeMethodInfoPtr_get_SunTexture_Public_get_Texture_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665758);
+			SkyMaterialController.NativeMethodInfoPtr_set_SunTexture_Public_set_Void_Texture_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665759);
+			SkyMaterialController.NativeMethodInfoPtr_get_SunColor_Public_get_Color_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665760);
+			SkyMaterialController.NativeMethodInfoPtr_set_SunColor_Public_set_Void_Color_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665761);
+			SkyMaterialController.NativeMethodInfoPtr_get_SunRotationSpeed_Public_get_Single_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665762);
+			SkyMaterialController.NativeMethodInfoPtr_set_SunRotationSpeed_Public_set_Void_Single_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665763);
+			SkyMaterialController.NativeMethodInfoPtr_get_SunDirection_Public_get_Vector3_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665764);
+			SkyMaterialController.NativeMethodInfoPtr_set_SunDirection_Public_set_Void_Vector3_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665765);
+			SkyMaterialController.NativeMethodInfoPtr_get_SunWorldToLocalMatrix_Public_get_Matrix4x4_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665766);
+			SkyMaterialController.NativeMethodInfoPtr_set_SunWorldToLocalMatrix_Public_set_Void_Matrix4x4_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665767);
+			SkyMaterialController.NativeMethodInfoPtr_get_SunSize_Public_get_Single_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665768);
+			SkyMaterialController.NativeMethodInfoPtr_set_SunSize_Public_set_Void_Single_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665769);
+			SkyMaterialController.NativeMethodInfoPtr_get_SunEdgeFeathering_Public_get_Single_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665770);
+			SkyMaterialController.NativeMethodInfoPtr_set_SunEdgeFeathering_Public_set_Void_Single_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665771);
+			SkyMaterialController.NativeMethodInfoPtr_get_SunBloomFilterBoost_Public_get_Single_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665772);
+			SkyMaterialController.NativeMethodInfoPtr_set_SunBloomFilterBoost_Public_set_Void_Single_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665773);
+			SkyMaterialController.NativeMethodInfoPtr_SetSunSpriteDimensions_Public_Void_Int32_Int32_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665774);
+			SkyMaterialController.NativeMethodInfoPtr_GetSunSpriteDimensions_Public_Vector2_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665775);
+			SkyMaterialController.NativeMethodInfoPtr_get_SunSpriteItemCount_Public_get_Int32_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665776);
+			SkyMaterialController.NativeMethodInfoPtr_set_SunSpriteItemCount_Public_set_Void_Int32_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665777);
+			SkyMaterialController.NativeMethodInfoPtr_get_SunSpriteAnimationSpeed_Public_get_Single_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665778);
+			SkyMaterialController.NativeMethodInfoPtr_set_SunSpriteAnimationSpeed_Public_set_Void_Single_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665779);
+			SkyMaterialController.NativeMethodInfoPtr_get_SunAlpha_Public_get_Single_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665780);
+			SkyMaterialController.NativeMethodInfoPtr_set_SunAlpha_Public_set_Void_Single_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665781);
+			SkyMaterialController.NativeMethodInfoPtr_get_CloudBegin_Public_get_Single_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665782);
+			SkyMaterialController.NativeMethodInfoPtr_set_CloudBegin_Public_set_Void_Single_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665783);
+			SkyMaterialController.NativeMethodInfoPtr_get_CloudTextureTiling_Public_get_Single_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665784);
+			SkyMaterialController.NativeMethodInfoPtr_set_CloudTextureTiling_Public_set_Void_Single_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665785);
+			SkyMaterialController.NativeMethodInfoPtr_get_CloudColor_Public_get_Color_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665786);
+			SkyMaterialController.NativeMethodInfoPtr_set_CloudColor_Public_set_Void_Color_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665787);
+			SkyMaterialController.NativeMethodInfoPtr_get_CloudTexture_Public_get_Texture_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665788);
+			SkyMaterialController.NativeMethodInfoPtr_set_CloudTexture_Public_set_Void_Texture_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665789);
+			SkyMaterialController.NativeMethodInfoPtr_get_ArtCloudCustomTexture_Public_get_Texture_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665790);
+			SkyMaterialController.NativeMethodInfoPtr_set_ArtCloudCustomTexture_Public_set_Void_Texture_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665791);
+			SkyMaterialController.NativeMethodInfoPtr_get_CloudDensity_Public_get_Single_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665792);
+			SkyMaterialController.NativeMethodInfoPtr_set_CloudDensity_Public_set_Void_Single_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665793);
+			SkyMaterialController.NativeMethodInfoPtr_get_CloudSpeed_Public_get_Single_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665794);
+			SkyMaterialController.NativeMethodInfoPtr_set_CloudSpeed_Public_set_Void_Single_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665795);
+			SkyMaterialController.NativeMethodInfoPtr_get_CloudDirection_Public_get_Single_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665796);
+			SkyMaterialController.NativeMethodInfoPtr_set_CloudDirection_Public_set_Void_Single_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665797);
+			SkyMaterialController.NativeMethodInfoPtr_get_CloudHeight_Public_get_Single_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665798);
+			SkyMaterialController.NativeMethodInfoPtr_set_CloudHeight_Public_set_Void_Single_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665799);
+			SkyMaterialController.NativeMethodInfoPtr_get_CloudColor1_Public_get_Color_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665800);
+			SkyMaterialController.NativeMethodInfoPtr_set_CloudColor1_Public_set_Void_Color_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665801);
+			SkyMaterialController.NativeMethodInfoPtr_get_CloudColor2_Public_get_Color_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665802);
+			SkyMaterialController.NativeMethodInfoPtr_set_CloudColor2_Public_set_Void_Color_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665803);
+			SkyMaterialController.NativeMethodInfoPtr_get_CloudFadePosition_Public_get_Single_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665804);
+			SkyMaterialController.NativeMethodInfoPtr_set_CloudFadePosition_Public_set_Void_Single_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665805);
+			SkyMaterialController.NativeMethodInfoPtr_get_CloudFadeAmount_Public_get_Single_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665806);
+			SkyMaterialController.NativeMethodInfoPtr_set_CloudFadeAmount_Public_set_Void_Single_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665807);
+			SkyMaterialController.NativeMethodInfoPtr_get_CloudAlpha_Public_get_Single_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665808);
+			SkyMaterialController.NativeMethodInfoPtr_set_CloudAlpha_Public_set_Void_Single_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665809);
+			SkyMaterialController.NativeMethodInfoPtr_get_CloudCubemap_Public_get_Texture_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665810);
+			SkyMaterialController.NativeMethodInfoPtr_set_CloudCubemap_Public_set_Void_Texture_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665811);
+			SkyMaterialController.NativeMethodInfoPtr_get_CloudCubemapRotationSpeed_Public_get_Single_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665812);
+			SkyMaterialController.NativeMethodInfoPtr_set_CloudCubemapRotationSpeed_Public_set_Void_Single_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665813);
+			SkyMaterialController.NativeMethodInfoPtr_get_CloudCubemapDoubleLayerCustomTexture_Public_get_Texture_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665814);
+			SkyMaterialController.NativeMethodInfoPtr_set_CloudCubemapDoubleLayerCustomTexture_Public_set_Void_Texture_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665815);
+			SkyMaterialController.NativeMethodInfoPtr_get_CloudCubemapDoubleLayerRotationSpeed_Public_get_Single_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665816);
+			SkyMaterialController.NativeMethodInfoPtr_set_CloudCubemapDoubleLayerRotationSpeed_Public_set_Void_Single_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665817);
+			SkyMaterialController.NativeMethodInfoPtr_get_CloudCubemapDoubleLayerHeight_Public_get_Single_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665818);
+			SkyMaterialController.NativeMethodInfoPtr_set_CloudCubemapDoubleLayerHeight_Public_set_Void_Single_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665819);
+			SkyMaterialController.NativeMethodInfoPtr_get_CloudCubemapDoubleLayerTintColor_Public_get_Color_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665820);
+			SkyMaterialController.NativeMethodInfoPtr_set_CloudCubemapDoubleLayerTintColor_Public_set_Void_Color_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665821);
+			SkyMaterialController.NativeMethodInfoPtr_get_CloudCubemapTintColor_Public_get_Color_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665822);
+			SkyMaterialController.NativeMethodInfoPtr_set_CloudCubemapTintColor_Public_set_Void_Color_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665823);
+			SkyMaterialController.NativeMethodInfoPtr_get_CloudCubemapHeight_Public_get_Single_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665824);
+			SkyMaterialController.NativeMethodInfoPtr_set_CloudCubemapHeight_Public_set_Void_Single_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665825);
+			SkyMaterialController.NativeMethodInfoPtr_get_CloudCubemapNormalTexture_Public_get_Texture_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665826);
+			SkyMaterialController.NativeMethodInfoPtr_set_CloudCubemapNormalTexture_Public_set_Void_Texture_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665827);
+			SkyMaterialController.NativeMethodInfoPtr_get_CloudCubemapNormalLitColor_Public_get_Color_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665828);
+			SkyMaterialController.NativeMethodInfoPtr_set_CloudCubemapNormalLitColor_Public_set_Void_Color_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665829);
+			SkyMaterialController.NativeMethodInfoPtr_get_CloudCubemapNormalShadowColor_Public_get_Color_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665830);
+			SkyMaterialController.NativeMethodInfoPtr_set_CloudCubemapNormalShadowColor_Public_set_Void_Color_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665831);
+			SkyMaterialController.NativeMethodInfoPtr_get_CloudCubemapNormalRotationSpeed_Public_get_Single_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665832);
+			SkyMaterialController.NativeMethodInfoPtr_set_CloudCubemapNormalRotationSpeed_Public_set_Void_Single_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665833);
+			SkyMaterialController.NativeMethodInfoPtr_get_CloudCubemapNormalHeight_Public_get_Single_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665834);
+			SkyMaterialController.NativeMethodInfoPtr_set_CloudCubemapNormalHeight_Public_set_Void_Single_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665835);
+			SkyMaterialController.NativeMethodInfoPtr_get_CloudCubemapNormalAmbientIntensity_Public_get_Single_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665836);
+			SkyMaterialController.NativeMethodInfoPtr_set_CloudCubemapNormalAmbientIntensity_Public_set_Void_Single_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665837);
+			SkyMaterialController.NativeMethodInfoPtr_get_CloudCubemapNormalDoubleLayerCustomTexture_Public_get_Texture_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665838);
+			SkyMaterialController.NativeMethodInfoPtr_set_CloudCubemapNormalDoubleLayerCustomTexture_Public_set_Void_Texture_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665839);
+			SkyMaterialController.NativeMethodInfoPtr_get_CloudCubemapNormalDoubleLayerRotationSpeed_Public_get_Single_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665840);
+			SkyMaterialController.NativeMethodInfoPtr_set_CloudCubemapNormalDoubleLayerRotationSpeed_Public_set_Void_Single_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665841);
+			SkyMaterialController.NativeMethodInfoPtr_get_CloudCubemapNormalDoubleLayerHeight_Public_get_Single_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665842);
+			SkyMaterialController.NativeMethodInfoPtr_set_CloudCubemapNormalDoubleLayerHeight_Public_set_Void_Single_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665843);
+			SkyMaterialController.NativeMethodInfoPtr_get_CloudCubemapNormalDoubleLayerLitColor_Public_get_Color_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665844);
+			SkyMaterialController.NativeMethodInfoPtr_set_CloudCubemapNormalDoubleLayerLitColor_Public_set_Void_Color_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665845);
+			SkyMaterialController.NativeMethodInfoPtr_get_CloudCubemapNormalDoubleLayerShadowColor_Public_get_Color_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665846);
+			SkyMaterialController.NativeMethodInfoPtr_set_CloudCubemapNormalDoubleLayerShadowColor_Public_set_Void_Color_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665847);
+			SkyMaterialController.NativeMethodInfoPtr_get_CloudCubemapNormalLightDirection_Public_get_Vector3_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665848);
+			SkyMaterialController.NativeMethodInfoPtr_set_CloudCubemapNormalLightDirection_Public_set_Void_Vector3_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665849);
+			SkyMaterialController.NativeMethodInfoPtr_get_FogColor_Public_get_Color_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665850);
+			SkyMaterialController.NativeMethodInfoPtr_set_FogColor_Public_set_Void_Color_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665851);
+			SkyMaterialController.NativeMethodInfoPtr_get_FogDensity_Public_get_Single_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665852);
+			SkyMaterialController.NativeMethodInfoPtr_set_FogDensity_Public_set_Void_Single_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665853);
+			SkyMaterialController.NativeMethodInfoPtr_get_FogHeight_Public_get_Single_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665854);
+			SkyMaterialController.NativeMethodInfoPtr_set_FogHeight_Public_set_Void_Single_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665855);
+			SkyMaterialController.NativeMethodInfoPtr_ApplyGradientValuesOnMaterial_Private_Void_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665856);
+			SkyMaterialController.NativeMethodInfoPtr_ApplyStarFadeValuesOnMaterial_Private_Void_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665857);
+			SkyMaterialController.NativeMethodInfoPtr__ctor_Public_Void_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr, 100665858);
+		}
+
+		// Token: 0x17000838 RID: 2104
+		// (get) Token: 0x0600164E RID: 5710 RVA: 0x000B6DB0 File Offset: 0x000B4FB0
+		// (set) Token: 0x0600164F RID: 5711 RVA: 0x000B6DF0 File Offset: 0x000B4FF0
+		public unsafe Material SkyboxMaterial
+		{
+			[CallerCount(10)]
+			[CachedScanResults(RefRangeStart = 17383, RefRangeEnd = 17393, XrefRangeStart = 17383, XrefRangeEnd = 17393, MetadataInitTokenRva = 0L, MetadataInitFlagRva = 0L)]
+			get
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = null;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_get_SkyboxMaterial_Public_get_Material_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+				IntPtr intPtr3 = intPtr;
+				return (intPtr3 != 0) ? Il2CppObjectPool.Get<Material>(intPtr3) : null;
+			}
+			[CallerCount(0)]
+			[CachedScanResults(RefRangeStart = 0, RefRangeEnd = 0, XrefRangeStart = 93624, XrefRangeEnd = 93626, MetadataInitTokenRva = 0L, MetadataInitFlagRva = 0L)]
+			set
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = stackalloc IntPtr[checked(unchecked((UIntPtr)1) * (UIntPtr)sizeof(IntPtr))];
+				*ptr = IL2CPP.Il2CppObjectBaseToPtr(value);
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_set_SkyboxMaterial_Public_set_Void_Material_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+			}
+		}
+
+		// Token: 0x17000839 RID: 2105
+		// (get) Token: 0x06001650 RID: 5712 RVA: 0x000B6E34 File Offset: 0x000B5034
+		// (set) Token: 0x06001651 RID: 5713 RVA: 0x000B6E70 File Offset: 0x000B5070
+		public unsafe Color SkyColor
+		{
+			[CallerCount(0)]
+			get
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = null;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_get_SkyColor_Public_get_Color_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+				return *IL2CPP.il2cpp_object_unbox(intPtr);
+			}
+			[CallerCount(0)]
+			[CachedScanResults(RefRangeStart = 0, RefRangeEnd = 0, XrefRangeStart = 93626, XrefRangeEnd = 93629, MetadataInitTokenRva = 0L, MetadataInitFlagRva = 0L)]
+			set
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = stackalloc IntPtr[checked(unchecked((UIntPtr)1) * (UIntPtr)sizeof(IntPtr))];
+				*ptr = ref value;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_set_SkyColor_Public_set_Void_Color_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+			}
+		}
+
+		// Token: 0x1700083A RID: 2106
+		// (get) Token: 0x06001652 RID: 5714 RVA: 0x000B6EB0 File Offset: 0x000B50B0
+		// (set) Token: 0x06001653 RID: 5715 RVA: 0x000B6EEC File Offset: 0x000B50EC
+		public unsafe Color SkyMiddleColor
+		{
+			[CallerCount(0)]
+			get
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = null;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_get_SkyMiddleColor_Public_get_Color_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+				return *IL2CPP.il2cpp_object_unbox(intPtr);
+			}
+			[CallerCount(0)]
+			[CachedScanResults(RefRangeStart = 0, RefRangeEnd = 0, XrefRangeStart = 93629, XrefRangeEnd = 93632, MetadataInitTokenRva = 0L, MetadataInitFlagRva = 0L)]
+			set
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = stackalloc IntPtr[checked(unchecked((UIntPtr)1) * (UIntPtr)sizeof(IntPtr))];
+				*ptr = ref value;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_set_SkyMiddleColor_Public_set_Void_Color_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+			}
+		}
+
+		// Token: 0x1700083B RID: 2107
+		// (get) Token: 0x06001654 RID: 5716 RVA: 0x000B6F2C File Offset: 0x000B512C
+		// (set) Token: 0x06001655 RID: 5717 RVA: 0x000B6F68 File Offset: 0x000B5168
+		public unsafe Color HorizonColor
+		{
+			[CallerCount(0)]
+			get
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = null;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_get_HorizonColor_Public_get_Color_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+				return *IL2CPP.il2cpp_object_unbox(intPtr);
+			}
+			[CallerCount(0)]
+			[CachedScanResults(RefRangeStart = 0, RefRangeEnd = 0, XrefRangeStart = 93632, XrefRangeEnd = 93635, MetadataInitTokenRva = 0L, MetadataInitFlagRva = 0L)]
+			set
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = stackalloc IntPtr[checked(unchecked((UIntPtr)1) * (UIntPtr)sizeof(IntPtr))];
+				*ptr = ref value;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_set_HorizonColor_Public_set_Void_Color_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+			}
+		}
+
+		// Token: 0x1700083C RID: 2108
+		// (get) Token: 0x06001656 RID: 5718 RVA: 0x000B6FA8 File Offset: 0x000B51A8
+		// (set) Token: 0x06001657 RID: 5719 RVA: 0x000B6FE4 File Offset: 0x000B51E4
+		public unsafe float GradientFadeBegin
+		{
+			[CallerCount(0)]
+			get
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = null;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_get_GradientFadeBegin_Public_get_Single_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+				return *IL2CPP.il2cpp_object_unbox(intPtr);
+			}
+			[CallerCount(0)]
+			[CachedScanResults(RefRangeStart = 0, RefRangeEnd = 0, XrefRangeStart = 93635, XrefRangeEnd = 93636, MetadataInitTokenRva = 0L, MetadataInitFlagRva = 0L)]
+			set
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = stackalloc IntPtr[checked(unchecked((UIntPtr)1) * (UIntPtr)sizeof(IntPtr))];
+				*ptr = ref value;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_set_GradientFadeBegin_Public_set_Void_Single_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+			}
+		}
+
+		// Token: 0x1700083D RID: 2109
+		// (get) Token: 0x06001658 RID: 5720 RVA: 0x000B7024 File Offset: 0x000B5224
+		// (set) Token: 0x06001659 RID: 5721 RVA: 0x000B7060 File Offset: 0x000B5260
+		public unsafe float GradientFadeLength
+		{
+			[CallerCount(0)]
+			get
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = null;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_get_GradientFadeLength_Public_get_Single_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+				return *IL2CPP.il2cpp_object_unbox(intPtr);
+			}
+			[CallerCount(0)]
+			[CachedScanResults(RefRangeStart = 0, RefRangeEnd = 0, XrefRangeStart = 93636, XrefRangeEnd = 93637, MetadataInitTokenRva = 0L, MetadataInitFlagRva = 0L)]
+			set
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = stackalloc IntPtr[checked(unchecked((UIntPtr)1) * (UIntPtr)sizeof(IntPtr))];
+				*ptr = ref value;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_set_GradientFadeLength_Public_set_Void_Single_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+			}
+		}
+
+		// Token: 0x1700083E RID: 2110
+		// (get) Token: 0x0600165A RID: 5722 RVA: 0x000B70A0 File Offset: 0x000B52A0
+		// (set) Token: 0x0600165B RID: 5723 RVA: 0x000B70DC File Offset: 0x000B52DC
+		public unsafe float SkyMiddlePosition
+		{
+			[CallerCount(0)]
+			get
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = null;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_get_SkyMiddlePosition_Public_get_Single_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+				return *IL2CPP.il2cpp_object_unbox(intPtr);
+			}
+			[CallerCount(0)]
+			[CachedScanResults(RefRangeStart = 0, RefRangeEnd = 0, XrefRangeStart = 93637, XrefRangeEnd = 93641, MetadataInitTokenRva = 0L, MetadataInitFlagRva = 0L)]
+			set
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = stackalloc IntPtr[checked(unchecked((UIntPtr)1) * (UIntPtr)sizeof(IntPtr))];
+				*ptr = ref value;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_set_SkyMiddlePosition_Public_set_Void_Single_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+			}
+		}
+
+		// Token: 0x1700083F RID: 2111
+		// (get) Token: 0x0600165C RID: 5724 RVA: 0x000B711C File Offset: 0x000B531C
+		// (set) Token: 0x0600165D RID: 5725 RVA: 0x000B715C File Offset: 0x000B535C
+		public unsafe Cubemap BackgroundCubemap
+		{
+			[CallerCount(0)]
+			get
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = null;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_get_BackgroundCubemap_Public_get_Cubemap_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+				IntPtr intPtr3 = intPtr;
+				return (intPtr3 != 0) ? Il2CppObjectPool.Get<Cubemap>(intPtr3) : null;
+			}
+			[CallerCount(0)]
+			[CachedScanResults(RefRangeStart = 0, RefRangeEnd = 0, XrefRangeStart = 93641, XrefRangeEnd = 93646, MetadataInitTokenRva = 0L, MetadataInitFlagRva = 0L)]
+			set
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = stackalloc IntPtr[checked(unchecked((UIntPtr)1) * (UIntPtr)sizeof(IntPtr))];
+				*ptr = IL2CPP.Il2CppObjectBaseToPtr(value);
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_set_BackgroundCubemap_Public_set_Void_Cubemap_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+			}
+		}
+
+		// Token: 0x17000840 RID: 2112
+		// (get) Token: 0x0600165E RID: 5726 RVA: 0x000B71A0 File Offset: 0x000B53A0
+		// (set) Token: 0x0600165F RID: 5727 RVA: 0x000B71DC File Offset: 0x000B53DC
+		public unsafe float StarFadeBegin
+		{
+			[CallerCount(0)]
+			get
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = null;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_get_StarFadeBegin_Public_get_Single_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+				return *IL2CPP.il2cpp_object_unbox(intPtr);
+			}
+			[CallerCount(0)]
+			[CachedScanResults(RefRangeStart = 0, RefRangeEnd = 0, XrefRangeStart = 93646, XrefRangeEnd = 93647, MetadataInitTokenRva = 0L, MetadataInitFlagRva = 0L)]
+			set
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = stackalloc IntPtr[checked(unchecked((UIntPtr)1) * (UIntPtr)sizeof(IntPtr))];
+				*ptr = ref value;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_set_StarFadeBegin_Public_set_Void_Single_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+			}
+		}
+
+		// Token: 0x17000841 RID: 2113
+		// (get) Token: 0x06001660 RID: 5728 RVA: 0x000B721C File Offset: 0x000B541C
+		// (set) Token: 0x06001661 RID: 5729 RVA: 0x000B7258 File Offset: 0x000B5458
+		public unsafe float StarFadeLength
+		{
+			[CallerCount(0)]
+			get
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = null;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_get_StarFadeLength_Public_get_Single_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+				return *IL2CPP.il2cpp_object_unbox(intPtr);
+			}
+			[CallerCount(0)]
+			[CachedScanResults(RefRangeStart = 0, RefRangeEnd = 0, XrefRangeStart = 93647, XrefRangeEnd = 93648, MetadataInitTokenRva = 0L, MetadataInitFlagRva = 0L)]
+			set
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = stackalloc IntPtr[checked(unchecked((UIntPtr)1) * (UIntPtr)sizeof(IntPtr))];
+				*ptr = ref value;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_set_StarFadeLength_Public_set_Void_Single_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+			}
+		}
+
+		// Token: 0x17000842 RID: 2114
+		// (get) Token: 0x06001662 RID: 5730 RVA: 0x000B7298 File Offset: 0x000B5498
+		// (set) Token: 0x06001663 RID: 5731 RVA: 0x000B72D4 File Offset: 0x000B54D4
+		public unsafe float HorizonDistanceScale
+		{
+			[CallerCount(0)]
+			get
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = null;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_get_HorizonDistanceScale_Public_get_Single_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+				return *IL2CPP.il2cpp_object_unbox(intPtr);
+			}
+			[CallerCount(0)]
+			[CachedScanResults(RefRangeStart = 0, RefRangeEnd = 0, XrefRangeStart = 93648, XrefRangeEnd = 93652, MetadataInitTokenRva = 0L, MetadataInitFlagRva = 0L)]
+			set
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = stackalloc IntPtr[checked(unchecked((UIntPtr)1) * (UIntPtr)sizeof(IntPtr))];
+				*ptr = ref value;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_set_HorizonDistanceScale_Public_set_Void_Single_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+			}
+		}
+
+		// Token: 0x17000843 RID: 2115
+		// (get) Token: 0x06001664 RID: 5732 RVA: 0x000B7314 File Offset: 0x000B5514
+		// (set) Token: 0x06001665 RID: 5733 RVA: 0x000B7354 File Offset: 0x000B5554
+		public unsafe Texture StarBasicCubemap
+		{
+			[CallerCount(1)]
+			[CachedScanResults(RefRangeStart = 22967, RefRangeEnd = 22968, XrefRangeStart = 22967, XrefRangeEnd = 22968, MetadataInitTokenRva = 0L, MetadataInitFlagRva = 0L)]
+			get
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = null;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_get_StarBasicCubemap_Public_get_Texture_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+				IntPtr intPtr3 = intPtr;
+				return (intPtr3 != 0) ? Il2CppObjectPool.Get<Texture>(intPtr3) : null;
+			}
+			[CallerCount(0)]
+			[CachedScanResults(RefRangeStart = 0, RefRangeEnd = 0, XrefRangeStart = 93652, XrefRangeEnd = 93657, MetadataInitTokenRva = 0L, MetadataInitFlagRva = 0L)]
+			set
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = stackalloc IntPtr[checked(unchecked((UIntPtr)1) * (UIntPtr)sizeof(IntPtr))];
+				*ptr = IL2CPP.Il2CppObjectBaseToPtr(value);
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_set_StarBasicCubemap_Public_set_Void_Texture_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+			}
+		}
+
+		// Token: 0x17000844 RID: 2116
+		// (get) Token: 0x06001666 RID: 5734 RVA: 0x000B7398 File Offset: 0x000B5598
+		// (set) Token: 0x06001667 RID: 5735 RVA: 0x000B73D4 File Offset: 0x000B55D4
+		public unsafe float StarBasicTwinkleSpeed
+		{
+			[CallerCount(0)]
+			get
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = null;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_get_StarBasicTwinkleSpeed_Public_get_Single_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+				return *IL2CPP.il2cpp_object_unbox(intPtr);
+			}
+			[CallerCount(0)]
+			[CachedScanResults(RefRangeStart = 0, RefRangeEnd = 0, XrefRangeStart = 93657, XrefRangeEnd = 93661, MetadataInitTokenRva = 0L, MetadataInitFlagRva = 0L)]
+			set
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = stackalloc IntPtr[checked(unchecked((UIntPtr)1) * (UIntPtr)sizeof(IntPtr))];
+				*ptr = ref value;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_set_StarBasicTwinkleSpeed_Public_set_Void_Single_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+			}
+		}
+
+		// Token: 0x17000845 RID: 2117
+		// (get) Token: 0x06001668 RID: 5736 RVA: 0x000B7414 File Offset: 0x000B5614
+		// (set) Token: 0x06001669 RID: 5737 RVA: 0x000B7450 File Offset: 0x000B5650
+		public unsafe float StarBasicTwinkleAmount
+		{
+			[CallerCount(0)]
+			get
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = null;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_get_StarBasicTwinkleAmount_Public_get_Single_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+				return *IL2CPP.il2cpp_object_unbox(intPtr);
+			}
+			[CallerCount(0)]
+			[CachedScanResults(RefRangeStart = 0, RefRangeEnd = 0, XrefRangeStart = 93661, XrefRangeEnd = 93665, MetadataInitTokenRva = 0L, MetadataInitFlagRva = 0L)]
+			set
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = stackalloc IntPtr[checked(unchecked((UIntPtr)1) * (UIntPtr)sizeof(IntPtr))];
+				*ptr = ref value;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_set_StarBasicTwinkleAmount_Public_set_Void_Single_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+			}
+		}
+
+		// Token: 0x17000846 RID: 2118
+		// (get) Token: 0x0600166A RID: 5738 RVA: 0x000B7490 File Offset: 0x000B5690
+		// (set) Token: 0x0600166B RID: 5739 RVA: 0x000B74CC File Offset: 0x000B56CC
+		public unsafe float StarBasicOpacity
+		{
+			[CallerCount(0)]
+			get
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = null;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_get_StarBasicOpacity_Public_get_Single_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+				return *IL2CPP.il2cpp_object_unbox(intPtr);
+			}
+			[CallerCount(0)]
+			[CachedScanResults(RefRangeStart = 0, RefRangeEnd = 0, XrefRangeStart = 93665, XrefRangeEnd = 93669, MetadataInitTokenRva = 0L, MetadataInitFlagRva = 0L)]
+			set
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = stackalloc IntPtr[checked(unchecked((UIntPtr)1) * (UIntPtr)sizeof(IntPtr))];
+				*ptr = ref value;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_set_StarBasicOpacity_Public_set_Void_Single_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+			}
+		}
+
+		// Token: 0x17000847 RID: 2119
+		// (get) Token: 0x0600166C RID: 5740 RVA: 0x000B750C File Offset: 0x000B570C
+		// (set) Token: 0x0600166D RID: 5741 RVA: 0x000B7548 File Offset: 0x000B5748
+		public unsafe Color StarBasicTintColor
+		{
+			[CallerCount(0)]
+			get
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = null;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_get_StarBasicTintColor_Public_get_Color_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+				return *IL2CPP.il2cpp_object_unbox(intPtr);
+			}
+			[CallerCount(0)]
+			[CachedScanResults(RefRangeStart = 0, RefRangeEnd = 0, XrefRangeStart = 93669, XrefRangeEnd = 93672, MetadataInitTokenRva = 0L, MetadataInitFlagRva = 0L)]
+			set
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = stackalloc IntPtr[checked(unchecked((UIntPtr)1) * (UIntPtr)sizeof(IntPtr))];
+				*ptr = ref value;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_set_StarBasicTintColor_Public_set_Void_Color_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+			}
+		}
+
+		// Token: 0x17000848 RID: 2120
+		// (get) Token: 0x0600166E RID: 5742 RVA: 0x000B7588 File Offset: 0x000B5788
+		// (set) Token: 0x0600166F RID: 5743 RVA: 0x000B75C4 File Offset: 0x000B57C4
+		public unsafe float StarBasicExponent
+		{
+			[CallerCount(0)]
+			get
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = null;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_get_StarBasicExponent_Public_get_Single_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+				return *IL2CPP.il2cpp_object_unbox(intPtr);
+			}
+			[CallerCount(0)]
+			[CachedScanResults(RefRangeStart = 0, RefRangeEnd = 0, XrefRangeStart = 93672, XrefRangeEnd = 93676, MetadataInitTokenRva = 0L, MetadataInitFlagRva = 0L)]
+			set
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = stackalloc IntPtr[checked(unchecked((UIntPtr)1) * (UIntPtr)sizeof(IntPtr))];
+				*ptr = ref value;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_set_StarBasicExponent_Public_set_Void_Single_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+			}
+		}
+
+		// Token: 0x17000849 RID: 2121
+		// (get) Token: 0x06001670 RID: 5744 RVA: 0x000B7604 File Offset: 0x000B5804
+		// (set) Token: 0x06001671 RID: 5745 RVA: 0x000B7640 File Offset: 0x000B5840
+		public unsafe float StarBasicIntensity
+		{
+			[CallerCount(0)]
+			get
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = null;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_get_StarBasicIntensity_Public_get_Single_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+				return *IL2CPP.il2cpp_object_unbox(intPtr);
+			}
+			[CallerCount(0)]
+			[CachedScanResults(RefRangeStart = 0, RefRangeEnd = 0, XrefRangeStart = 93676, XrefRangeEnd = 93680, MetadataInitTokenRva = 0L, MetadataInitFlagRva = 0L)]
+			set
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = stackalloc IntPtr[checked(unchecked((UIntPtr)1) * (UIntPtr)sizeof(IntPtr))];
+				*ptr = ref value;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_set_StarBasicIntensity_Public_set_Void_Single_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+			}
+		}
+
+		// Token: 0x1700084A RID: 2122
+		// (get) Token: 0x06001672 RID: 5746 RVA: 0x000B7680 File Offset: 0x000B5880
+		// (set) Token: 0x06001673 RID: 5747 RVA: 0x000B76C0 File Offset: 0x000B58C0
+		public unsafe Texture StarLayer1Texture
+		{
+			[CallerCount(1)]
+			[CachedScanResults(RefRangeStart = 43167, RefRangeEnd = 43168, XrefRangeStart = 43167, XrefRangeEnd = 43168, MetadataInitTokenRva = 0L, MetadataInitFlagRva = 0L)]
+			get
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = null;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_get_StarLayer1Texture_Public_get_Texture_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+				IntPtr intPtr3 = intPtr;
+				return (intPtr3 != 0) ? Il2CppObjectPool.Get<Texture>(intPtr3) : null;
+			}
+			[CallerCount(0)]
+			[CachedScanResults(RefRangeStart = 0, RefRangeEnd = 0, XrefRangeStart = 93680, XrefRangeEnd = 93685, MetadataInitTokenRva = 0L, MetadataInitFlagRva = 0L)]
+			set
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = stackalloc IntPtr[checked(unchecked((UIntPtr)1) * (UIntPtr)sizeof(IntPtr))];
+				*ptr = IL2CPP.Il2CppObjectBaseToPtr(value);
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_set_StarLayer1Texture_Public_set_Void_Texture_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+			}
+		}
+
+		// Token: 0x1700084B RID: 2123
+		// (get) Token: 0x06001674 RID: 5748 RVA: 0x000B7704 File Offset: 0x000B5904
+		// (set) Token: 0x06001675 RID: 5749 RVA: 0x000B7744 File Offset: 0x000B5944
+		public unsafe Texture2D StarLayer1DataTexture
+		{
+			[CallerCount(0)]
+			get
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = null;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_get_StarLayer1DataTexture_Public_get_Texture2D_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+				IntPtr intPtr3 = intPtr;
+				return (intPtr3 != 0) ? Il2CppObjectPool.Get<Texture2D>(intPtr3) : null;
+			}
+			[CallerCount(0)]
+			[CachedScanResults(RefRangeStart = 0, RefRangeEnd = 0, XrefRangeStart = 93685, XrefRangeEnd = 93690, MetadataInitTokenRva = 0L, MetadataInitFlagRva = 0L)]
+			set
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = stackalloc IntPtr[checked(unchecked((UIntPtr)1) * (UIntPtr)sizeof(IntPtr))];
+				*ptr = IL2CPP.Il2CppObjectBaseToPtr(value);
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_set_StarLayer1DataTexture_Public_set_Void_Texture2D_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+			}
+		}
+
+		// Token: 0x1700084C RID: 2124
+		// (get) Token: 0x06001676 RID: 5750 RVA: 0x000B7788 File Offset: 0x000B5988
+		// (set) Token: 0x06001677 RID: 5751 RVA: 0x000B77C4 File Offset: 0x000B59C4
+		public unsafe Color StarLayer1Color
+		{
+			[CallerCount(0)]
+			get
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = null;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_get_StarLayer1Color_Public_get_Color_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+				return *IL2CPP.il2cpp_object_unbox(intPtr);
+			}
+			[CallerCount(0)]
+			[CachedScanResults(RefRangeStart = 0, RefRangeEnd = 0, XrefRangeStart = 93690, XrefRangeEnd = 93693, MetadataInitTokenRva = 0L, MetadataInitFlagRva = 0L)]
+			set
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = stackalloc IntPtr[checked(unchecked((UIntPtr)1) * (UIntPtr)sizeof(IntPtr))];
+				*ptr = ref value;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_set_StarLayer1Color_Public_set_Void_Color_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+			}
+		}
+
+		// Token: 0x1700084D RID: 2125
+		// (get) Token: 0x06001678 RID: 5752 RVA: 0x000B7804 File Offset: 0x000B5A04
+		// (set) Token: 0x06001679 RID: 5753 RVA: 0x000B7840 File Offset: 0x000B5A40
+		public unsafe float StarLayer1MaxRadius
+		{
+			[CallerCount(0)]
+			get
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = null;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_get_StarLayer1MaxRadius_Public_get_Single_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+				return *IL2CPP.il2cpp_object_unbox(intPtr);
+			}
+			[CallerCount(0)]
+			[CachedScanResults(RefRangeStart = 0, RefRangeEnd = 0, XrefRangeStart = 93693, XrefRangeEnd = 93697, MetadataInitTokenRva = 0L, MetadataInitFlagRva = 0L)]
+			set
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = stackalloc IntPtr[checked(unchecked((UIntPtr)1) * (UIntPtr)sizeof(IntPtr))];
+				*ptr = ref value;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_set_StarLayer1MaxRadius_Public_set_Void_Single_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+			}
+		}
+
+		// Token: 0x1700084E RID: 2126
+		// (get) Token: 0x0600167A RID: 5754 RVA: 0x000B7880 File Offset: 0x000B5A80
+		// (set) Token: 0x0600167B RID: 5755 RVA: 0x000B78BC File Offset: 0x000B5ABC
+		public unsafe float StarLayer1TwinkleAmount
+		{
+			[CallerCount(0)]
+			get
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = null;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_get_StarLayer1TwinkleAmount_Public_get_Single_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+				return *IL2CPP.il2cpp_object_unbox(intPtr);
+			}
+			[CallerCount(0)]
+			[CachedScanResults(RefRangeStart = 0, RefRangeEnd = 0, XrefRangeStart = 93697, XrefRangeEnd = 93701, MetadataInitTokenRva = 0L, MetadataInitFlagRva = 0L)]
+			set
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = stackalloc IntPtr[checked(unchecked((UIntPtr)1) * (UIntPtr)sizeof(IntPtr))];
+				*ptr = ref value;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_set_StarLayer1TwinkleAmount_Public_set_Void_Single_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+			}
+		}
+
+		// Token: 0x1700084F RID: 2127
+		// (get) Token: 0x0600167C RID: 5756 RVA: 0x000B78FC File Offset: 0x000B5AFC
+		// (set) Token: 0x0600167D RID: 5757 RVA: 0x000B7938 File Offset: 0x000B5B38
+		public unsafe float StarLayer1TwinkleSpeed
+		{
+			[CallerCount(0)]
+			get
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = null;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_get_StarLayer1TwinkleSpeed_Public_get_Single_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+				return *IL2CPP.il2cpp_object_unbox(intPtr);
+			}
+			[CallerCount(0)]
+			[CachedScanResults(RefRangeStart = 0, RefRangeEnd = 0, XrefRangeStart = 93701, XrefRangeEnd = 93705, MetadataInitTokenRva = 0L, MetadataInitFlagRva = 0L)]
+			set
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = stackalloc IntPtr[checked(unchecked((UIntPtr)1) * (UIntPtr)sizeof(IntPtr))];
+				*ptr = ref value;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_set_StarLayer1TwinkleSpeed_Public_set_Void_Single_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+			}
+		}
+
+		// Token: 0x17000850 RID: 2128
+		// (get) Token: 0x0600167E RID: 5758 RVA: 0x000B7978 File Offset: 0x000B5B78
+		// (set) Token: 0x0600167F RID: 5759 RVA: 0x000B79B4 File Offset: 0x000B5BB4
+		public unsafe float StarLayer1RotationSpeed
+		{
+			[CallerCount(0)]
+			get
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = null;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_get_StarLayer1RotationSpeed_Public_get_Single_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+				return *IL2CPP.il2cpp_object_unbox(intPtr);
+			}
+			[CallerCount(0)]
+			[CachedScanResults(RefRangeStart = 0, RefRangeEnd = 0, XrefRangeStart = 93705, XrefRangeEnd = 93709, MetadataInitTokenRva = 0L, MetadataInitFlagRva = 0L)]
+			set
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = stackalloc IntPtr[checked(unchecked((UIntPtr)1) * (UIntPtr)sizeof(IntPtr))];
+				*ptr = ref value;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_set_StarLayer1RotationSpeed_Public_set_Void_Single_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+			}
+		}
+
+		// Token: 0x17000851 RID: 2129
+		// (get) Token: 0x06001680 RID: 5760 RVA: 0x000B79F4 File Offset: 0x000B5BF4
+		// (set) Token: 0x06001681 RID: 5761 RVA: 0x000B7A30 File Offset: 0x000B5C30
+		public unsafe float StarLayer1EdgeFeathering
+		{
+			[CallerCount(0)]
+			get
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = null;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_get_StarLayer1EdgeFeathering_Public_get_Single_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+				return *IL2CPP.il2cpp_object_unbox(intPtr);
+			}
+			[CallerCount(0)]
+			[CachedScanResults(RefRangeStart = 0, RefRangeEnd = 0, XrefRangeStart = 93709, XrefRangeEnd = 93713, MetadataInitTokenRva = 0L, MetadataInitFlagRva = 0L)]
+			set
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = stackalloc IntPtr[checked(unchecked((UIntPtr)1) * (UIntPtr)sizeof(IntPtr))];
+				*ptr = ref value;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_set_StarLayer1EdgeFeathering_Public_set_Void_Single_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+			}
+		}
+
+		// Token: 0x17000852 RID: 2130
+		// (get) Token: 0x06001682 RID: 5762 RVA: 0x000B7A70 File Offset: 0x000B5C70
+		// (set) Token: 0x06001683 RID: 5763 RVA: 0x000B7AAC File Offset: 0x000B5CAC
+		public unsafe float StarLayer1BloomFilterBoost
+		{
+			[CallerCount(0)]
+			get
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = null;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_get_StarLayer1BloomFilterBoost_Public_get_Single_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+				return *IL2CPP.il2cpp_object_unbox(intPtr);
+			}
+			[CallerCount(0)]
+			[CachedScanResults(RefRangeStart = 0, RefRangeEnd = 0, XrefRangeStart = 93713, XrefRangeEnd = 93717, MetadataInitTokenRva = 0L, MetadataInitFlagRva = 0L)]
+			set
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = stackalloc IntPtr[checked(unchecked((UIntPtr)1) * (UIntPtr)sizeof(IntPtr))];
+				*ptr = ref value;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_set_StarLayer1BloomFilterBoost_Public_set_Void_Single_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+			}
+		}
+
+		// Token: 0x06001684 RID: 5764 RVA: 0x000B7AEC File Offset: 0x000B5CEC
+		[CallerCount(0)]
+		[CachedScanResults(RefRangeStart = 0, RefRangeEnd = 0, XrefRangeStart = 93717, XrefRangeEnd = 93720, MetadataInitTokenRva = 0L, MetadataInitFlagRva = 0L)]
+		public unsafe void SetStarLayer1SpriteDimensions(int columns, int rows)
+		{
+			IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+			IntPtr* ptr = stackalloc IntPtr[checked(unchecked((UIntPtr)2) * (UIntPtr)sizeof(IntPtr))];
+			*ptr = ref columns;
+			ptr[checked(unchecked((UIntPtr)1) * (UIntPtr)sizeof(IntPtr)) / (UIntPtr)sizeof(IntPtr)] = ref rows;
+			IntPtr intPtr2;
+			IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_SetStarLayer1SpriteDimensions_Public_Void_Int32_Int32_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+			Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+		}
+
+		// Token: 0x06001685 RID: 5765 RVA: 0x000B7B38 File Offset: 0x000B5D38
+		[CallerCount(0)]
+		public unsafe Vector2 GetStarLayer1SpriteDimensions()
+		{
+			IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+			IntPtr* ptr = null;
+			IntPtr intPtr2;
+			IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_GetStarLayer1SpriteDimensions_Public_Vector2_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+			Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+			return *IL2CPP.il2cpp_object_unbox(intPtr);
+		}
+
+		// Token: 0x17000853 RID: 2131
+		// (get) Token: 0x06001686 RID: 5766 RVA: 0x000B7B74 File Offset: 0x000B5D74
+		// (set) Token: 0x06001687 RID: 5767 RVA: 0x000B7BB0 File Offset: 0x000B5DB0
+		public unsafe int StarLayer1SpriteItemCount
+		{
+			[CallerCount(0)]
+			get
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = null;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_get_StarLayer1SpriteItemCount_Public_get_Int32_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+				return *IL2CPP.il2cpp_object_unbox(intPtr);
+			}
+			[CallerCount(0)]
+			[CachedScanResults(RefRangeStart = 0, RefRangeEnd = 0, XrefRangeStart = 93720, XrefRangeEnd = 93724, MetadataInitTokenRva = 0L, MetadataInitFlagRva = 0L)]
+			set
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = stackalloc IntPtr[checked(unchecked((UIntPtr)1) * (UIntPtr)sizeof(IntPtr))];
+				*ptr = ref value;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_set_StarLayer1SpriteItemCount_Public_set_Void_Int32_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+			}
+		}
+
+		// Token: 0x17000854 RID: 2132
+		// (get) Token: 0x06001688 RID: 5768 RVA: 0x000B7BF0 File Offset: 0x000B5DF0
+		// (set) Token: 0x06001689 RID: 5769 RVA: 0x000B7C2C File Offset: 0x000B5E2C
+		public unsafe float StarLayer1SpriteAnimationSpeed
+		{
+			[CallerCount(0)]
+			get
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = null;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_get_StarLayer1SpriteAnimationSpeed_Public_get_Single_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+				return *IL2CPP.il2cpp_object_unbox(intPtr);
+			}
+			[CallerCount(0)]
+			[CachedScanResults(RefRangeStart = 0, RefRangeEnd = 0, XrefRangeStart = 93724, XrefRangeEnd = 93728, MetadataInitTokenRva = 0L, MetadataInitFlagRva = 0L)]
+			set
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = stackalloc IntPtr[checked(unchecked((UIntPtr)1) * (UIntPtr)sizeof(IntPtr))];
+				*ptr = ref value;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_set_StarLayer1SpriteAnimationSpeed_Public_set_Void_Single_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+			}
+		}
+
+		// Token: 0x17000855 RID: 2133
+		// (get) Token: 0x0600168A RID: 5770 RVA: 0x000B7C6C File Offset: 0x000B5E6C
+		// (set) Token: 0x0600168B RID: 5771 RVA: 0x000B7CAC File Offset: 0x000B5EAC
+		public unsafe Texture StarLayer2Texture
+		{
+			[CallerCount(0)]
+			get
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = null;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_get_StarLayer2Texture_Public_get_Texture_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+				IntPtr intPtr3 = intPtr;
+				return (intPtr3 != 0) ? Il2CppObjectPool.Get<Texture>(intPtr3) : null;
+			}
+			[CallerCount(0)]
+			[CachedScanResults(RefRangeStart = 0, RefRangeEnd = 0, XrefRangeStart = 93728, XrefRangeEnd = 93733, MetadataInitTokenRva = 0L, MetadataInitFlagRva = 0L)]
+			set
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = stackalloc IntPtr[checked(unchecked((UIntPtr)1) * (UIntPtr)sizeof(IntPtr))];
+				*ptr = IL2CPP.Il2CppObjectBaseToPtr(value);
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_set_StarLayer2Texture_Public_set_Void_Texture_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+			}
+		}
+
+		// Token: 0x17000856 RID: 2134
+		// (get) Token: 0x0600168C RID: 5772 RVA: 0x000B7CF0 File Offset: 0x000B5EF0
+		// (set) Token: 0x0600168D RID: 5773 RVA: 0x000B7D30 File Offset: 0x000B5F30
+		public unsafe Texture2D StarLayer2DataTexture
+		{
+			[CallerCount(0)]
+			get
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = null;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_get_StarLayer2DataTexture_Public_get_Texture2D_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+				IntPtr intPtr3 = intPtr;
+				return (intPtr3 != 0) ? Il2CppObjectPool.Get<Texture2D>(intPtr3) : null;
+			}
+			[CallerCount(0)]
+			[CachedScanResults(RefRangeStart = 0, RefRangeEnd = 0, XrefRangeStart = 93733, XrefRangeEnd = 93738, MetadataInitTokenRva = 0L, MetadataInitFlagRva = 0L)]
+			set
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = stackalloc IntPtr[checked(unchecked((UIntPtr)1) * (UIntPtr)sizeof(IntPtr))];
+				*ptr = IL2CPP.Il2CppObjectBaseToPtr(value);
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_set_StarLayer2DataTexture_Public_set_Void_Texture2D_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+			}
+		}
+
+		// Token: 0x17000857 RID: 2135
+		// (get) Token: 0x0600168E RID: 5774 RVA: 0x000B7D74 File Offset: 0x000B5F74
+		// (set) Token: 0x0600168F RID: 5775 RVA: 0x000B7DB0 File Offset: 0x000B5FB0
+		public unsafe Color StarLayer2Color
+		{
+			[CallerCount(0)]
+			get
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = null;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_get_StarLayer2Color_Public_get_Color_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+				return *IL2CPP.il2cpp_object_unbox(intPtr);
+			}
+			[CallerCount(0)]
+			[CachedScanResults(RefRangeStart = 0, RefRangeEnd = 0, XrefRangeStart = 93738, XrefRangeEnd = 93741, MetadataInitTokenRva = 0L, MetadataInitFlagRva = 0L)]
+			set
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = stackalloc IntPtr[checked(unchecked((UIntPtr)1) * (UIntPtr)sizeof(IntPtr))];
+				*ptr = ref value;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_set_StarLayer2Color_Public_set_Void_Color_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+			}
+		}
+
+		// Token: 0x17000858 RID: 2136
+		// (get) Token: 0x06001690 RID: 5776 RVA: 0x000B7DF0 File Offset: 0x000B5FF0
+		// (set) Token: 0x06001691 RID: 5777 RVA: 0x000B7E2C File Offset: 0x000B602C
+		public unsafe float StarLayer2MaxRadius
+		{
+			[CallerCount(0)]
+			get
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = null;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_get_StarLayer2MaxRadius_Public_get_Single_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+				return *IL2CPP.il2cpp_object_unbox(intPtr);
+			}
+			[CallerCount(0)]
+			[CachedScanResults(RefRangeStart = 0, RefRangeEnd = 0, XrefRangeStart = 93741, XrefRangeEnd = 93745, MetadataInitTokenRva = 0L, MetadataInitFlagRva = 0L)]
+			set
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = stackalloc IntPtr[checked(unchecked((UIntPtr)1) * (UIntPtr)sizeof(IntPtr))];
+				*ptr = ref value;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_set_StarLayer2MaxRadius_Public_set_Void_Single_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+			}
+		}
+
+		// Token: 0x17000859 RID: 2137
+		// (get) Token: 0x06001692 RID: 5778 RVA: 0x000B7E6C File Offset: 0x000B606C
+		// (set) Token: 0x06001693 RID: 5779 RVA: 0x000B7EA8 File Offset: 0x000B60A8
+		public unsafe float StarLayer2TwinkleAmount
+		{
+			[CallerCount(0)]
+			get
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = null;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_get_StarLayer2TwinkleAmount_Public_get_Single_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+				return *IL2CPP.il2cpp_object_unbox(intPtr);
+			}
+			[CallerCount(0)]
+			[CachedScanResults(RefRangeStart = 0, RefRangeEnd = 0, XrefRangeStart = 93745, XrefRangeEnd = 93749, MetadataInitTokenRva = 0L, MetadataInitFlagRva = 0L)]
+			set
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = stackalloc IntPtr[checked(unchecked((UIntPtr)1) * (UIntPtr)sizeof(IntPtr))];
+				*ptr = ref value;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_set_StarLayer2TwinkleAmount_Public_set_Void_Single_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+			}
+		}
+
+		// Token: 0x1700085A RID: 2138
+		// (get) Token: 0x06001694 RID: 5780 RVA: 0x000B7EE8 File Offset: 0x000B60E8
+		// (set) Token: 0x06001695 RID: 5781 RVA: 0x000B7F24 File Offset: 0x000B6124
+		public unsafe float StarLayer2TwinkleSpeed
+		{
+			[CallerCount(0)]
+			get
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = null;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_get_StarLayer2TwinkleSpeed_Public_get_Single_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+				return *IL2CPP.il2cpp_object_unbox(intPtr);
+			}
+			[CallerCount(0)]
+			[CachedScanResults(RefRangeStart = 0, RefRangeEnd = 0, XrefRangeStart = 93749, XrefRangeEnd = 93753, MetadataInitTokenRva = 0L, MetadataInitFlagRva = 0L)]
+			set
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = stackalloc IntPtr[checked(unchecked((UIntPtr)1) * (UIntPtr)sizeof(IntPtr))];
+				*ptr = ref value;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_set_StarLayer2TwinkleSpeed_Public_set_Void_Single_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+			}
+		}
+
+		// Token: 0x1700085B RID: 2139
+		// (get) Token: 0x06001696 RID: 5782 RVA: 0x000B7F64 File Offset: 0x000B6164
+		// (set) Token: 0x06001697 RID: 5783 RVA: 0x000B7FA0 File Offset: 0x000B61A0
+		public unsafe float StarLayer2RotationSpeed
+		{
+			[CallerCount(2)]
+			[CachedScanResults(RefRangeStart = 86619, RefRangeEnd = 86621, XrefRangeStart = 86619, XrefRangeEnd = 86621, MetadataInitTokenRva = 0L, MetadataInitFlagRva = 0L)]
+			get
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = null;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_get_StarLayer2RotationSpeed_Public_get_Single_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+				return *IL2CPP.il2cpp_object_unbox(intPtr);
+			}
+			[CallerCount(0)]
+			[CachedScanResults(RefRangeStart = 0, RefRangeEnd = 0, XrefRangeStart = 93753, XrefRangeEnd = 93757, MetadataInitTokenRva = 0L, MetadataInitFlagRva = 0L)]
+			set
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = stackalloc IntPtr[checked(unchecked((UIntPtr)1) * (UIntPtr)sizeof(IntPtr))];
+				*ptr = ref value;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_set_StarLayer2RotationSpeed_Public_set_Void_Single_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+			}
+		}
+
+		// Token: 0x1700085C RID: 2140
+		// (get) Token: 0x06001698 RID: 5784 RVA: 0x000B7FE0 File Offset: 0x000B61E0
+		// (set) Token: 0x06001699 RID: 5785 RVA: 0x000B801C File Offset: 0x000B621C
+		public unsafe float StarLayer2EdgeFeathering
+		{
+			[CallerCount(0)]
+			get
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = null;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_get_StarLayer2EdgeFeathering_Public_get_Single_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+				return *IL2CPP.il2cpp_object_unbox(intPtr);
+			}
+			[CallerCount(0)]
+			[CachedScanResults(RefRangeStart = 0, RefRangeEnd = 0, XrefRangeStart = 93757, XrefRangeEnd = 93761, MetadataInitTokenRva = 0L, MetadataInitFlagRva = 0L)]
+			set
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = stackalloc IntPtr[checked(unchecked((UIntPtr)1) * (UIntPtr)sizeof(IntPtr))];
+				*ptr = ref value;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_set_StarLayer2EdgeFeathering_Public_set_Void_Single_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+			}
+		}
+
+		// Token: 0x1700085D RID: 2141
+		// (get) Token: 0x0600169A RID: 5786 RVA: 0x000B805C File Offset: 0x000B625C
+		// (set) Token: 0x0600169B RID: 5787 RVA: 0x000B8098 File Offset: 0x000B6298
+		public unsafe float StarLayer2BloomFilterBoost
+		{
+			[CallerCount(0)]
+			get
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = null;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_get_StarLayer2BloomFilterBoost_Public_get_Single_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+				return *IL2CPP.il2cpp_object_unbox(intPtr);
+			}
+			[CallerCount(0)]
+			[CachedScanResults(RefRangeStart = 0, RefRangeEnd = 0, XrefRangeStart = 93761, XrefRangeEnd = 93765, MetadataInitTokenRva = 0L, MetadataInitFlagRva = 0L)]
+			set
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = stackalloc IntPtr[checked(unchecked((UIntPtr)1) * (UIntPtr)sizeof(IntPtr))];
+				*ptr = ref value;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_set_StarLayer2BloomFilterBoost_Public_set_Void_Single_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+			}
+		}
+
+		// Token: 0x0600169C RID: 5788 RVA: 0x000B80D8 File Offset: 0x000B62D8
+		[CallerCount(0)]
+		[CachedScanResults(RefRangeStart = 0, RefRangeEnd = 0, XrefRangeStart = 93765, XrefRangeEnd = 93768, MetadataInitTokenRva = 0L, MetadataInitFlagRva = 0L)]
+		public unsafe void SetStarLayer2SpriteDimensions(int columns, int rows)
+		{
+			IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+			IntPtr* ptr = stackalloc IntPtr[checked(unchecked((UIntPtr)2) * (UIntPtr)sizeof(IntPtr))];
+			*ptr = ref columns;
+			ptr[checked(unchecked((UIntPtr)1) * (UIntPtr)sizeof(IntPtr)) / (UIntPtr)sizeof(IntPtr)] = ref rows;
+			IntPtr intPtr2;
+			IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_SetStarLayer2SpriteDimensions_Public_Void_Int32_Int32_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+			Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+		}
+
+		// Token: 0x0600169D RID: 5789 RVA: 0x000B8124 File Offset: 0x000B6324
+		[CallerCount(0)]
+		public unsafe Vector2 GetStarLayer2SpriteDimensions()
+		{
+			IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+			IntPtr* ptr = null;
+			IntPtr intPtr2;
+			IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_GetStarLayer2SpriteDimensions_Public_Vector2_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+			Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+			return *IL2CPP.il2cpp_object_unbox(intPtr);
+		}
+
+		// Token: 0x1700085E RID: 2142
+		// (get) Token: 0x0600169E RID: 5790 RVA: 0x000B8160 File Offset: 0x000B6360
+		// (set) Token: 0x0600169F RID: 5791 RVA: 0x000B819C File Offset: 0x000B639C
+		public unsafe int StarLayer2SpriteItemCount
+		{
+			[CallerCount(0)]
+			get
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = null;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_get_StarLayer2SpriteItemCount_Public_get_Int32_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+				return *IL2CPP.il2cpp_object_unbox(intPtr);
+			}
+			[CallerCount(0)]
+			[CachedScanResults(RefRangeStart = 0, RefRangeEnd = 0, XrefRangeStart = 93768, XrefRangeEnd = 93772, MetadataInitTokenRva = 0L, MetadataInitFlagRva = 0L)]
+			set
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = stackalloc IntPtr[checked(unchecked((UIntPtr)1) * (UIntPtr)sizeof(IntPtr))];
+				*ptr = ref value;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_set_StarLayer2SpriteItemCount_Public_set_Void_Int32_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+			}
+		}
+
+		// Token: 0x1700085F RID: 2143
+		// (get) Token: 0x060016A0 RID: 5792 RVA: 0x000B81DC File Offset: 0x000B63DC
+		// (set) Token: 0x060016A1 RID: 5793 RVA: 0x000B8218 File Offset: 0x000B6418
+		public unsafe float StarLayer2SpriteAnimationSpeed
+		{
+			[CallerCount(0)]
+			get
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = null;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_get_StarLayer2SpriteAnimationSpeed_Public_get_Single_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+				return *IL2CPP.il2cpp_object_unbox(intPtr);
+			}
+			[CallerCount(0)]
+			[CachedScanResults(RefRangeStart = 0, RefRangeEnd = 0, XrefRangeStart = 93772, XrefRangeEnd = 93776, MetadataInitTokenRva = 0L, MetadataInitFlagRva = 0L)]
+			set
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = stackalloc IntPtr[checked(unchecked((UIntPtr)1) * (UIntPtr)sizeof(IntPtr))];
+				*ptr = ref value;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_set_StarLayer2SpriteAnimationSpeed_Public_set_Void_Single_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+			}
+		}
+
+		// Token: 0x17000860 RID: 2144
+		// (get) Token: 0x060016A2 RID: 5794 RVA: 0x000B8258 File Offset: 0x000B6458
+		// (set) Token: 0x060016A3 RID: 5795 RVA: 0x000B8298 File Offset: 0x000B6498
+		public unsafe Texture StarLayer3Texture
+		{
+			[CallerCount(0)]
+			get
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = null;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_get_StarLayer3Texture_Public_get_Texture_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+				IntPtr intPtr3 = intPtr;
+				return (intPtr3 != 0) ? Il2CppObjectPool.Get<Texture>(intPtr3) : null;
+			}
+			[CallerCount(0)]
+			[CachedScanResults(RefRangeStart = 0, RefRangeEnd = 0, XrefRangeStart = 93776, XrefRangeEnd = 93781, MetadataInitTokenRva = 0L, MetadataInitFlagRva = 0L)]
+			set
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = stackalloc IntPtr[checked(unchecked((UIntPtr)1) * (UIntPtr)sizeof(IntPtr))];
+				*ptr = IL2CPP.Il2CppObjectBaseToPtr(value);
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_set_StarLayer3Texture_Public_set_Void_Texture_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+			}
+		}
+
+		// Token: 0x17000861 RID: 2145
+		// (get) Token: 0x060016A4 RID: 5796 RVA: 0x000B82DC File Offset: 0x000B64DC
+		// (set) Token: 0x060016A5 RID: 5797 RVA: 0x000B831C File Offset: 0x000B651C
+		public unsafe Texture2D StarLayer3DataTexture
+		{
+			[CallerCount(1)]
+			[CachedScanResults(RefRangeStart = 93781, RefRangeEnd = 93782, XrefRangeStart = 93781, XrefRangeEnd = 93781, MetadataInitTokenRva = 0L, MetadataInitFlagRva = 0L)]
+			get
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = null;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_get_StarLayer3DataTexture_Public_get_Texture2D_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+				IntPtr intPtr3 = intPtr;
+				return (intPtr3 != 0) ? Il2CppObjectPool.Get<Texture2D>(intPtr3) : null;
+			}
+			[CallerCount(0)]
+			[CachedScanResults(RefRangeStart = 0, RefRangeEnd = 0, XrefRangeStart = 93782, XrefRangeEnd = 93787, MetadataInitTokenRva = 0L, MetadataInitFlagRva = 0L)]
+			set
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = stackalloc IntPtr[checked(unchecked((UIntPtr)1) * (UIntPtr)sizeof(IntPtr))];
+				*ptr = IL2CPP.Il2CppObjectBaseToPtr(value);
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_set_StarLayer3DataTexture_Public_set_Void_Texture2D_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+			}
+		}
+
+		// Token: 0x17000862 RID: 2146
+		// (get) Token: 0x060016A6 RID: 5798 RVA: 0x000B8360 File Offset: 0x000B6560
+		// (set) Token: 0x060016A7 RID: 5799 RVA: 0x000B839C File Offset: 0x000B659C
+		public unsafe Color StarLayer3Color
+		{
+			[CallerCount(0)]
+			get
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = null;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_get_StarLayer3Color_Public_get_Color_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+				return *IL2CPP.il2cpp_object_unbox(intPtr);
+			}
+			[CallerCount(0)]
+			[CachedScanResults(RefRangeStart = 0, RefRangeEnd = 0, XrefRangeStart = 93787, XrefRangeEnd = 93790, MetadataInitTokenRva = 0L, MetadataInitFlagRva = 0L)]
+			set
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = stackalloc IntPtr[checked(unchecked((UIntPtr)1) * (UIntPtr)sizeof(IntPtr))];
+				*ptr = ref value;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_set_StarLayer3Color_Public_set_Void_Color_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+			}
+		}
+
+		// Token: 0x17000863 RID: 2147
+		// (get) Token: 0x060016A8 RID: 5800 RVA: 0x000B83DC File Offset: 0x000B65DC
+		// (set) Token: 0x060016A9 RID: 5801 RVA: 0x000B8418 File Offset: 0x000B6618
+		public unsafe float StarLayer3MaxRadius
+		{
+			[CallerCount(0)]
+			get
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = null;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_get_StarLayer3MaxRadius_Public_get_Single_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+				return *IL2CPP.il2cpp_object_unbox(intPtr);
+			}
+			[CallerCount(0)]
+			[CachedScanResults(RefRangeStart = 0, RefRangeEnd = 0, XrefRangeStart = 93790, XrefRangeEnd = 93794, MetadataInitTokenRva = 0L, MetadataInitFlagRva = 0L)]
+			set
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = stackalloc IntPtr[checked(unchecked((UIntPtr)1) * (UIntPtr)sizeof(IntPtr))];
+				*ptr = ref value;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_set_StarLayer3MaxRadius_Public_set_Void_Single_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+			}
+		}
+
+		// Token: 0x17000864 RID: 2148
+		// (get) Token: 0x060016AA RID: 5802 RVA: 0x000B8458 File Offset: 0x000B6658
+		// (set) Token: 0x060016AB RID: 5803 RVA: 0x000B8494 File Offset: 0x000B6694
+		public unsafe float StarLayer3TwinkleAmount
+		{
+			[CallerCount(0)]
+			get
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = null;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_get_StarLayer3TwinkleAmount_Public_get_Single_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+				return *IL2CPP.il2cpp_object_unbox(intPtr);
+			}
+			[CallerCount(0)]
+			[CachedScanResults(RefRangeStart = 0, RefRangeEnd = 0, XrefRangeStart = 93794, XrefRangeEnd = 93798, MetadataInitTokenRva = 0L, MetadataInitFlagRva = 0L)]
+			set
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = stackalloc IntPtr[checked(unchecked((UIntPtr)1) * (UIntPtr)sizeof(IntPtr))];
+				*ptr = ref value;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_set_StarLayer3TwinkleAmount_Public_set_Void_Single_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+			}
+		}
+
+		// Token: 0x17000865 RID: 2149
+		// (get) Token: 0x060016AC RID: 5804 RVA: 0x000B84D4 File Offset: 0x000B66D4
+		// (set) Token: 0x060016AD RID: 5805 RVA: 0x000B8510 File Offset: 0x000B6710
+		public unsafe float StarLayer3TwinkleSpeed
+		{
+			[CallerCount(0)]
+			get
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = null;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_get_StarLayer3TwinkleSpeed_Public_get_Single_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+				return *IL2CPP.il2cpp_object_unbox(intPtr);
+			}
+			[CallerCount(0)]
+			[CachedScanResults(RefRangeStart = 0, RefRangeEnd = 0, XrefRangeStart = 93798, XrefRangeEnd = 93802, MetadataInitTokenRva = 0L, MetadataInitFlagRva = 0L)]
+			set
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = stackalloc IntPtr[checked(unchecked((UIntPtr)1) * (UIntPtr)sizeof(IntPtr))];
+				*ptr = ref value;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_set_StarLayer3TwinkleSpeed_Public_set_Void_Single_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+			}
+		}
+
+		// Token: 0x17000866 RID: 2150
+		// (get) Token: 0x060016AE RID: 5806 RVA: 0x000B8550 File Offset: 0x000B6750
+		// (set) Token: 0x060016AF RID: 5807 RVA: 0x000B858C File Offset: 0x000B678C
+		public unsafe float StarLayer3RotationSpeed
+		{
+			[CallerCount(0)]
+			get
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = null;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_get_StarLayer3RotationSpeed_Public_get_Single_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+				return *IL2CPP.il2cpp_object_unbox(intPtr);
+			}
+			[CallerCount(0)]
+			[CachedScanResults(RefRangeStart = 0, RefRangeEnd = 0, XrefRangeStart = 93802, XrefRangeEnd = 93806, MetadataInitTokenRva = 0L, MetadataInitFlagRva = 0L)]
+			set
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = stackalloc IntPtr[checked(unchecked((UIntPtr)1) * (UIntPtr)sizeof(IntPtr))];
+				*ptr = ref value;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_set_StarLayer3RotationSpeed_Public_set_Void_Single_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+			}
+		}
+
+		// Token: 0x17000867 RID: 2151
+		// (get) Token: 0x060016B0 RID: 5808 RVA: 0x000B85CC File Offset: 0x000B67CC
+		// (set) Token: 0x060016B1 RID: 5809 RVA: 0x000B8608 File Offset: 0x000B6808
+		public unsafe float StarLayer3EdgeFeathering
+		{
+			[CallerCount(0)]
+			get
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = null;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_get_StarLayer3EdgeFeathering_Public_get_Single_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+				return *IL2CPP.il2cpp_object_unbox(intPtr);
+			}
+			[CallerCount(0)]
+			[CachedScanResults(RefRangeStart = 0, RefRangeEnd = 0, XrefRangeStart = 93806, XrefRangeEnd = 93810, MetadataInitTokenRva = 0L, MetadataInitFlagRva = 0L)]
+			set
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = stackalloc IntPtr[checked(unchecked((UIntPtr)1) * (UIntPtr)sizeof(IntPtr))];
+				*ptr = ref value;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_set_StarLayer3EdgeFeathering_Public_set_Void_Single_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+			}
+		}
+
+		// Token: 0x17000868 RID: 2152
+		// (get) Token: 0x060016B2 RID: 5810 RVA: 0x000B8648 File Offset: 0x000B6848
+		// (set) Token: 0x060016B3 RID: 5811 RVA: 0x000B8684 File Offset: 0x000B6884
+		public unsafe float StarLayer3BloomFilterBoost
+		{
+			[CallerCount(0)]
+			get
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = null;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_get_StarLayer3BloomFilterBoost_Public_get_Single_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+				return *IL2CPP.il2cpp_object_unbox(intPtr);
+			}
+			[CallerCount(0)]
+			[CachedScanResults(RefRangeStart = 0, RefRangeEnd = 0, XrefRangeStart = 93810, XrefRangeEnd = 93814, MetadataInitTokenRva = 0L, MetadataInitFlagRva = 0L)]
+			set
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = stackalloc IntPtr[checked(unchecked((UIntPtr)1) * (UIntPtr)sizeof(IntPtr))];
+				*ptr = ref value;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_set_StarLayer3BloomFilterBoost_Public_set_Void_Single_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+			}
+		}
+
+		// Token: 0x060016B4 RID: 5812 RVA: 0x000B86C4 File Offset: 0x000B68C4
+		[CallerCount(0)]
+		[CachedScanResults(RefRangeStart = 0, RefRangeEnd = 0, XrefRangeStart = 93814, XrefRangeEnd = 93817, MetadataInitTokenRva = 0L, MetadataInitFlagRva = 0L)]
+		public unsafe void SetStarLayer3SpriteDimensions(int columns, int rows)
+		{
+			IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+			IntPtr* ptr = stackalloc IntPtr[checked(unchecked((UIntPtr)2) * (UIntPtr)sizeof(IntPtr))];
+			*ptr = ref columns;
+			ptr[checked(unchecked((UIntPtr)1) * (UIntPtr)sizeof(IntPtr)) / (UIntPtr)sizeof(IntPtr)] = ref rows;
+			IntPtr intPtr2;
+			IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_SetStarLayer3SpriteDimensions_Public_Void_Int32_Int32_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+			Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+		}
+
+		// Token: 0x060016B5 RID: 5813 RVA: 0x000B8710 File Offset: 0x000B6910
+		[CallerCount(0)]
+		public unsafe Vector2 GetStarLayer3SpriteDimensions()
+		{
+			IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+			IntPtr* ptr = null;
+			IntPtr intPtr2;
+			IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_GetStarLayer3SpriteDimensions_Public_Vector2_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+			Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+			return *IL2CPP.il2cpp_object_unbox(intPtr);
+		}
+
+		// Token: 0x17000869 RID: 2153
+		// (get) Token: 0x060016B6 RID: 5814 RVA: 0x000B874C File Offset: 0x000B694C
+		// (set) Token: 0x060016B7 RID: 5815 RVA: 0x000B8788 File Offset: 0x000B6988
+		public unsafe int StarLayer3SpriteItemCount
+		{
+			[CallerCount(0)]
+			get
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = null;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_get_StarLayer3SpriteItemCount_Public_get_Int32_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+				return *IL2CPP.il2cpp_object_unbox(intPtr);
+			}
+			[CallerCount(0)]
+			[CachedScanResults(RefRangeStart = 0, RefRangeEnd = 0, XrefRangeStart = 93817, XrefRangeEnd = 93821, MetadataInitTokenRva = 0L, MetadataInitFlagRva = 0L)]
+			set
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = stackalloc IntPtr[checked(unchecked((UIntPtr)1) * (UIntPtr)sizeof(IntPtr))];
+				*ptr = ref value;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_set_StarLayer3SpriteItemCount_Public_set_Void_Int32_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+			}
+		}
+
+		// Token: 0x1700086A RID: 2154
+		// (get) Token: 0x060016B8 RID: 5816 RVA: 0x000B87C8 File Offset: 0x000B69C8
+		// (set) Token: 0x060016B9 RID: 5817 RVA: 0x000B8804 File Offset: 0x000B6A04
+		public unsafe float StarLayer3SpriteAnimationSpeed
+		{
+			[CallerCount(0)]
+			get
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = null;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_get_StarLayer3SpriteAnimationSpeed_Public_get_Single_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+				return *IL2CPP.il2cpp_object_unbox(intPtr);
+			}
+			[CallerCount(0)]
+			[CachedScanResults(RefRangeStart = 0, RefRangeEnd = 0, XrefRangeStart = 93821, XrefRangeEnd = 93825, MetadataInitTokenRva = 0L, MetadataInitFlagRva = 0L)]
+			set
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = stackalloc IntPtr[checked(unchecked((UIntPtr)1) * (UIntPtr)sizeof(IntPtr))];
+				*ptr = ref value;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_set_StarLayer3SpriteAnimationSpeed_Public_set_Void_Single_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+			}
+		}
+
+		// Token: 0x1700086B RID: 2155
+		// (get) Token: 0x060016BA RID: 5818 RVA: 0x000B8844 File Offset: 0x000B6A44
+		// (set) Token: 0x060016BB RID: 5819 RVA: 0x000B8884 File Offset: 0x000B6A84
+		public unsafe Texture MoonTexture
+		{
+			[CallerCount(0)]
+			get
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = null;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_get_MoonTexture_Public_get_Texture_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+				IntPtr intPtr3 = intPtr;
+				return (intPtr3 != 0) ? Il2CppObjectPool.Get<Texture>(intPtr3) : null;
+			}
+			[CallerCount(0)]
+			[CachedScanResults(RefRangeStart = 0, RefRangeEnd = 0, XrefRangeStart = 93825, XrefRangeEnd = 93830, MetadataInitTokenRva = 0L, MetadataInitFlagRva = 0L)]
+			set
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = stackalloc IntPtr[checked(unchecked((UIntPtr)1) * (UIntPtr)sizeof(IntPtr))];
+				*ptr = IL2CPP.Il2CppObjectBaseToPtr(value);
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_set_MoonTexture_Public_set_Void_Texture_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+			}
+		}
+
+		// Token: 0x1700086C RID: 2156
+		// (get) Token: 0x060016BC RID: 5820 RVA: 0x000B88C8 File Offset: 0x000B6AC8
+		// (set) Token: 0x060016BD RID: 5821 RVA: 0x000B8904 File Offset: 0x000B6B04
+		public unsafe float MoonRotationSpeed
+		{
+			[CallerCount(0)]
+			get
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = null;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_get_MoonRotationSpeed_Public_get_Single_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+				return *IL2CPP.il2cpp_object_unbox(intPtr);
+			}
+			[CallerCount(0)]
+			[CachedScanResults(RefRangeStart = 0, RefRangeEnd = 0, XrefRangeStart = 93830, XrefRangeEnd = 93834, MetadataInitTokenRva = 0L, MetadataInitFlagRva = 0L)]
+			set
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = stackalloc IntPtr[checked(unchecked((UIntPtr)1) * (UIntPtr)sizeof(IntPtr))];
+				*ptr = ref value;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_set_MoonRotationSpeed_Public_set_Void_Single_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+			}
+		}
+
+		// Token: 0x1700086D RID: 2157
+		// (get) Token: 0x060016BE RID: 5822 RVA: 0x000B8944 File Offset: 0x000B6B44
+		// (set) Token: 0x060016BF RID: 5823 RVA: 0x000B8980 File Offset: 0x000B6B80
+		public unsafe Color MoonColor
+		{
+			[CallerCount(0)]
+			get
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = null;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_get_MoonColor_Public_get_Color_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+				return *IL2CPP.il2cpp_object_unbox(intPtr);
+			}
+			[CallerCount(0)]
+			[CachedScanResults(RefRangeStart = 0, RefRangeEnd = 0, XrefRangeStart = 93834, XrefRangeEnd = 93837, MetadataInitTokenRva = 0L, MetadataInitFlagRva = 0L)]
+			set
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = stackalloc IntPtr[checked(unchecked((UIntPtr)1) * (UIntPtr)sizeof(IntPtr))];
+				*ptr = ref value;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_set_MoonColor_Public_set_Void_Color_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+			}
+		}
+
+		// Token: 0x1700086E RID: 2158
+		// (get) Token: 0x060016C0 RID: 5824 RVA: 0x000B89C0 File Offset: 0x000B6BC0
+		// (set) Token: 0x060016C1 RID: 5825 RVA: 0x000B89FC File Offset: 0x000B6BFC
+		public unsafe Vector3 MoonDirection
+		{
+			[CallerCount(0)]
+			get
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = null;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_get_MoonDirection_Public_get_Vector3_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+				return *IL2CPP.il2cpp_object_unbox(intPtr);
+			}
+			[CallerCount(0)]
+			[CachedScanResults(RefRangeStart = 0, RefRangeEnd = 0, XrefRangeStart = 93837, XrefRangeEnd = 93841, MetadataInitTokenRva = 0L, MetadataInitFlagRva = 0L)]
+			set
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = stackalloc IntPtr[checked(unchecked((UIntPtr)1) * (UIntPtr)sizeof(IntPtr))];
+				*ptr = ref value;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_set_MoonDirection_Public_set_Void_Vector3_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+			}
+		}
+
+		// Token: 0x1700086F RID: 2159
+		// (get) Token: 0x060016C2 RID: 5826 RVA: 0x000B8A3C File Offset: 0x000B6C3C
+		// (set) Token: 0x060016C3 RID: 5827 RVA: 0x000B8A78 File Offset: 0x000B6C78
+		public unsafe Matrix4x4 MoonWorldToLocalMatrix
+		{
+			[CallerCount(0)]
+			get
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = null;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_get_MoonWorldToLocalMatrix_Public_get_Matrix4x4_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+				return *IL2CPP.il2cpp_object_unbox(intPtr);
+			}
+			[CallerCount(2)]
+			[CachedScanResults(RefRangeStart = 93844, RefRangeEnd = 93846, XrefRangeStart = 93841, XrefRangeEnd = 93844, MetadataInitTokenRva = 0L, MetadataInitFlagRva = 0L)]
+			set
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = stackalloc IntPtr[checked(unchecked((UIntPtr)1) * (UIntPtr)sizeof(IntPtr))];
+				*ptr = ref value;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_set_MoonWorldToLocalMatrix_Public_set_Void_Matrix4x4_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+			}
+		}
+
+		// Token: 0x17000870 RID: 2160
+		// (get) Token: 0x060016C4 RID: 5828 RVA: 0x000B8AB8 File Offset: 0x000B6CB8
+		// (set) Token: 0x060016C5 RID: 5829 RVA: 0x000B8AF4 File Offset: 0x000B6CF4
+		public unsafe float MoonSize
+		{
+			[CallerCount(0)]
+			get
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = null;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_get_MoonSize_Public_get_Single_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+				return *IL2CPP.il2cpp_object_unbox(intPtr);
+			}
+			[CallerCount(0)]
+			[CachedScanResults(RefRangeStart = 0, RefRangeEnd = 0, XrefRangeStart = 93846, XrefRangeEnd = 93850, MetadataInitTokenRva = 0L, MetadataInitFlagRva = 0L)]
+			set
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = stackalloc IntPtr[checked(unchecked((UIntPtr)1) * (UIntPtr)sizeof(IntPtr))];
+				*ptr = ref value;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_set_MoonSize_Public_set_Void_Single_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+			}
+		}
+
+		// Token: 0x17000871 RID: 2161
+		// (get) Token: 0x060016C6 RID: 5830 RVA: 0x000B8B34 File Offset: 0x000B6D34
+		// (set) Token: 0x060016C7 RID: 5831 RVA: 0x000B8B70 File Offset: 0x000B6D70
+		public unsafe float MoonEdgeFeathering
+		{
+			[CallerCount(0)]
+			get
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = null;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_get_MoonEdgeFeathering_Public_get_Single_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+				return *IL2CPP.il2cpp_object_unbox(intPtr);
+			}
+			[CallerCount(0)]
+			[CachedScanResults(RefRangeStart = 0, RefRangeEnd = 0, XrefRangeStart = 93850, XrefRangeEnd = 93854, MetadataInitTokenRva = 0L, MetadataInitFlagRva = 0L)]
+			set
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = stackalloc IntPtr[checked(unchecked((UIntPtr)1) * (UIntPtr)sizeof(IntPtr))];
+				*ptr = ref value;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_set_MoonEdgeFeathering_Public_set_Void_Single_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+			}
+		}
+
+		// Token: 0x17000872 RID: 2162
+		// (get) Token: 0x060016C8 RID: 5832 RVA: 0x000B8BB0 File Offset: 0x000B6DB0
+		// (set) Token: 0x060016C9 RID: 5833 RVA: 0x000B8BEC File Offset: 0x000B6DEC
+		public unsafe float MoonBloomFilterBoost
+		{
+			[CallerCount(0)]
+			get
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = null;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_get_MoonBloomFilterBoost_Public_get_Single_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+				return *IL2CPP.il2cpp_object_unbox(intPtr);
+			}
+			[CallerCount(0)]
+			[CachedScanResults(RefRangeStart = 0, RefRangeEnd = 0, XrefRangeStart = 93854, XrefRangeEnd = 93858, MetadataInitTokenRva = 0L, MetadataInitFlagRva = 0L)]
+			set
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = stackalloc IntPtr[checked(unchecked((UIntPtr)1) * (UIntPtr)sizeof(IntPtr))];
+				*ptr = ref value;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_set_MoonBloomFilterBoost_Public_set_Void_Single_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+			}
+		}
+
+		// Token: 0x060016CA RID: 5834 RVA: 0x000B8C2C File Offset: 0x000B6E2C
+		[CallerCount(0)]
+		[CachedScanResults(RefRangeStart = 0, RefRangeEnd = 0, XrefRangeStart = 93858, XrefRangeEnd = 93861, MetadataInitTokenRva = 0L, MetadataInitFlagRva = 0L)]
+		public unsafe void SetMoonSpriteDimensions(int columns, int rows)
+		{
+			IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+			IntPtr* ptr = stackalloc IntPtr[checked(unchecked((UIntPtr)2) * (UIntPtr)sizeof(IntPtr))];
+			*ptr = ref columns;
+			ptr[checked(unchecked((UIntPtr)1) * (UIntPtr)sizeof(IntPtr)) / (UIntPtr)sizeof(IntPtr)] = ref rows;
+			IntPtr intPtr2;
+			IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_SetMoonSpriteDimensions_Public_Void_Int32_Int32_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+			Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+		}
+
+		// Token: 0x060016CB RID: 5835 RVA: 0x000B8C78 File Offset: 0x000B6E78
+		[CallerCount(0)]
+		public unsafe Vector2 GetMoonSpriteDimensions()
+		{
+			IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+			IntPtr* ptr = null;
+			IntPtr intPtr2;
+			IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_GetMoonSpriteDimensions_Public_Vector2_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+			Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+			return *IL2CPP.il2cpp_object_unbox(intPtr);
+		}
+
+		// Token: 0x17000873 RID: 2163
+		// (get) Token: 0x060016CC RID: 5836 RVA: 0x000B8CB4 File Offset: 0x000B6EB4
+		// (set) Token: 0x060016CD RID: 5837 RVA: 0x000B8CF0 File Offset: 0x000B6EF0
+		public unsafe int MoonSpriteItemCount
+		{
+			[CallerCount(0)]
+			get
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = null;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_get_MoonSpriteItemCount_Public_get_Int32_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+				return *IL2CPP.il2cpp_object_unbox(intPtr);
+			}
+			[CallerCount(0)]
+			[CachedScanResults(RefRangeStart = 0, RefRangeEnd = 0, XrefRangeStart = 93861, XrefRangeEnd = 93865, MetadataInitTokenRva = 0L, MetadataInitFlagRva = 0L)]
+			set
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = stackalloc IntPtr[checked(unchecked((UIntPtr)1) * (UIntPtr)sizeof(IntPtr))];
+				*ptr = ref value;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_set_MoonSpriteItemCount_Public_set_Void_Int32_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+			}
+		}
+
+		// Token: 0x17000874 RID: 2164
+		// (get) Token: 0x060016CE RID: 5838 RVA: 0x000B8D30 File Offset: 0x000B6F30
+		// (set) Token: 0x060016CF RID: 5839 RVA: 0x000B8D6C File Offset: 0x000B6F6C
+		public unsafe float MoonSpriteAnimationSpeed
+		{
+			[CallerCount(0)]
+			get
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = null;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_get_MoonSpriteAnimationSpeed_Public_get_Single_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+				return *IL2CPP.il2cpp_object_unbox(intPtr);
+			}
+			[CallerCount(0)]
+			[CachedScanResults(RefRangeStart = 0, RefRangeEnd = 0, XrefRangeStart = 93865, XrefRangeEnd = 93869, MetadataInitTokenRva = 0L, MetadataInitFlagRva = 0L)]
+			set
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = stackalloc IntPtr[checked(unchecked((UIntPtr)1) * (UIntPtr)sizeof(IntPtr))];
+				*ptr = ref value;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_set_MoonSpriteAnimationSpeed_Public_set_Void_Single_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+			}
+		}
+
+		// Token: 0x17000875 RID: 2165
+		// (get) Token: 0x060016D0 RID: 5840 RVA: 0x000B8DAC File Offset: 0x000B6FAC
+		// (set) Token: 0x060016D1 RID: 5841 RVA: 0x000B8DE8 File Offset: 0x000B6FE8
+		public unsafe float MoonAlpha
+		{
+			[CallerCount(0)]
+			get
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = null;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_get_MoonAlpha_Public_get_Single_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+				return *IL2CPP.il2cpp_object_unbox(intPtr);
+			}
+			[CallerCount(0)]
+			[CachedScanResults(RefRangeStart = 0, RefRangeEnd = 0, XrefRangeStart = 93869, XrefRangeEnd = 93873, MetadataInitTokenRva = 0L, MetadataInitFlagRva = 0L)]
+			set
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = stackalloc IntPtr[checked(unchecked((UIntPtr)1) * (UIntPtr)sizeof(IntPtr))];
+				*ptr = ref value;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_set_MoonAlpha_Public_set_Void_Single_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+			}
+		}
+
+		// Token: 0x17000876 RID: 2166
+		// (get) Token: 0x060016D2 RID: 5842 RVA: 0x000B8E28 File Offset: 0x000B7028
+		// (set) Token: 0x060016D3 RID: 5843 RVA: 0x000B8E68 File Offset: 0x000B7068
+		public unsafe Texture SunTexture
+		{
+			[CallerCount(0)]
+			get
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = null;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_get_SunTexture_Public_get_Texture_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+				IntPtr intPtr3 = intPtr;
+				return (intPtr3 != 0) ? Il2CppObjectPool.Get<Texture>(intPtr3) : null;
+			}
+			[CallerCount(0)]
+			[CachedScanResults(RefRangeStart = 0, RefRangeEnd = 0, XrefRangeStart = 93873, XrefRangeEnd = 93878, MetadataInitTokenRva = 0L, MetadataInitFlagRva = 0L)]
+			set
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = stackalloc IntPtr[checked(unchecked((UIntPtr)1) * (UIntPtr)sizeof(IntPtr))];
+				*ptr = IL2CPP.Il2CppObjectBaseToPtr(value);
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_set_SunTexture_Public_set_Void_Texture_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+			}
+		}
+
+		// Token: 0x17000877 RID: 2167
+		// (get) Token: 0x060016D4 RID: 5844 RVA: 0x000B8EAC File Offset: 0x000B70AC
+		// (set) Token: 0x060016D5 RID: 5845 RVA: 0x000B8EE8 File Offset: 0x000B70E8
+		public unsafe Color SunColor
+		{
+			[CallerCount(0)]
+			get
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = null;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_get_SunColor_Public_get_Color_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+				return *IL2CPP.il2cpp_object_unbox(intPtr);
+			}
+			[CallerCount(0)]
+			[CachedScanResults(RefRangeStart = 0, RefRangeEnd = 0, XrefRangeStart = 93878, XrefRangeEnd = 93881, MetadataInitTokenRva = 0L, MetadataInitFlagRva = 0L)]
+			set
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = stackalloc IntPtr[checked(unchecked((UIntPtr)1) * (UIntPtr)sizeof(IntPtr))];
+				*ptr = ref value;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_set_SunColor_Public_set_Void_Color_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+			}
+		}
+
+		// Token: 0x17000878 RID: 2168
+		// (get) Token: 0x060016D6 RID: 5846 RVA: 0x000B8F28 File Offset: 0x000B7128
+		// (set) Token: 0x060016D7 RID: 5847 RVA: 0x000B8F64 File Offset: 0x000B7164
+		public unsafe float SunRotationSpeed
+		{
+			[CallerCount(0)]
+			get
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = null;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_get_SunRotationSpeed_Public_get_Single_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+				return *IL2CPP.il2cpp_object_unbox(intPtr);
+			}
+			[CallerCount(0)]
+			[CachedScanResults(RefRangeStart = 0, RefRangeEnd = 0, XrefRangeStart = 93881, XrefRangeEnd = 93885, MetadataInitTokenRva = 0L, MetadataInitFlagRva = 0L)]
+			set
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = stackalloc IntPtr[checked(unchecked((UIntPtr)1) * (UIntPtr)sizeof(IntPtr))];
+				*ptr = ref value;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_set_SunRotationSpeed_Public_set_Void_Single_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+			}
+		}
+
+		// Token: 0x17000879 RID: 2169
+		// (get) Token: 0x060016D8 RID: 5848 RVA: 0x000B8FA4 File Offset: 0x000B71A4
+		// (set) Token: 0x060016D9 RID: 5849 RVA: 0x000B8FE0 File Offset: 0x000B71E0
+		public unsafe Vector3 SunDirection
+		{
+			[CallerCount(0)]
+			get
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = null;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_get_SunDirection_Public_get_Vector3_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+				return *IL2CPP.il2cpp_object_unbox(intPtr);
+			}
+			[CallerCount(0)]
+			[CachedScanResults(RefRangeStart = 0, RefRangeEnd = 0, XrefRangeStart = 93885, XrefRangeEnd = 93889, MetadataInitTokenRva = 0L, MetadataInitFlagRva = 0L)]
+			set
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = stackalloc IntPtr[checked(unchecked((UIntPtr)1) * (UIntPtr)sizeof(IntPtr))];
+				*ptr = ref value;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_set_SunDirection_Public_set_Void_Vector3_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+			}
+		}
+
+		// Token: 0x1700087A RID: 2170
+		// (get) Token: 0x060016DA RID: 5850 RVA: 0x000B9020 File Offset: 0x000B7220
+		// (set) Token: 0x060016DB RID: 5851 RVA: 0x000B905C File Offset: 0x000B725C
+		public unsafe Matrix4x4 SunWorldToLocalMatrix
+		{
+			[CallerCount(0)]
+			get
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = null;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_get_SunWorldToLocalMatrix_Public_get_Matrix4x4_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+				return *IL2CPP.il2cpp_object_unbox(intPtr);
+			}
+			[CallerCount(2)]
+			[CachedScanResults(RefRangeStart = 93892, RefRangeEnd = 93894, XrefRangeStart = 93889, XrefRangeEnd = 93892, MetadataInitTokenRva = 0L, MetadataInitFlagRva = 0L)]
+			set
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = stackalloc IntPtr[checked(unchecked((UIntPtr)1) * (UIntPtr)sizeof(IntPtr))];
+				*ptr = ref value;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_set_SunWorldToLocalMatrix_Public_set_Void_Matrix4x4_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+			}
+		}
+
+		// Token: 0x1700087B RID: 2171
+		// (get) Token: 0x060016DC RID: 5852 RVA: 0x000B909C File Offset: 0x000B729C
+		// (set) Token: 0x060016DD RID: 5853 RVA: 0x000B90D8 File Offset: 0x000B72D8
+		public unsafe float SunSize
+		{
+			[CallerCount(0)]
+			get
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = null;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_get_SunSize_Public_get_Single_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+				return *IL2CPP.il2cpp_object_unbox(intPtr);
+			}
+			[CallerCount(0)]
+			[CachedScanResults(RefRangeStart = 0, RefRangeEnd = 0, XrefRangeStart = 93894, XrefRangeEnd = 93898, MetadataInitTokenRva = 0L, MetadataInitFlagRva = 0L)]
+			set
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = stackalloc IntPtr[checked(unchecked((UIntPtr)1) * (UIntPtr)sizeof(IntPtr))];
+				*ptr = ref value;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_set_SunSize_Public_set_Void_Single_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+			}
+		}
+
+		// Token: 0x1700087C RID: 2172
+		// (get) Token: 0x060016DE RID: 5854 RVA: 0x000B9118 File Offset: 0x000B7318
+		// (set) Token: 0x060016DF RID: 5855 RVA: 0x000B9154 File Offset: 0x000B7354
+		public unsafe float SunEdgeFeathering
+		{
+			[CallerCount(0)]
+			get
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = null;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_get_SunEdgeFeathering_Public_get_Single_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+				return *IL2CPP.il2cpp_object_unbox(intPtr);
+			}
+			[CallerCount(0)]
+			[CachedScanResults(RefRangeStart = 0, RefRangeEnd = 0, XrefRangeStart = 93898, XrefRangeEnd = 93902, MetadataInitTokenRva = 0L, MetadataInitFlagRva = 0L)]
+			set
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = stackalloc IntPtr[checked(unchecked((UIntPtr)1) * (UIntPtr)sizeof(IntPtr))];
+				*ptr = ref value;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_set_SunEdgeFeathering_Public_set_Void_Single_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+			}
+		}
+
+		// Token: 0x1700087D RID: 2173
+		// (get) Token: 0x060016E0 RID: 5856 RVA: 0x000B9194 File Offset: 0x000B7394
+		// (set) Token: 0x060016E1 RID: 5857 RVA: 0x000B91D0 File Offset: 0x000B73D0
+		public unsafe float SunBloomFilterBoost
+		{
+			[CallerCount(0)]
+			get
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = null;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_get_SunBloomFilterBoost_Public_get_Single_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+				return *IL2CPP.il2cpp_object_unbox(intPtr);
+			}
+			[CallerCount(0)]
+			[CachedScanResults(RefRangeStart = 0, RefRangeEnd = 0, XrefRangeStart = 93902, XrefRangeEnd = 93906, MetadataInitTokenRva = 0L, MetadataInitFlagRva = 0L)]
+			set
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = stackalloc IntPtr[checked(unchecked((UIntPtr)1) * (UIntPtr)sizeof(IntPtr))];
+				*ptr = ref value;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_set_SunBloomFilterBoost_Public_set_Void_Single_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+			}
+		}
+
+		// Token: 0x060016E2 RID: 5858 RVA: 0x000B9210 File Offset: 0x000B7410
+		[CallerCount(0)]
+		[CachedScanResults(RefRangeStart = 0, RefRangeEnd = 0, XrefRangeStart = 93906, XrefRangeEnd = 93909, MetadataInitTokenRva = 0L, MetadataInitFlagRva = 0L)]
+		public unsafe void SetSunSpriteDimensions(int columns, int rows)
+		{
+			IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+			IntPtr* ptr = stackalloc IntPtr[checked(unchecked((UIntPtr)2) * (UIntPtr)sizeof(IntPtr))];
+			*ptr = ref columns;
+			ptr[checked(unchecked((UIntPtr)1) * (UIntPtr)sizeof(IntPtr)) / (UIntPtr)sizeof(IntPtr)] = ref rows;
+			IntPtr intPtr2;
+			IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_SetSunSpriteDimensions_Public_Void_Int32_Int32_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+			Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+		}
+
+		// Token: 0x060016E3 RID: 5859 RVA: 0x000B925C File Offset: 0x000B745C
+		[CallerCount(0)]
+		public unsafe Vector2 GetSunSpriteDimensions()
+		{
+			IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+			IntPtr* ptr = null;
+			IntPtr intPtr2;
+			IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_GetSunSpriteDimensions_Public_Vector2_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+			Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+			return *IL2CPP.il2cpp_object_unbox(intPtr);
+		}
+
+		// Token: 0x1700087E RID: 2174
+		// (get) Token: 0x060016E4 RID: 5860 RVA: 0x000B9298 File Offset: 0x000B7498
+		// (set) Token: 0x060016E5 RID: 5861 RVA: 0x000B92D4 File Offset: 0x000B74D4
+		public unsafe int SunSpriteItemCount
+		{
+			[CallerCount(0)]
+			get
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = null;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_get_SunSpriteItemCount_Public_get_Int32_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+				return *IL2CPP.il2cpp_object_unbox(intPtr);
+			}
+			[CallerCount(0)]
+			[CachedScanResults(RefRangeStart = 0, RefRangeEnd = 0, XrefRangeStart = 93909, XrefRangeEnd = 93913, MetadataInitTokenRva = 0L, MetadataInitFlagRva = 0L)]
+			set
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = stackalloc IntPtr[checked(unchecked((UIntPtr)1) * (UIntPtr)sizeof(IntPtr))];
+				*ptr = ref value;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_set_SunSpriteItemCount_Public_set_Void_Int32_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+			}
+		}
+
+		// Token: 0x1700087F RID: 2175
+		// (get) Token: 0x060016E6 RID: 5862 RVA: 0x000B9314 File Offset: 0x000B7514
+		// (set) Token: 0x060016E7 RID: 5863 RVA: 0x000B9350 File Offset: 0x000B7550
+		public unsafe float SunSpriteAnimationSpeed
+		{
+			[CallerCount(0)]
+			get
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = null;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_get_SunSpriteAnimationSpeed_Public_get_Single_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+				return *IL2CPP.il2cpp_object_unbox(intPtr);
+			}
+			[CallerCount(0)]
+			[CachedScanResults(RefRangeStart = 0, RefRangeEnd = 0, XrefRangeStart = 93913, XrefRangeEnd = 93917, MetadataInitTokenRva = 0L, MetadataInitFlagRva = 0L)]
+			set
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = stackalloc IntPtr[checked(unchecked((UIntPtr)1) * (UIntPtr)sizeof(IntPtr))];
+				*ptr = ref value;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_set_SunSpriteAnimationSpeed_Public_set_Void_Single_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+			}
+		}
+
+		// Token: 0x17000880 RID: 2176
+		// (get) Token: 0x060016E8 RID: 5864 RVA: 0x000B9390 File Offset: 0x000B7590
+		// (set) Token: 0x060016E9 RID: 5865 RVA: 0x000B93CC File Offset: 0x000B75CC
+		public unsafe float SunAlpha
+		{
+			[CallerCount(0)]
+			get
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = null;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_get_SunAlpha_Public_get_Single_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+				return *IL2CPP.il2cpp_object_unbox(intPtr);
+			}
+			[CallerCount(0)]
+			[CachedScanResults(RefRangeStart = 0, RefRangeEnd = 0, XrefRangeStart = 93917, XrefRangeEnd = 93921, MetadataInitTokenRva = 0L, MetadataInitFlagRva = 0L)]
+			set
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = stackalloc IntPtr[checked(unchecked((UIntPtr)1) * (UIntPtr)sizeof(IntPtr))];
+				*ptr = ref value;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_set_SunAlpha_Public_set_Void_Single_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+			}
+		}
+
+		// Token: 0x17000881 RID: 2177
+		// (get) Token: 0x060016EA RID: 5866 RVA: 0x000B940C File Offset: 0x000B760C
+		// (set) Token: 0x060016EB RID: 5867 RVA: 0x000B9448 File Offset: 0x000B7648
+		public unsafe float CloudBegin
+		{
+			[CallerCount(0)]
+			get
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = null;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_get_CloudBegin_Public_get_Single_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+				return *IL2CPP.il2cpp_object_unbox(intPtr);
+			}
+			[CallerCount(0)]
+			[CachedScanResults(RefRangeStart = 0, RefRangeEnd = 0, XrefRangeStart = 93921, XrefRangeEnd = 93925, MetadataInitTokenRva = 0L, MetadataInitFlagRva = 0L)]
+			set
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = stackalloc IntPtr[checked(unchecked((UIntPtr)1) * (UIntPtr)sizeof(IntPtr))];
+				*ptr = ref value;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_set_CloudBegin_Public_set_Void_Single_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+			}
+		}
+
+		// Token: 0x17000882 RID: 2178
+		// (get) Token: 0x060016EC RID: 5868 RVA: 0x000B9488 File Offset: 0x000B7688
+		// (set) Token: 0x060016ED RID: 5869 RVA: 0x000B94C4 File Offset: 0x000B76C4
+		public unsafe float CloudTextureTiling
+		{
+			[CallerCount(0)]
+			get
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = null;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_get_CloudTextureTiling_Public_get_Single_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+				return *IL2CPP.il2cpp_object_unbox(intPtr);
+			}
+			[CallerCount(0)]
+			[CachedScanResults(RefRangeStart = 0, RefRangeEnd = 0, XrefRangeStart = 93925, XrefRangeEnd = 93929, MetadataInitTokenRva = 0L, MetadataInitFlagRva = 0L)]
+			set
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = stackalloc IntPtr[checked(unchecked((UIntPtr)1) * (UIntPtr)sizeof(IntPtr))];
+				*ptr = ref value;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_set_CloudTextureTiling_Public_set_Void_Single_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+			}
+		}
+
+		// Token: 0x17000883 RID: 2179
+		// (get) Token: 0x060016EE RID: 5870 RVA: 0x000B9504 File Offset: 0x000B7704
+		// (set) Token: 0x060016EF RID: 5871 RVA: 0x000B9540 File Offset: 0x000B7740
+		public unsafe Color CloudColor
+		{
+			[CallerCount(0)]
+			get
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = null;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_get_CloudColor_Public_get_Color_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+				return *IL2CPP.il2cpp_object_unbox(intPtr);
+			}
+			[CallerCount(0)]
+			[CachedScanResults(RefRangeStart = 0, RefRangeEnd = 0, XrefRangeStart = 93929, XrefRangeEnd = 93932, MetadataInitTokenRva = 0L, MetadataInitFlagRva = 0L)]
+			set
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = stackalloc IntPtr[checked(unchecked((UIntPtr)1) * (UIntPtr)sizeof(IntPtr))];
+				*ptr = ref value;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_set_CloudColor_Public_set_Void_Color_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+			}
+		}
+
+		// Token: 0x17000884 RID: 2180
+		// (get) Token: 0x060016F0 RID: 5872 RVA: 0x000B9580 File Offset: 0x000B7780
+		// (set) Token: 0x060016F1 RID: 5873 RVA: 0x000B95C0 File Offset: 0x000B77C0
+		public unsafe Texture CloudTexture
+		{
+			[CallerCount(0)]
+			[CachedScanResults(RefRangeStart = 0, RefRangeEnd = 0, XrefRangeStart = 93932, XrefRangeEnd = 93936, MetadataInitTokenRva = 0L, MetadataInitFlagRva = 0L)]
+			get
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = null;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_get_CloudTexture_Public_get_Texture_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+				IntPtr intPtr3 = intPtr;
+				return (intPtr3 != 0) ? Il2CppObjectPool.Get<Texture>(intPtr3) : null;
+			}
+			[CallerCount(0)]
+			[CachedScanResults(RefRangeStart = 0, RefRangeEnd = 0, XrefRangeStart = 93936, XrefRangeEnd = 93941, MetadataInitTokenRva = 0L, MetadataInitFlagRva = 0L)]
+			set
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = stackalloc IntPtr[checked(unchecked((UIntPtr)1) * (UIntPtr)sizeof(IntPtr))];
+				*ptr = IL2CPP.Il2CppObjectBaseToPtr(value);
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_set_CloudTexture_Public_set_Void_Texture_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+			}
+		}
+
+		// Token: 0x17000885 RID: 2181
+		// (get) Token: 0x060016F2 RID: 5874 RVA: 0x000B9604 File Offset: 0x000B7804
+		// (set) Token: 0x060016F3 RID: 5875 RVA: 0x000B9644 File Offset: 0x000B7844
+		public unsafe Texture ArtCloudCustomTexture
+		{
+			[CallerCount(0)]
+			[CachedScanResults(RefRangeStart = 0, RefRangeEnd = 0, XrefRangeStart = 93941, XrefRangeEnd = 93945, MetadataInitTokenRva = 0L, MetadataInitFlagRva = 0L)]
+			get
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = null;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_get_ArtCloudCustomTexture_Public_get_Texture_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+				IntPtr intPtr3 = intPtr;
+				return (intPtr3 != 0) ? Il2CppObjectPool.Get<Texture>(intPtr3) : null;
+			}
+			[CallerCount(0)]
+			[CachedScanResults(RefRangeStart = 0, RefRangeEnd = 0, XrefRangeStart = 93945, XrefRangeEnd = 93950, MetadataInitTokenRva = 0L, MetadataInitFlagRva = 0L)]
+			set
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = stackalloc IntPtr[checked(unchecked((UIntPtr)1) * (UIntPtr)sizeof(IntPtr))];
+				*ptr = IL2CPP.Il2CppObjectBaseToPtr(value);
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_set_ArtCloudCustomTexture_Public_set_Void_Texture_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+			}
+		}
+
+		// Token: 0x17000886 RID: 2182
+		// (get) Token: 0x060016F4 RID: 5876 RVA: 0x000B9688 File Offset: 0x000B7888
+		// (set) Token: 0x060016F5 RID: 5877 RVA: 0x000B96C4 File Offset: 0x000B78C4
+		public unsafe float CloudDensity
+		{
+			[CallerCount(0)]
+			get
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = null;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_get_CloudDensity_Public_get_Single_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+				return *IL2CPP.il2cpp_object_unbox(intPtr);
+			}
+			[CallerCount(0)]
+			[CachedScanResults(RefRangeStart = 0, RefRangeEnd = 0, XrefRangeStart = 93950, XrefRangeEnd = 93954, MetadataInitTokenRva = 0L, MetadataInitFlagRva = 0L)]
+			set
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = stackalloc IntPtr[checked(unchecked((UIntPtr)1) * (UIntPtr)sizeof(IntPtr))];
+				*ptr = ref value;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_set_CloudDensity_Public_set_Void_Single_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+			}
+		}
+
+		// Token: 0x17000887 RID: 2183
+		// (get) Token: 0x060016F6 RID: 5878 RVA: 0x000B9704 File Offset: 0x000B7904
+		// (set) Token: 0x060016F7 RID: 5879 RVA: 0x000B9740 File Offset: 0x000B7940
+		public unsafe float CloudSpeed
+		{
+			[CallerCount(0)]
+			get
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = null;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_get_CloudSpeed_Public_get_Single_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+				return *IL2CPP.il2cpp_object_unbox(intPtr);
+			}
+			[CallerCount(0)]
+			[CachedScanResults(RefRangeStart = 0, RefRangeEnd = 0, XrefRangeStart = 93954, XrefRangeEnd = 93958, MetadataInitTokenRva = 0L, MetadataInitFlagRva = 0L)]
+			set
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = stackalloc IntPtr[checked(unchecked((UIntPtr)1) * (UIntPtr)sizeof(IntPtr))];
+				*ptr = ref value;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_set_CloudSpeed_Public_set_Void_Single_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+			}
+		}
+
+		// Token: 0x17000888 RID: 2184
+		// (get) Token: 0x060016F8 RID: 5880 RVA: 0x000B9780 File Offset: 0x000B7980
+		// (set) Token: 0x060016F9 RID: 5881 RVA: 0x000B97BC File Offset: 0x000B79BC
+		public unsafe float CloudDirection
+		{
+			[CallerCount(0)]
+			get
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = null;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_get_CloudDirection_Public_get_Single_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+				return *IL2CPP.il2cpp_object_unbox(intPtr);
+			}
+			[CallerCount(0)]
+			[CachedScanResults(RefRangeStart = 0, RefRangeEnd = 0, XrefRangeStart = 93958, XrefRangeEnd = 93962, MetadataInitTokenRva = 0L, MetadataInitFlagRva = 0L)]
+			set
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = stackalloc IntPtr[checked(unchecked((UIntPtr)1) * (UIntPtr)sizeof(IntPtr))];
+				*ptr = ref value;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_set_CloudDirection_Public_set_Void_Single_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+			}
+		}
+
+		// Token: 0x17000889 RID: 2185
+		// (get) Token: 0x060016FA RID: 5882 RVA: 0x000B97FC File Offset: 0x000B79FC
+		// (set) Token: 0x060016FB RID: 5883 RVA: 0x000B9838 File Offset: 0x000B7A38
+		public unsafe float CloudHeight
+		{
+			[CallerCount(0)]
+			get
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = null;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_get_CloudHeight_Public_get_Single_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+				return *IL2CPP.il2cpp_object_unbox(intPtr);
+			}
+			[CallerCount(0)]
+			[CachedScanResults(RefRangeStart = 0, RefRangeEnd = 0, XrefRangeStart = 93962, XrefRangeEnd = 93966, MetadataInitTokenRva = 0L, MetadataInitFlagRva = 0L)]
+			set
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = stackalloc IntPtr[checked(unchecked((UIntPtr)1) * (UIntPtr)sizeof(IntPtr))];
+				*ptr = ref value;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_set_CloudHeight_Public_set_Void_Single_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+			}
+		}
+
+		// Token: 0x1700088A RID: 2186
+		// (get) Token: 0x060016FC RID: 5884 RVA: 0x000B9878 File Offset: 0x000B7A78
+		// (set) Token: 0x060016FD RID: 5885 RVA: 0x000B98B4 File Offset: 0x000B7AB4
+		public unsafe Color CloudColor1
+		{
+			[CallerCount(0)]
+			get
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = null;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_get_CloudColor1_Public_get_Color_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+				return *IL2CPP.il2cpp_object_unbox(intPtr);
+			}
+			[CallerCount(0)]
+			[CachedScanResults(RefRangeStart = 0, RefRangeEnd = 0, XrefRangeStart = 93966, XrefRangeEnd = 93969, MetadataInitTokenRva = 0L, MetadataInitFlagRva = 0L)]
+			set
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = stackalloc IntPtr[checked(unchecked((UIntPtr)1) * (UIntPtr)sizeof(IntPtr))];
+				*ptr = ref value;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_set_CloudColor1_Public_set_Void_Color_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+			}
+		}
+
+		// Token: 0x1700088B RID: 2187
+		// (get) Token: 0x060016FE RID: 5886 RVA: 0x000B98F4 File Offset: 0x000B7AF4
+		// (set) Token: 0x060016FF RID: 5887 RVA: 0x000B9930 File Offset: 0x000B7B30
+		public unsafe Color CloudColor2
+		{
+			[CallerCount(0)]
+			get
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = null;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_get_CloudColor2_Public_get_Color_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+				return *IL2CPP.il2cpp_object_unbox(intPtr);
+			}
+			[CallerCount(0)]
+			[CachedScanResults(RefRangeStart = 0, RefRangeEnd = 0, XrefRangeStart = 93969, XrefRangeEnd = 93972, MetadataInitTokenRva = 0L, MetadataInitFlagRva = 0L)]
+			set
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = stackalloc IntPtr[checked(unchecked((UIntPtr)1) * (UIntPtr)sizeof(IntPtr))];
+				*ptr = ref value;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_set_CloudColor2_Public_set_Void_Color_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+			}
+		}
+
+		// Token: 0x1700088C RID: 2188
+		// (get) Token: 0x06001700 RID: 5888 RVA: 0x000B9970 File Offset: 0x000B7B70
+		// (set) Token: 0x06001701 RID: 5889 RVA: 0x000B99AC File Offset: 0x000B7BAC
+		public unsafe float CloudFadePosition
+		{
+			[CallerCount(0)]
+			get
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = null;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_get_CloudFadePosition_Public_get_Single_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+				return *IL2CPP.il2cpp_object_unbox(intPtr);
+			}
+			[CallerCount(0)]
+			[CachedScanResults(RefRangeStart = 0, RefRangeEnd = 0, XrefRangeStart = 93972, XrefRangeEnd = 93976, MetadataInitTokenRva = 0L, MetadataInitFlagRva = 0L)]
+			set
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = stackalloc IntPtr[checked(unchecked((UIntPtr)1) * (UIntPtr)sizeof(IntPtr))];
+				*ptr = ref value;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_set_CloudFadePosition_Public_set_Void_Single_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+			}
+		}
+
+		// Token: 0x1700088D RID: 2189
+		// (get) Token: 0x06001702 RID: 5890 RVA: 0x000B99EC File Offset: 0x000B7BEC
+		// (set) Token: 0x06001703 RID: 5891 RVA: 0x000B9A28 File Offset: 0x000B7C28
+		public unsafe float CloudFadeAmount
+		{
+			[CallerCount(0)]
+			get
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = null;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_get_CloudFadeAmount_Public_get_Single_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+				return *IL2CPP.il2cpp_object_unbox(intPtr);
+			}
+			[CallerCount(0)]
+			[CachedScanResults(RefRangeStart = 0, RefRangeEnd = 0, XrefRangeStart = 93976, XrefRangeEnd = 93980, MetadataInitTokenRva = 0L, MetadataInitFlagRva = 0L)]
+			set
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = stackalloc IntPtr[checked(unchecked((UIntPtr)1) * (UIntPtr)sizeof(IntPtr))];
+				*ptr = ref value;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_set_CloudFadeAmount_Public_set_Void_Single_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+			}
+		}
+
+		// Token: 0x1700088E RID: 2190
+		// (get) Token: 0x06001704 RID: 5892 RVA: 0x000B9A68 File Offset: 0x000B7C68
+		// (set) Token: 0x06001705 RID: 5893 RVA: 0x000B9AA4 File Offset: 0x000B7CA4
+		public unsafe float CloudAlpha
+		{
+			[CallerCount(0)]
+			get
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = null;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_get_CloudAlpha_Public_get_Single_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+				return *IL2CPP.il2cpp_object_unbox(intPtr);
+			}
+			[CallerCount(0)]
+			[CachedScanResults(RefRangeStart = 0, RefRangeEnd = 0, XrefRangeStart = 93980, XrefRangeEnd = 93984, MetadataInitTokenRva = 0L, MetadataInitFlagRva = 0L)]
+			set
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = stackalloc IntPtr[checked(unchecked((UIntPtr)1) * (UIntPtr)sizeof(IntPtr))];
+				*ptr = ref value;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_set_CloudAlpha_Public_set_Void_Single_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+			}
+		}
+
+		// Token: 0x1700088F RID: 2191
+		// (get) Token: 0x06001706 RID: 5894 RVA: 0x000B9AE4 File Offset: 0x000B7CE4
+		// (set) Token: 0x06001707 RID: 5895 RVA: 0x000B9B24 File Offset: 0x000B7D24
+		public unsafe Texture CloudCubemap
+		{
+			[CallerCount(0)]
+			get
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = null;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_get_CloudCubemap_Public_get_Texture_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+				IntPtr intPtr3 = intPtr;
+				return (intPtr3 != 0) ? Il2CppObjectPool.Get<Texture>(intPtr3) : null;
+			}
+			[CallerCount(0)]
+			[CachedScanResults(RefRangeStart = 0, RefRangeEnd = 0, XrefRangeStart = 93984, XrefRangeEnd = 93989, MetadataInitTokenRva = 0L, MetadataInitFlagRva = 0L)]
+			set
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = stackalloc IntPtr[checked(unchecked((UIntPtr)1) * (UIntPtr)sizeof(IntPtr))];
+				*ptr = IL2CPP.Il2CppObjectBaseToPtr(value);
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_set_CloudCubemap_Public_set_Void_Texture_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+			}
+		}
+
+		// Token: 0x17000890 RID: 2192
+		// (get) Token: 0x06001708 RID: 5896 RVA: 0x000B9B68 File Offset: 0x000B7D68
+		// (set) Token: 0x06001709 RID: 5897 RVA: 0x000B9BA4 File Offset: 0x000B7DA4
+		public unsafe float CloudCubemapRotationSpeed
+		{
+			[CallerCount(0)]
+			get
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = null;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_get_CloudCubemapRotationSpeed_Public_get_Single_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+				return *IL2CPP.il2cpp_object_unbox(intPtr);
+			}
+			[CallerCount(0)]
+			[CachedScanResults(RefRangeStart = 0, RefRangeEnd = 0, XrefRangeStart = 93989, XrefRangeEnd = 93993, MetadataInitTokenRva = 0L, MetadataInitFlagRva = 0L)]
+			set
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = stackalloc IntPtr[checked(unchecked((UIntPtr)1) * (UIntPtr)sizeof(IntPtr))];
+				*ptr = ref value;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_set_CloudCubemapRotationSpeed_Public_set_Void_Single_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+			}
+		}
+
+		// Token: 0x17000891 RID: 2193
+		// (get) Token: 0x0600170A RID: 5898 RVA: 0x000B9BE4 File Offset: 0x000B7DE4
+		// (set) Token: 0x0600170B RID: 5899 RVA: 0x000B9C24 File Offset: 0x000B7E24
+		public unsafe Texture CloudCubemapDoubleLayerCustomTexture
+		{
+			[CallerCount(0)]
+			get
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = null;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_get_CloudCubemapDoubleLayerCustomTexture_Public_get_Texture_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+				IntPtr intPtr3 = intPtr;
+				return (intPtr3 != 0) ? Il2CppObjectPool.Get<Texture>(intPtr3) : null;
+			}
+			[CallerCount(0)]
+			[CachedScanResults(RefRangeStart = 0, RefRangeEnd = 0, XrefRangeStart = 93993, XrefRangeEnd = 93998, MetadataInitTokenRva = 0L, MetadataInitFlagRva = 0L)]
+			set
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = stackalloc IntPtr[checked(unchecked((UIntPtr)1) * (UIntPtr)sizeof(IntPtr))];
+				*ptr = IL2CPP.Il2CppObjectBaseToPtr(value);
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_set_CloudCubemapDoubleLayerCustomTexture_Public_set_Void_Texture_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+			}
+		}
+
+		// Token: 0x17000892 RID: 2194
+		// (get) Token: 0x0600170C RID: 5900 RVA: 0x000B9C68 File Offset: 0x000B7E68
+		// (set) Token: 0x0600170D RID: 5901 RVA: 0x000B9CA4 File Offset: 0x000B7EA4
+		public unsafe float CloudCubemapDoubleLayerRotationSpeed
+		{
+			[CallerCount(0)]
+			get
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = null;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_get_CloudCubemapDoubleLayerRotationSpeed_Public_get_Single_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+				return *IL2CPP.il2cpp_object_unbox(intPtr);
+			}
+			[CallerCount(0)]
+			[CachedScanResults(RefRangeStart = 0, RefRangeEnd = 0, XrefRangeStart = 93998, XrefRangeEnd = 94002, MetadataInitTokenRva = 0L, MetadataInitFlagRva = 0L)]
+			set
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = stackalloc IntPtr[checked(unchecked((UIntPtr)1) * (UIntPtr)sizeof(IntPtr))];
+				*ptr = ref value;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_set_CloudCubemapDoubleLayerRotationSpeed_Public_set_Void_Single_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+			}
+		}
+
+		// Token: 0x17000893 RID: 2195
+		// (get) Token: 0x0600170E RID: 5902 RVA: 0x000B9CE4 File Offset: 0x000B7EE4
+		// (set) Token: 0x0600170F RID: 5903 RVA: 0x000B9D20 File Offset: 0x000B7F20
+		public unsafe float CloudCubemapDoubleLayerHeight
+		{
+			[CallerCount(0)]
+			get
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = null;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_get_CloudCubemapDoubleLayerHeight_Public_get_Single_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+				return *IL2CPP.il2cpp_object_unbox(intPtr);
+			}
+			[CallerCount(0)]
+			[CachedScanResults(RefRangeStart = 0, RefRangeEnd = 0, XrefRangeStart = 94002, XrefRangeEnd = 94006, MetadataInitTokenRva = 0L, MetadataInitFlagRva = 0L)]
+			set
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = stackalloc IntPtr[checked(unchecked((UIntPtr)1) * (UIntPtr)sizeof(IntPtr))];
+				*ptr = ref value;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_set_CloudCubemapDoubleLayerHeight_Public_set_Void_Single_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+			}
+		}
+
+		// Token: 0x17000894 RID: 2196
+		// (get) Token: 0x06001710 RID: 5904 RVA: 0x000B9D60 File Offset: 0x000B7F60
+		// (set) Token: 0x06001711 RID: 5905 RVA: 0x000B9D9C File Offset: 0x000B7F9C
+		public unsafe Color CloudCubemapDoubleLayerTintColor
+		{
+			[CallerCount(0)]
+			get
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = null;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_get_CloudCubemapDoubleLayerTintColor_Public_get_Color_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+				return *IL2CPP.il2cpp_object_unbox(intPtr);
+			}
+			[CallerCount(0)]
+			[CachedScanResults(RefRangeStart = 0, RefRangeEnd = 0, XrefRangeStart = 94006, XrefRangeEnd = 94009, MetadataInitTokenRva = 0L, MetadataInitFlagRva = 0L)]
+			set
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = stackalloc IntPtr[checked(unchecked((UIntPtr)1) * (UIntPtr)sizeof(IntPtr))];
+				*ptr = ref value;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_set_CloudCubemapDoubleLayerTintColor_Public_set_Void_Color_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+			}
+		}
+
+		// Token: 0x17000895 RID: 2197
+		// (get) Token: 0x06001712 RID: 5906 RVA: 0x000B9DDC File Offset: 0x000B7FDC
+		// (set) Token: 0x06001713 RID: 5907 RVA: 0x000B9E18 File Offset: 0x000B8018
+		public unsafe Color CloudCubemapTintColor
+		{
+			[CallerCount(0)]
+			get
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = null;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_get_CloudCubemapTintColor_Public_get_Color_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+				return *IL2CPP.il2cpp_object_unbox(intPtr);
+			}
+			[CallerCount(0)]
+			[CachedScanResults(RefRangeStart = 0, RefRangeEnd = 0, XrefRangeStart = 94009, XrefRangeEnd = 94012, MetadataInitTokenRva = 0L, MetadataInitFlagRva = 0L)]
+			set
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = stackalloc IntPtr[checked(unchecked((UIntPtr)1) * (UIntPtr)sizeof(IntPtr))];
+				*ptr = ref value;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_set_CloudCubemapTintColor_Public_set_Void_Color_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+			}
+		}
+
+		// Token: 0x17000896 RID: 2198
+		// (get) Token: 0x06001714 RID: 5908 RVA: 0x000B9E58 File Offset: 0x000B8058
+		// (set) Token: 0x06001715 RID: 5909 RVA: 0x000B9E94 File Offset: 0x000B8094
+		public unsafe float CloudCubemapHeight
+		{
+			[CallerCount(0)]
+			get
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = null;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_get_CloudCubemapHeight_Public_get_Single_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+				return *IL2CPP.il2cpp_object_unbox(intPtr);
+			}
+			[CallerCount(0)]
+			[CachedScanResults(RefRangeStart = 0, RefRangeEnd = 0, XrefRangeStart = 94012, XrefRangeEnd = 94016, MetadataInitTokenRva = 0L, MetadataInitFlagRva = 0L)]
+			set
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = stackalloc IntPtr[checked(unchecked((UIntPtr)1) * (UIntPtr)sizeof(IntPtr))];
+				*ptr = ref value;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_set_CloudCubemapHeight_Public_set_Void_Single_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+			}
+		}
+
+		// Token: 0x17000897 RID: 2199
+		// (get) Token: 0x06001716 RID: 5910 RVA: 0x000B9ED4 File Offset: 0x000B80D4
+		// (set) Token: 0x06001717 RID: 5911 RVA: 0x000B9F14 File Offset: 0x000B8114
+		public unsafe Texture CloudCubemapNormalTexture
+		{
+			[CallerCount(0)]
+			get
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = null;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_get_CloudCubemapNormalTexture_Public_get_Texture_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+				IntPtr intPtr3 = intPtr;
+				return (intPtr3 != 0) ? Il2CppObjectPool.Get<Texture>(intPtr3) : null;
+			}
+			[CallerCount(0)]
+			[CachedScanResults(RefRangeStart = 0, RefRangeEnd = 0, XrefRangeStart = 94016, XrefRangeEnd = 94021, MetadataInitTokenRva = 0L, MetadataInitFlagRva = 0L)]
+			set
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = stackalloc IntPtr[checked(unchecked((UIntPtr)1) * (UIntPtr)sizeof(IntPtr))];
+				*ptr = IL2CPP.Il2CppObjectBaseToPtr(value);
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_set_CloudCubemapNormalTexture_Public_set_Void_Texture_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+			}
+		}
+
+		// Token: 0x17000898 RID: 2200
+		// (get) Token: 0x06001718 RID: 5912 RVA: 0x000B9F58 File Offset: 0x000B8158
+		// (set) Token: 0x06001719 RID: 5913 RVA: 0x000B9F94 File Offset: 0x000B8194
+		public unsafe Color CloudCubemapNormalLitColor
+		{
+			[CallerCount(0)]
+			get
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = null;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_get_CloudCubemapNormalLitColor_Public_get_Color_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+				return *IL2CPP.il2cpp_object_unbox(intPtr);
+			}
+			[CallerCount(0)]
+			[CachedScanResults(RefRangeStart = 0, RefRangeEnd = 0, XrefRangeStart = 94021, XrefRangeEnd = 94024, MetadataInitTokenRva = 0L, MetadataInitFlagRva = 0L)]
+			set
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = stackalloc IntPtr[checked(unchecked((UIntPtr)1) * (UIntPtr)sizeof(IntPtr))];
+				*ptr = ref value;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_set_CloudCubemapNormalLitColor_Public_set_Void_Color_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+			}
+		}
+
+		// Token: 0x17000899 RID: 2201
+		// (get) Token: 0x0600171A RID: 5914 RVA: 0x000B9FD4 File Offset: 0x000B81D4
+		// (set) Token: 0x0600171B RID: 5915 RVA: 0x000BA010 File Offset: 0x000B8210
+		public unsafe Color CloudCubemapNormalShadowColor
+		{
+			[CallerCount(0)]
+			get
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = null;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_get_CloudCubemapNormalShadowColor_Public_get_Color_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+				return *IL2CPP.il2cpp_object_unbox(intPtr);
+			}
+			[CallerCount(0)]
+			[CachedScanResults(RefRangeStart = 0, RefRangeEnd = 0, XrefRangeStart = 94024, XrefRangeEnd = 94027, MetadataInitTokenRva = 0L, MetadataInitFlagRva = 0L)]
+			set
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = stackalloc IntPtr[checked(unchecked((UIntPtr)1) * (UIntPtr)sizeof(IntPtr))];
+				*ptr = ref value;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_set_CloudCubemapNormalShadowColor_Public_set_Void_Color_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+			}
+		}
+
+		// Token: 0x1700089A RID: 2202
+		// (get) Token: 0x0600171C RID: 5916 RVA: 0x000BA050 File Offset: 0x000B8250
+		// (set) Token: 0x0600171D RID: 5917 RVA: 0x000BA08C File Offset: 0x000B828C
+		public unsafe float CloudCubemapNormalRotationSpeed
+		{
+			[CallerCount(0)]
+			get
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = null;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_get_CloudCubemapNormalRotationSpeed_Public_get_Single_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+				return *IL2CPP.il2cpp_object_unbox(intPtr);
+			}
+			[CallerCount(0)]
+			[CachedScanResults(RefRangeStart = 0, RefRangeEnd = 0, XrefRangeStart = 94027, XrefRangeEnd = 94031, MetadataInitTokenRva = 0L, MetadataInitFlagRva = 0L)]
+			set
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = stackalloc IntPtr[checked(unchecked((UIntPtr)1) * (UIntPtr)sizeof(IntPtr))];
+				*ptr = ref value;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_set_CloudCubemapNormalRotationSpeed_Public_set_Void_Single_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+			}
+		}
+
+		// Token: 0x1700089B RID: 2203
+		// (get) Token: 0x0600171E RID: 5918 RVA: 0x000BA0CC File Offset: 0x000B82CC
+		// (set) Token: 0x0600171F RID: 5919 RVA: 0x000BA108 File Offset: 0x000B8308
+		public unsafe float CloudCubemapNormalHeight
+		{
+			[CallerCount(2)]
+			[CachedScanResults(RefRangeStart = 94031, RefRangeEnd = 94033, XrefRangeStart = 94031, XrefRangeEnd = 94031, MetadataInitTokenRva = 0L, MetadataInitFlagRva = 0L)]
+			get
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = null;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_get_CloudCubemapNormalHeight_Public_get_Single_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+				return *IL2CPP.il2cpp_object_unbox(intPtr);
+			}
+			[CallerCount(0)]
+			[CachedScanResults(RefRangeStart = 0, RefRangeEnd = 0, XrefRangeStart = 94033, XrefRangeEnd = 94037, MetadataInitTokenRva = 0L, MetadataInitFlagRva = 0L)]
+			set
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = stackalloc IntPtr[checked(unchecked((UIntPtr)1) * (UIntPtr)sizeof(IntPtr))];
+				*ptr = ref value;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_set_CloudCubemapNormalHeight_Public_set_Void_Single_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+			}
+		}
+
+		// Token: 0x1700089C RID: 2204
+		// (get) Token: 0x06001720 RID: 5920 RVA: 0x000BA148 File Offset: 0x000B8348
+		// (set) Token: 0x06001721 RID: 5921 RVA: 0x000BA184 File Offset: 0x000B8384
+		public unsafe float CloudCubemapNormalAmbientIntensity
+		{
+			[CallerCount(0)]
+			get
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = null;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_get_CloudCubemapNormalAmbientIntensity_Public_get_Single_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+				return *IL2CPP.il2cpp_object_unbox(intPtr);
+			}
+			[CallerCount(0)]
+			[CachedScanResults(RefRangeStart = 0, RefRangeEnd = 0, XrefRangeStart = 94037, XrefRangeEnd = 94041, MetadataInitTokenRva = 0L, MetadataInitFlagRva = 0L)]
+			set
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = stackalloc IntPtr[checked(unchecked((UIntPtr)1) * (UIntPtr)sizeof(IntPtr))];
+				*ptr = ref value;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_set_CloudCubemapNormalAmbientIntensity_Public_set_Void_Single_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+			}
+		}
+
+		// Token: 0x1700089D RID: 2205
+		// (get) Token: 0x06001722 RID: 5922 RVA: 0x000BA1C4 File Offset: 0x000B83C4
+		// (set) Token: 0x06001723 RID: 5923 RVA: 0x000BA204 File Offset: 0x000B8404
+		public unsafe Texture CloudCubemapNormalDoubleLayerCustomTexture
+		{
+			[CallerCount(4)]
+			[CachedScanResults(RefRangeStart = 94041, RefRangeEnd = 94045, XrefRangeStart = 94041, XrefRangeEnd = 94041, MetadataInitTokenRva = 0L, MetadataInitFlagRva = 0L)]
+			get
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = null;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_get_CloudCubemapNormalDoubleLayerCustomTexture_Public_get_Texture_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+				IntPtr intPtr3 = intPtr;
+				return (intPtr3 != 0) ? Il2CppObjectPool.Get<Texture>(intPtr3) : null;
+			}
+			[CallerCount(0)]
+			[CachedScanResults(RefRangeStart = 0, RefRangeEnd = 0, XrefRangeStart = 94045, XrefRangeEnd = 94050, MetadataInitTokenRva = 0L, MetadataInitFlagRva = 0L)]
+			set
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = stackalloc IntPtr[checked(unchecked((UIntPtr)1) * (UIntPtr)sizeof(IntPtr))];
+				*ptr = IL2CPP.Il2CppObjectBaseToPtr(value);
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_set_CloudCubemapNormalDoubleLayerCustomTexture_Public_set_Void_Texture_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+			}
+		}
+
+		// Token: 0x1700089E RID: 2206
+		// (get) Token: 0x06001724 RID: 5924 RVA: 0x000BA248 File Offset: 0x000B8448
+		// (set) Token: 0x06001725 RID: 5925 RVA: 0x000BA284 File Offset: 0x000B8484
+		public unsafe float CloudCubemapNormalDoubleLayerRotationSpeed
+		{
+			[CallerCount(0)]
+			get
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = null;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_get_CloudCubemapNormalDoubleLayerRotationSpeed_Public_get_Single_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+				return *IL2CPP.il2cpp_object_unbox(intPtr);
+			}
+			[CallerCount(0)]
+			[CachedScanResults(RefRangeStart = 0, RefRangeEnd = 0, XrefRangeStart = 94050, XrefRangeEnd = 94054, MetadataInitTokenRva = 0L, MetadataInitFlagRva = 0L)]
+			set
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = stackalloc IntPtr[checked(unchecked((UIntPtr)1) * (UIntPtr)sizeof(IntPtr))];
+				*ptr = ref value;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_set_CloudCubemapNormalDoubleLayerRotationSpeed_Public_set_Void_Single_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+			}
+		}
+
+		// Token: 0x1700089F RID: 2207
+		// (get) Token: 0x06001726 RID: 5926 RVA: 0x000BA2C4 File Offset: 0x000B84C4
+		// (set) Token: 0x06001727 RID: 5927 RVA: 0x000BA300 File Offset: 0x000B8500
+		public unsafe float CloudCubemapNormalDoubleLayerHeight
+		{
+			[CallerCount(0)]
+			get
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = null;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_get_CloudCubemapNormalDoubleLayerHeight_Public_get_Single_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+				return *IL2CPP.il2cpp_object_unbox(intPtr);
+			}
+			[CallerCount(0)]
+			[CachedScanResults(RefRangeStart = 0, RefRangeEnd = 0, XrefRangeStart = 94054, XrefRangeEnd = 94058, MetadataInitTokenRva = 0L, MetadataInitFlagRva = 0L)]
+			set
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = stackalloc IntPtr[checked(unchecked((UIntPtr)1) * (UIntPtr)sizeof(IntPtr))];
+				*ptr = ref value;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_set_CloudCubemapNormalDoubleLayerHeight_Public_set_Void_Single_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+			}
+		}
+
+		// Token: 0x170008A0 RID: 2208
+		// (get) Token: 0x06001728 RID: 5928 RVA: 0x000BA340 File Offset: 0x000B8540
+		// (set) Token: 0x06001729 RID: 5929 RVA: 0x000BA37C File Offset: 0x000B857C
+		public unsafe Color CloudCubemapNormalDoubleLayerLitColor
+		{
+			[CallerCount(0)]
+			get
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = null;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_get_CloudCubemapNormalDoubleLayerLitColor_Public_get_Color_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+				return *IL2CPP.il2cpp_object_unbox(intPtr);
+			}
+			[CallerCount(0)]
+			[CachedScanResults(RefRangeStart = 0, RefRangeEnd = 0, XrefRangeStart = 94058, XrefRangeEnd = 94061, MetadataInitTokenRva = 0L, MetadataInitFlagRva = 0L)]
+			set
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = stackalloc IntPtr[checked(unchecked((UIntPtr)1) * (UIntPtr)sizeof(IntPtr))];
+				*ptr = ref value;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_set_CloudCubemapNormalDoubleLayerLitColor_Public_set_Void_Color_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+			}
+		}
+
+		// Token: 0x170008A1 RID: 2209
+		// (get) Token: 0x0600172A RID: 5930 RVA: 0x000BA3BC File Offset: 0x000B85BC
+		// (set) Token: 0x0600172B RID: 5931 RVA: 0x000BA3F8 File Offset: 0x000B85F8
+		public unsafe Color CloudCubemapNormalDoubleLayerShadowColor
+		{
+			[CallerCount(0)]
+			get
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = null;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_get_CloudCubemapNormalDoubleLayerShadowColor_Public_get_Color_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+				return *IL2CPP.il2cpp_object_unbox(intPtr);
+			}
+			[CallerCount(0)]
+			[CachedScanResults(RefRangeStart = 0, RefRangeEnd = 0, XrefRangeStart = 94061, XrefRangeEnd = 94064, MetadataInitTokenRva = 0L, MetadataInitFlagRva = 0L)]
+			set
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = stackalloc IntPtr[checked(unchecked((UIntPtr)1) * (UIntPtr)sizeof(IntPtr))];
+				*ptr = ref value;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_set_CloudCubemapNormalDoubleLayerShadowColor_Public_set_Void_Color_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+			}
+		}
+
+		// Token: 0x170008A2 RID: 2210
+		// (get) Token: 0x0600172C RID: 5932 RVA: 0x000BA438 File Offset: 0x000B8638
+		// (set) Token: 0x0600172D RID: 5933 RVA: 0x000BA474 File Offset: 0x000B8674
+		public unsafe Vector3 CloudCubemapNormalLightDirection
+		{
+			[CallerCount(0)]
+			get
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = null;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_get_CloudCubemapNormalLightDirection_Public_get_Vector3_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+				return *IL2CPP.il2cpp_object_unbox(intPtr);
+			}
+			[CallerCount(0)]
+			[CachedScanResults(RefRangeStart = 0, RefRangeEnd = 0, XrefRangeStart = 94064, XrefRangeEnd = 94067, MetadataInitTokenRva = 0L, MetadataInitFlagRva = 0L)]
+			set
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = stackalloc IntPtr[checked(unchecked((UIntPtr)1) * (UIntPtr)sizeof(IntPtr))];
+				*ptr = ref value;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_set_CloudCubemapNormalLightDirection_Public_set_Void_Vector3_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+			}
+		}
+
+		// Token: 0x170008A3 RID: 2211
+		// (get) Token: 0x0600172E RID: 5934 RVA: 0x000BA4B4 File Offset: 0x000B86B4
+		// (set) Token: 0x0600172F RID: 5935 RVA: 0x000BA4F0 File Offset: 0x000B86F0
+		public unsafe Color FogColor
+		{
+			[CallerCount(0)]
+			get
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = null;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_get_FogColor_Public_get_Color_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+				return *IL2CPP.il2cpp_object_unbox(intPtr);
+			}
+			[CallerCount(0)]
+			[CachedScanResults(RefRangeStart = 0, RefRangeEnd = 0, XrefRangeStart = 94067, XrefRangeEnd = 94070, MetadataInitTokenRva = 0L, MetadataInitFlagRva = 0L)]
+			set
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = stackalloc IntPtr[checked(unchecked((UIntPtr)1) * (UIntPtr)sizeof(IntPtr))];
+				*ptr = ref value;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_set_FogColor_Public_set_Void_Color_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+			}
+		}
+
+		// Token: 0x170008A4 RID: 2212
+		// (get) Token: 0x06001730 RID: 5936 RVA: 0x000BA530 File Offset: 0x000B8730
+		// (set) Token: 0x06001731 RID: 5937 RVA: 0x000BA56C File Offset: 0x000B876C
+		public unsafe float FogDensity
+		{
+			[CallerCount(0)]
+			get
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = null;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_get_FogDensity_Public_get_Single_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+				return *IL2CPP.il2cpp_object_unbox(intPtr);
+			}
+			[CallerCount(0)]
+			[CachedScanResults(RefRangeStart = 0, RefRangeEnd = 0, XrefRangeStart = 94070, XrefRangeEnd = 94074, MetadataInitTokenRva = 0L, MetadataInitFlagRva = 0L)]
+			set
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = stackalloc IntPtr[checked(unchecked((UIntPtr)1) * (UIntPtr)sizeof(IntPtr))];
+				*ptr = ref value;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_set_FogDensity_Public_set_Void_Single_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+			}
+		}
+
+		// Token: 0x170008A5 RID: 2213
+		// (get) Token: 0x06001732 RID: 5938 RVA: 0x000BA5AC File Offset: 0x000B87AC
+		// (set) Token: 0x06001733 RID: 5939 RVA: 0x000BA5E8 File Offset: 0x000B87E8
+		public unsafe float FogHeight
+		{
+			[CallerCount(0)]
+			get
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = null;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_get_FogHeight_Public_get_Single_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+				return *IL2CPP.il2cpp_object_unbox(intPtr);
+			}
+			[CallerCount(0)]
+			[CachedScanResults(RefRangeStart = 0, RefRangeEnd = 0, XrefRangeStart = 94074, XrefRangeEnd = 94078, MetadataInitTokenRva = 0L, MetadataInitFlagRva = 0L)]
+			set
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = stackalloc IntPtr[checked(unchecked((UIntPtr)1) * (UIntPtr)sizeof(IntPtr))];
+				*ptr = ref value;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_set_FogHeight_Public_set_Void_Single_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+			}
+		}
+
+		// Token: 0x06001734 RID: 5940 RVA: 0x000BA628 File Offset: 0x000B8828
+		[CallerCount(4)]
+		[CachedScanResults(RefRangeStart = 94085, RefRangeEnd = 94089, XrefRangeStart = 94078, XrefRangeEnd = 94085, MetadataInitTokenRva = 0L, MetadataInitFlagRva = 0L)]
+		public unsafe void ApplyGradientValuesOnMaterial()
+		{
+			IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+			IntPtr* ptr = null;
+			IntPtr intPtr2;
+			IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_ApplyGradientValuesOnMaterial_Private_Void_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+			Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+		}
+
+		// Token: 0x06001735 RID: 5941 RVA: 0x000BA65C File Offset: 0x000B885C
+		[CallerCount(4)]
+		[CachedScanResults(RefRangeStart = 94096, RefRangeEnd = 94100, XrefRangeStart = 94089, XrefRangeEnd = 94096, MetadataInitTokenRva = 0L, MetadataInitFlagRva = 0L)]
+		public unsafe void ApplyStarFadeValuesOnMaterial()
+		{
+			IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+			IntPtr* ptr = null;
+			IntPtr intPtr2;
+			IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr_ApplyStarFadeValuesOnMaterial_Private_Void_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+			Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+		}
+
+		// Token: 0x06001736 RID: 5942 RVA: 0x000BA690 File Offset: 0x000B8890
+		[CallerCount(1)]
+		[CachedScanResults(RefRangeStart = 94121, RefRangeEnd = 94122, XrefRangeStart = 94100, XrefRangeEnd = 94121, MetadataInitTokenRva = 0L, MetadataInitFlagRva = 0L)]
+		public unsafe SkyMaterialController() : this(IL2CPP.il2cpp_object_new(Il2CppClassPointerStore<SkyMaterialController>.NativeClassPtr))
+		{
+			IntPtr* ptr = null;
+			IntPtr intPtr2;
+			IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(SkyMaterialController.NativeMethodInfoPtr__ctor_Public_Void_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+			Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+		}
+
+		// Token: 0x06001737 RID: 5943 RVA: 0x0000D1C2 File Offset: 0x0000B3C2
+		public SkyMaterialController(IntPtr pointer) : base(pointer)
+		{
+		}
+
+		// Token: 0x170007C5 RID: 1989
+		// (get) Token: 0x06001738 RID: 5944 RVA: 0x000BA6CC File Offset: 0x000B88CC
+		// (set) Token: 0x06001739 RID: 5945 RVA: 0x0000D1CB File Offset: 0x0000B3CB
+		public unsafe Material _skyboxMaterial
+		{
+			get
+			{
+				IntPtr intPtr = IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__skyboxMaterial);
+				IntPtr intPtr2 = *intPtr;
+				return (intPtr2 != 0) ? Il2CppObjectPool.Get<Material>(intPtr2) : null;
+			}
+			set
+			{
+				IntPtr intPtr = IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IL2CPP.il2cpp_gc_wbarrier_set_field(intPtr, intPtr + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__skyboxMaterial), IL2CPP.Il2CppObjectBaseToPtr(value));
+			}
+		}
+
+		// Token: 0x170007C6 RID: 1990
+		// (get) Token: 0x0600173A RID: 5946 RVA: 0x000BA6FC File Offset: 0x000B88FC
+		// (set) Token: 0x0600173B RID: 5947 RVA: 0x0000D1EA File Offset: 0x0000B3EA
+		public unsafe Color _skyColor
+		{
+			get
+			{
+				IntPtr intPtr = IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__skyColor);
+				return *intPtr;
+			}
+			set
+			{
+				*(IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__skyColor)) = value;
+			}
+		}
+
+		// Token: 0x170007C7 RID: 1991
+		// (get) Token: 0x0600173C RID: 5948 RVA: 0x000BA724 File Offset: 0x000B8924
+		// (set) Token: 0x0600173D RID: 5949 RVA: 0x0000D205 File Offset: 0x0000B405
+		public unsafe Color _skyMiddleColor
+		{
+			get
+			{
+				IntPtr intPtr = IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__skyMiddleColor);
+				return *intPtr;
+			}
+			set
+			{
+				*(IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__skyMiddleColor)) = value;
+			}
+		}
+
+		// Token: 0x170007C8 RID: 1992
+		// (get) Token: 0x0600173E RID: 5950 RVA: 0x000BA74C File Offset: 0x000B894C
+		// (set) Token: 0x0600173F RID: 5951 RVA: 0x0000D220 File Offset: 0x0000B420
+		public unsafe Color _horizonColor
+		{
+			get
+			{
+				IntPtr intPtr = IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__horizonColor);
+				return *intPtr;
+			}
+			set
+			{
+				*(IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__horizonColor)) = value;
+			}
+		}
+
+		// Token: 0x170007C9 RID: 1993
+		// (get) Token: 0x06001740 RID: 5952 RVA: 0x000BA774 File Offset: 0x000B8974
+		// (set) Token: 0x06001741 RID: 5953 RVA: 0x0000D23B File Offset: 0x0000B43B
+		public unsafe float _gradientFadeBegin
+		{
+			get
+			{
+				IntPtr intPtr = IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__gradientFadeBegin);
+				return *intPtr;
+			}
+			set
+			{
+				*(IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__gradientFadeBegin)) = value;
+			}
+		}
+
+		// Token: 0x170007CA RID: 1994
+		// (get) Token: 0x06001742 RID: 5954 RVA: 0x000BA79C File Offset: 0x000B899C
+		// (set) Token: 0x06001743 RID: 5955 RVA: 0x0000D256 File Offset: 0x0000B456
+		public unsafe float _gradientFadeLength
+		{
+			get
+			{
+				IntPtr intPtr = IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__gradientFadeLength);
+				return *intPtr;
+			}
+			set
+			{
+				*(IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__gradientFadeLength)) = value;
+			}
+		}
+
+		// Token: 0x170007CB RID: 1995
+		// (get) Token: 0x06001744 RID: 5956 RVA: 0x000BA7C4 File Offset: 0x000B89C4
+		// (set) Token: 0x06001745 RID: 5957 RVA: 0x0000D271 File Offset: 0x0000B471
+		public unsafe float _skyMiddlePosition
+		{
+			get
+			{
+				IntPtr intPtr = IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__skyMiddlePosition);
+				return *intPtr;
+			}
+			set
+			{
+				*(IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__skyMiddlePosition)) = value;
+			}
+		}
+
+		// Token: 0x170007CC RID: 1996
+		// (get) Token: 0x06001746 RID: 5958 RVA: 0x000BA7EC File Offset: 0x000B89EC
+		// (set) Token: 0x06001747 RID: 5959 RVA: 0x0000D28C File Offset: 0x0000B48C
+		public unsafe Cubemap _backgroundCubemap
+		{
+			get
+			{
+				IntPtr intPtr = IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__backgroundCubemap);
+				IntPtr intPtr2 = *intPtr;
+				return (intPtr2 != 0) ? Il2CppObjectPool.Get<Cubemap>(intPtr2) : null;
+			}
+			set
+			{
+				IntPtr intPtr = IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IL2CPP.il2cpp_gc_wbarrier_set_field(intPtr, intPtr + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__backgroundCubemap), IL2CPP.Il2CppObjectBaseToPtr(value));
+			}
+		}
+
+		// Token: 0x170007CD RID: 1997
+		// (get) Token: 0x06001748 RID: 5960 RVA: 0x000BA81C File Offset: 0x000B8A1C
+		// (set) Token: 0x06001749 RID: 5961 RVA: 0x0000D2AB File Offset: 0x0000B4AB
+		public unsafe float _starFadeBegin
+		{
+			get
+			{
+				IntPtr intPtr = IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__starFadeBegin);
+				return *intPtr;
+			}
+			set
+			{
+				*(IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__starFadeBegin)) = value;
+			}
+		}
+
+		// Token: 0x170007CE RID: 1998
+		// (get) Token: 0x0600174A RID: 5962 RVA: 0x000BA844 File Offset: 0x000B8A44
+		// (set) Token: 0x0600174B RID: 5963 RVA: 0x0000D2C6 File Offset: 0x0000B4C6
+		public unsafe float _starFadeLength
+		{
+			get
+			{
+				IntPtr intPtr = IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__starFadeLength);
+				return *intPtr;
+			}
+			set
+			{
+				*(IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__starFadeLength)) = value;
+			}
+		}
+
+		// Token: 0x170007CF RID: 1999
+		// (get) Token: 0x0600174C RID: 5964 RVA: 0x000BA86C File Offset: 0x000B8A6C
+		// (set) Token: 0x0600174D RID: 5965 RVA: 0x0000D2E1 File Offset: 0x0000B4E1
+		public unsafe float _horizonDistanceScale
+		{
+			get
+			{
+				IntPtr intPtr = IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__horizonDistanceScale);
+				return *intPtr;
+			}
+			set
+			{
+				*(IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__horizonDistanceScale)) = value;
+			}
+		}
+
+		// Token: 0x170007D0 RID: 2000
+		// (get) Token: 0x0600174E RID: 5966 RVA: 0x000BA894 File Offset: 0x000B8A94
+		// (set) Token: 0x0600174F RID: 5967 RVA: 0x0000D2FC File Offset: 0x0000B4FC
+		public unsafe Texture _starBasicCubemap
+		{
+			get
+			{
+				IntPtr intPtr = IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__starBasicCubemap);
+				IntPtr intPtr2 = *intPtr;
+				return (intPtr2 != 0) ? Il2CppObjectPool.Get<Texture>(intPtr2) : null;
+			}
+			set
+			{
+				IntPtr intPtr = IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IL2CPP.il2cpp_gc_wbarrier_set_field(intPtr, intPtr + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__starBasicCubemap), IL2CPP.Il2CppObjectBaseToPtr(value));
+			}
+		}
+
+		// Token: 0x170007D1 RID: 2001
+		// (get) Token: 0x06001750 RID: 5968 RVA: 0x000BA8C4 File Offset: 0x000B8AC4
+		// (set) Token: 0x06001751 RID: 5969 RVA: 0x0000D31B File Offset: 0x0000B51B
+		public unsafe float _starBasicTwinkleSpeed
+		{
+			get
+			{
+				IntPtr intPtr = IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__starBasicTwinkleSpeed);
+				return *intPtr;
+			}
+			set
+			{
+				*(IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__starBasicTwinkleSpeed)) = value;
+			}
+		}
+
+		// Token: 0x170007D2 RID: 2002
+		// (get) Token: 0x06001752 RID: 5970 RVA: 0x000BA8EC File Offset: 0x000B8AEC
+		// (set) Token: 0x06001753 RID: 5971 RVA: 0x0000D336 File Offset: 0x0000B536
+		public unsafe float _starBasicTwinkleAmount
+		{
+			get
+			{
+				IntPtr intPtr = IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__starBasicTwinkleAmount);
+				return *intPtr;
+			}
+			set
+			{
+				*(IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__starBasicTwinkleAmount)) = value;
+			}
+		}
+
+		// Token: 0x170007D3 RID: 2003
+		// (get) Token: 0x06001754 RID: 5972 RVA: 0x000BA914 File Offset: 0x000B8B14
+		// (set) Token: 0x06001755 RID: 5973 RVA: 0x0000D351 File Offset: 0x0000B551
+		public unsafe float _starBasicOpacity
+		{
+			get
+			{
+				IntPtr intPtr = IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__starBasicOpacity);
+				return *intPtr;
+			}
+			set
+			{
+				*(IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__starBasicOpacity)) = value;
+			}
+		}
+
+		// Token: 0x170007D4 RID: 2004
+		// (get) Token: 0x06001756 RID: 5974 RVA: 0x000BA93C File Offset: 0x000B8B3C
+		// (set) Token: 0x06001757 RID: 5975 RVA: 0x0000D36C File Offset: 0x0000B56C
+		public unsafe Color _starBasicTintColor
+		{
+			get
+			{
+				IntPtr intPtr = IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__starBasicTintColor);
+				return *intPtr;
+			}
+			set
+			{
+				*(IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__starBasicTintColor)) = value;
+			}
+		}
+
+		// Token: 0x170007D5 RID: 2005
+		// (get) Token: 0x06001758 RID: 5976 RVA: 0x000BA964 File Offset: 0x000B8B64
+		// (set) Token: 0x06001759 RID: 5977 RVA: 0x0000D387 File Offset: 0x0000B587
+		public unsafe float _starBasicExponent
+		{
+			get
+			{
+				IntPtr intPtr = IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__starBasicExponent);
+				return *intPtr;
+			}
+			set
+			{
+				*(IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__starBasicExponent)) = value;
+			}
+		}
+
+		// Token: 0x170007D6 RID: 2006
+		// (get) Token: 0x0600175A RID: 5978 RVA: 0x000BA98C File Offset: 0x000B8B8C
+		// (set) Token: 0x0600175B RID: 5979 RVA: 0x0000D3A2 File Offset: 0x0000B5A2
+		public unsafe float _starBasicIntensity
+		{
+			get
+			{
+				IntPtr intPtr = IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__starBasicIntensity);
+				return *intPtr;
+			}
+			set
+			{
+				*(IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__starBasicIntensity)) = value;
+			}
+		}
+
+		// Token: 0x170007D7 RID: 2007
+		// (get) Token: 0x0600175C RID: 5980 RVA: 0x000BA9B4 File Offset: 0x000B8BB4
+		// (set) Token: 0x0600175D RID: 5981 RVA: 0x0000D3BD File Offset: 0x0000B5BD
+		public unsafe Texture _starLayer1Texture
+		{
+			get
+			{
+				IntPtr intPtr = IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__starLayer1Texture);
+				IntPtr intPtr2 = *intPtr;
+				return (intPtr2 != 0) ? Il2CppObjectPool.Get<Texture>(intPtr2) : null;
+			}
+			set
+			{
+				IntPtr intPtr = IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IL2CPP.il2cpp_gc_wbarrier_set_field(intPtr, intPtr + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__starLayer1Texture), IL2CPP.Il2CppObjectBaseToPtr(value));
+			}
+		}
+
+		// Token: 0x170007D8 RID: 2008
+		// (get) Token: 0x0600175E RID: 5982 RVA: 0x000BA9E4 File Offset: 0x000B8BE4
+		// (set) Token: 0x0600175F RID: 5983 RVA: 0x0000D3DC File Offset: 0x0000B5DC
+		public unsafe Texture2D _starLayer1DataTexture
+		{
+			get
+			{
+				IntPtr intPtr = IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__starLayer1DataTexture);
+				IntPtr intPtr2 = *intPtr;
+				return (intPtr2 != 0) ? Il2CppObjectPool.Get<Texture2D>(intPtr2) : null;
+			}
+			set
+			{
+				IntPtr intPtr = IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IL2CPP.il2cpp_gc_wbarrier_set_field(intPtr, intPtr + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__starLayer1DataTexture), IL2CPP.Il2CppObjectBaseToPtr(value));
+			}
+		}
+
+		// Token: 0x170007D9 RID: 2009
+		// (get) Token: 0x06001760 RID: 5984 RVA: 0x000BAA14 File Offset: 0x000B8C14
+		// (set) Token: 0x06001761 RID: 5985 RVA: 0x0000D3FB File Offset: 0x0000B5FB
+		public unsafe Color _starLayer1Color
+		{
+			get
+			{
+				IntPtr intPtr = IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__starLayer1Color);
+				return *intPtr;
+			}
+			set
+			{
+				*(IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__starLayer1Color)) = value;
+			}
+		}
+
+		// Token: 0x170007DA RID: 2010
+		// (get) Token: 0x06001762 RID: 5986 RVA: 0x000BAA3C File Offset: 0x000B8C3C
+		// (set) Token: 0x06001763 RID: 5987 RVA: 0x0000D416 File Offset: 0x0000B616
+		public unsafe float _starLayer1MaxRadius
+		{
+			get
+			{
+				IntPtr intPtr = IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__starLayer1MaxRadius);
+				return *intPtr;
+			}
+			set
+			{
+				*(IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__starLayer1MaxRadius)) = value;
+			}
+		}
+
+		// Token: 0x170007DB RID: 2011
+		// (get) Token: 0x06001764 RID: 5988 RVA: 0x000BAA64 File Offset: 0x000B8C64
+		// (set) Token: 0x06001765 RID: 5989 RVA: 0x0000D431 File Offset: 0x0000B631
+		public unsafe float _starLayer1TwinkleAmount
+		{
+			get
+			{
+				IntPtr intPtr = IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__starLayer1TwinkleAmount);
+				return *intPtr;
+			}
+			set
+			{
+				*(IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__starLayer1TwinkleAmount)) = value;
+			}
+		}
+
+		// Token: 0x170007DC RID: 2012
+		// (get) Token: 0x06001766 RID: 5990 RVA: 0x000BAA8C File Offset: 0x000B8C8C
+		// (set) Token: 0x06001767 RID: 5991 RVA: 0x0000D44C File Offset: 0x0000B64C
+		public unsafe float _starLayer1TwinkleSpeed
+		{
+			get
+			{
+				IntPtr intPtr = IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__starLayer1TwinkleSpeed);
+				return *intPtr;
+			}
+			set
+			{
+				*(IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__starLayer1TwinkleSpeed)) = value;
+			}
+		}
+
+		// Token: 0x170007DD RID: 2013
+		// (get) Token: 0x06001768 RID: 5992 RVA: 0x000BAAB4 File Offset: 0x000B8CB4
+		// (set) Token: 0x06001769 RID: 5993 RVA: 0x0000D467 File Offset: 0x0000B667
+		public unsafe float _starLayer1RotationSpeed
+		{
+			get
+			{
+				IntPtr intPtr = IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__starLayer1RotationSpeed);
+				return *intPtr;
+			}
+			set
+			{
+				*(IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__starLayer1RotationSpeed)) = value;
+			}
+		}
+
+		// Token: 0x170007DE RID: 2014
+		// (get) Token: 0x0600176A RID: 5994 RVA: 0x000BAADC File Offset: 0x000B8CDC
+		// (set) Token: 0x0600176B RID: 5995 RVA: 0x0000D482 File Offset: 0x0000B682
+		public unsafe float _starLayer1EdgeFeathering
+		{
+			get
+			{
+				IntPtr intPtr = IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__starLayer1EdgeFeathering);
+				return *intPtr;
+			}
+			set
+			{
+				*(IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__starLayer1EdgeFeathering)) = value;
+			}
+		}
+
+		// Token: 0x170007DF RID: 2015
+		// (get) Token: 0x0600176C RID: 5996 RVA: 0x000BAB04 File Offset: 0x000B8D04
+		// (set) Token: 0x0600176D RID: 5997 RVA: 0x0000D49D File Offset: 0x0000B69D
+		public unsafe float _starLayer1BloomFilterBoost
+		{
+			get
+			{
+				IntPtr intPtr = IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__starLayer1BloomFilterBoost);
+				return *intPtr;
+			}
+			set
+			{
+				*(IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__starLayer1BloomFilterBoost)) = value;
+			}
+		}
+
+		// Token: 0x170007E0 RID: 2016
+		// (get) Token: 0x0600176E RID: 5998 RVA: 0x000BAB2C File Offset: 0x000B8D2C
+		// (set) Token: 0x0600176F RID: 5999 RVA: 0x0000D4B8 File Offset: 0x0000B6B8
+		public unsafe Vector4 _starLayer1SpriteDimensions
+		{
+			get
+			{
+				IntPtr intPtr = IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__starLayer1SpriteDimensions);
+				return *intPtr;
+			}
+			set
+			{
+				*(IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__starLayer1SpriteDimensions)) = value;
+			}
+		}
+
+		// Token: 0x170007E1 RID: 2017
+		// (get) Token: 0x06001770 RID: 6000 RVA: 0x000BAB54 File Offset: 0x000B8D54
+		// (set) Token: 0x06001771 RID: 6001 RVA: 0x0000D4D3 File Offset: 0x0000B6D3
+		public unsafe int _starLayer1SpriteItemCount
+		{
+			get
+			{
+				IntPtr intPtr = IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__starLayer1SpriteItemCount);
+				return *intPtr;
+			}
+			set
+			{
+				*(IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__starLayer1SpriteItemCount)) = value;
+			}
+		}
+
+		// Token: 0x170007E2 RID: 2018
+		// (get) Token: 0x06001772 RID: 6002 RVA: 0x000BAB7C File Offset: 0x000B8D7C
+		// (set) Token: 0x06001773 RID: 6003 RVA: 0x0000D4EE File Offset: 0x0000B6EE
+		public unsafe float _starLayer1SpriteAnimationSpeed
+		{
+			get
+			{
+				IntPtr intPtr = IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__starLayer1SpriteAnimationSpeed);
+				return *intPtr;
+			}
+			set
+			{
+				*(IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__starLayer1SpriteAnimationSpeed)) = value;
+			}
+		}
+
+		// Token: 0x170007E3 RID: 2019
+		// (get) Token: 0x06001774 RID: 6004 RVA: 0x000BABA4 File Offset: 0x000B8DA4
+		// (set) Token: 0x06001775 RID: 6005 RVA: 0x0000D509 File Offset: 0x0000B709
+		public unsafe Texture _starLayer2Texture
+		{
+			get
+			{
+				IntPtr intPtr = IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__starLayer2Texture);
+				IntPtr intPtr2 = *intPtr;
+				return (intPtr2 != 0) ? Il2CppObjectPool.Get<Texture>(intPtr2) : null;
+			}
+			set
+			{
+				IntPtr intPtr = IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IL2CPP.il2cpp_gc_wbarrier_set_field(intPtr, intPtr + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__starLayer2Texture), IL2CPP.Il2CppObjectBaseToPtr(value));
+			}
+		}
+
+		// Token: 0x170007E4 RID: 2020
+		// (get) Token: 0x06001776 RID: 6006 RVA: 0x000BABD4 File Offset: 0x000B8DD4
+		// (set) Token: 0x06001777 RID: 6007 RVA: 0x0000D528 File Offset: 0x0000B728
+		public unsafe Texture2D _starLayer2DataTexture
+		{
+			get
+			{
+				IntPtr intPtr = IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__starLayer2DataTexture);
+				IntPtr intPtr2 = *intPtr;
+				return (intPtr2 != 0) ? Il2CppObjectPool.Get<Texture2D>(intPtr2) : null;
+			}
+			set
+			{
+				IntPtr intPtr = IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IL2CPP.il2cpp_gc_wbarrier_set_field(intPtr, intPtr + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__starLayer2DataTexture), IL2CPP.Il2CppObjectBaseToPtr(value));
+			}
+		}
+
+		// Token: 0x170007E5 RID: 2021
+		// (get) Token: 0x06001778 RID: 6008 RVA: 0x000BAC04 File Offset: 0x000B8E04
+		// (set) Token: 0x06001779 RID: 6009 RVA: 0x0000D547 File Offset: 0x0000B747
+		public unsafe Color _starLayer2Color
+		{
+			get
+			{
+				IntPtr intPtr = IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__starLayer2Color);
+				return *intPtr;
+			}
+			set
+			{
+				*(IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__starLayer2Color)) = value;
+			}
+		}
+
+		// Token: 0x170007E6 RID: 2022
+		// (get) Token: 0x0600177A RID: 6010 RVA: 0x000BAC2C File Offset: 0x000B8E2C
+		// (set) Token: 0x0600177B RID: 6011 RVA: 0x0000D562 File Offset: 0x0000B762
+		public unsafe float _starLayer2MaxRadius
+		{
+			get
+			{
+				IntPtr intPtr = IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__starLayer2MaxRadius);
+				return *intPtr;
+			}
+			set
+			{
+				*(IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__starLayer2MaxRadius)) = value;
+			}
+		}
+
+		// Token: 0x170007E7 RID: 2023
+		// (get) Token: 0x0600177C RID: 6012 RVA: 0x000BAC54 File Offset: 0x000B8E54
+		// (set) Token: 0x0600177D RID: 6013 RVA: 0x0000D57D File Offset: 0x0000B77D
+		public unsafe float _starLayer2TwinkleAmount
+		{
+			get
+			{
+				IntPtr intPtr = IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__starLayer2TwinkleAmount);
+				return *intPtr;
+			}
+			set
+			{
+				*(IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__starLayer2TwinkleAmount)) = value;
+			}
+		}
+
+		// Token: 0x170007E8 RID: 2024
+		// (get) Token: 0x0600177E RID: 6014 RVA: 0x000BAC7C File Offset: 0x000B8E7C
+		// (set) Token: 0x0600177F RID: 6015 RVA: 0x0000D598 File Offset: 0x0000B798
+		public unsafe float _starLayer2TwinkleSpeed
+		{
+			get
+			{
+				IntPtr intPtr = IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__starLayer2TwinkleSpeed);
+				return *intPtr;
+			}
+			set
+			{
+				*(IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__starLayer2TwinkleSpeed)) = value;
+			}
+		}
+
+		// Token: 0x170007E9 RID: 2025
+		// (get) Token: 0x06001780 RID: 6016 RVA: 0x000BACA4 File Offset: 0x000B8EA4
+		// (set) Token: 0x06001781 RID: 6017 RVA: 0x0000D5B3 File Offset: 0x0000B7B3
+		public unsafe float _starLayer2RotationSpeed
+		{
+			get
+			{
+				IntPtr intPtr = IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__starLayer2RotationSpeed);
+				return *intPtr;
+			}
+			set
+			{
+				*(IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__starLayer2RotationSpeed)) = value;
+			}
+		}
+
+		// Token: 0x170007EA RID: 2026
+		// (get) Token: 0x06001782 RID: 6018 RVA: 0x000BACCC File Offset: 0x000B8ECC
+		// (set) Token: 0x06001783 RID: 6019 RVA: 0x0000D5CE File Offset: 0x0000B7CE
+		public unsafe float _starLayer2EdgeFeathering
+		{
+			get
+			{
+				IntPtr intPtr = IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__starLayer2EdgeFeathering);
+				return *intPtr;
+			}
+			set
+			{
+				*(IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__starLayer2EdgeFeathering)) = value;
+			}
+		}
+
+		// Token: 0x170007EB RID: 2027
+		// (get) Token: 0x06001784 RID: 6020 RVA: 0x000BACF4 File Offset: 0x000B8EF4
+		// (set) Token: 0x06001785 RID: 6021 RVA: 0x0000D5E9 File Offset: 0x0000B7E9
+		public unsafe float _starLayer2BloomFilterBoost
+		{
+			get
+			{
+				IntPtr intPtr = IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__starLayer2BloomFilterBoost);
+				return *intPtr;
+			}
+			set
+			{
+				*(IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__starLayer2BloomFilterBoost)) = value;
+			}
+		}
+
+		// Token: 0x170007EC RID: 2028
+		// (get) Token: 0x06001786 RID: 6022 RVA: 0x000BAD1C File Offset: 0x000B8F1C
+		// (set) Token: 0x06001787 RID: 6023 RVA: 0x0000D604 File Offset: 0x0000B804
+		public unsafe Vector4 _starLayer2SpriteDimensions
+		{
+			get
+			{
+				IntPtr intPtr = IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__starLayer2SpriteDimensions);
+				return *intPtr;
+			}
+			set
+			{
+				*(IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__starLayer2SpriteDimensions)) = value;
+			}
+		}
+
+		// Token: 0x170007ED RID: 2029
+		// (get) Token: 0x06001788 RID: 6024 RVA: 0x000BAD44 File Offset: 0x000B8F44
+		// (set) Token: 0x06001789 RID: 6025 RVA: 0x0000D61F File Offset: 0x0000B81F
+		public unsafe int _starLayer2SpriteItemCount
+		{
+			get
+			{
+				IntPtr intPtr = IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__starLayer2SpriteItemCount);
+				return *intPtr;
+			}
+			set
+			{
+				*(IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__starLayer2SpriteItemCount)) = value;
+			}
+		}
+
+		// Token: 0x170007EE RID: 2030
+		// (get) Token: 0x0600178A RID: 6026 RVA: 0x000BAD6C File Offset: 0x000B8F6C
+		// (set) Token: 0x0600178B RID: 6027 RVA: 0x0000D63A File Offset: 0x0000B83A
+		public unsafe float _starLayer2SpriteAnimationSpeed
+		{
+			get
+			{
+				IntPtr intPtr = IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__starLayer2SpriteAnimationSpeed);
+				return *intPtr;
+			}
+			set
+			{
+				*(IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__starLayer2SpriteAnimationSpeed)) = value;
+			}
+		}
+
+		// Token: 0x170007EF RID: 2031
+		// (get) Token: 0x0600178C RID: 6028 RVA: 0x000BAD94 File Offset: 0x000B8F94
+		// (set) Token: 0x0600178D RID: 6029 RVA: 0x0000D655 File Offset: 0x0000B855
+		public unsafe Texture _starLayer3Texture
+		{
+			get
+			{
+				IntPtr intPtr = IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__starLayer3Texture);
+				IntPtr intPtr2 = *intPtr;
+				return (intPtr2 != 0) ? Il2CppObjectPool.Get<Texture>(intPtr2) : null;
+			}
+			set
+			{
+				IntPtr intPtr = IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IL2CPP.il2cpp_gc_wbarrier_set_field(intPtr, intPtr + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__starLayer3Texture), IL2CPP.Il2CppObjectBaseToPtr(value));
+			}
+		}
+
+		// Token: 0x170007F0 RID: 2032
+		// (get) Token: 0x0600178E RID: 6030 RVA: 0x000BADC4 File Offset: 0x000B8FC4
+		// (set) Token: 0x0600178F RID: 6031 RVA: 0x0000D674 File Offset: 0x0000B874
+		public unsafe Texture2D _starLayer3DataTexture
+		{
+			get
+			{
+				IntPtr intPtr = IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__starLayer3DataTexture);
+				IntPtr intPtr2 = *intPtr;
+				return (intPtr2 != 0) ? Il2CppObjectPool.Get<Texture2D>(intPtr2) : null;
+			}
+			set
+			{
+				IntPtr intPtr = IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IL2CPP.il2cpp_gc_wbarrier_set_field(intPtr, intPtr + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__starLayer3DataTexture), IL2CPP.Il2CppObjectBaseToPtr(value));
+			}
+		}
+
+		// Token: 0x170007F1 RID: 2033
+		// (get) Token: 0x06001790 RID: 6032 RVA: 0x000BADF4 File Offset: 0x000B8FF4
+		// (set) Token: 0x06001791 RID: 6033 RVA: 0x0000D693 File Offset: 0x0000B893
+		public unsafe Color _starLayer3Color
+		{
+			get
+			{
+				IntPtr intPtr = IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__starLayer3Color);
+				return *intPtr;
+			}
+			set
+			{
+				*(IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__starLayer3Color)) = value;
+			}
+		}
+
+		// Token: 0x170007F2 RID: 2034
+		// (get) Token: 0x06001792 RID: 6034 RVA: 0x000BAE1C File Offset: 0x000B901C
+		// (set) Token: 0x06001793 RID: 6035 RVA: 0x0000D6AE File Offset: 0x0000B8AE
+		public unsafe float _starLayer3MaxRadius
+		{
+			get
+			{
+				IntPtr intPtr = IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__starLayer3MaxRadius);
+				return *intPtr;
+			}
+			set
+			{
+				*(IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__starLayer3MaxRadius)) = value;
+			}
+		}
+
+		// Token: 0x170007F3 RID: 2035
+		// (get) Token: 0x06001794 RID: 6036 RVA: 0x000BAE44 File Offset: 0x000B9044
+		// (set) Token: 0x06001795 RID: 6037 RVA: 0x0000D6C9 File Offset: 0x0000B8C9
+		public unsafe float _starLayer3TwinkleAmount
+		{
+			get
+			{
+				IntPtr intPtr = IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__starLayer3TwinkleAmount);
+				return *intPtr;
+			}
+			set
+			{
+				*(IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__starLayer3TwinkleAmount)) = value;
+			}
+		}
+
+		// Token: 0x170007F4 RID: 2036
+		// (get) Token: 0x06001796 RID: 6038 RVA: 0x000BAE6C File Offset: 0x000B906C
+		// (set) Token: 0x06001797 RID: 6039 RVA: 0x0000D6E4 File Offset: 0x0000B8E4
+		public unsafe float _starLayer3TwinkleSpeed
+		{
+			get
+			{
+				IntPtr intPtr = IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__starLayer3TwinkleSpeed);
+				return *intPtr;
+			}
+			set
+			{
+				*(IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__starLayer3TwinkleSpeed)) = value;
+			}
+		}
+
+		// Token: 0x170007F5 RID: 2037
+		// (get) Token: 0x06001798 RID: 6040 RVA: 0x000BAE94 File Offset: 0x000B9094
+		// (set) Token: 0x06001799 RID: 6041 RVA: 0x0000D6FF File Offset: 0x0000B8FF
+		public unsafe float _starLayer3RotationSpeed
+		{
+			get
+			{
+				IntPtr intPtr = IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__starLayer3RotationSpeed);
+				return *intPtr;
+			}
+			set
+			{
+				*(IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__starLayer3RotationSpeed)) = value;
+			}
+		}
+
+		// Token: 0x170007F6 RID: 2038
+		// (get) Token: 0x0600179A RID: 6042 RVA: 0x000BAEBC File Offset: 0x000B90BC
+		// (set) Token: 0x0600179B RID: 6043 RVA: 0x0000D71A File Offset: 0x0000B91A
+		public unsafe float _starLayer3EdgeFeathering
+		{
+			get
+			{
+				IntPtr intPtr = IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__starLayer3EdgeFeathering);
+				return *intPtr;
+			}
+			set
+			{
+				*(IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__starLayer3EdgeFeathering)) = value;
+			}
+		}
+
+		// Token: 0x170007F7 RID: 2039
+		// (get) Token: 0x0600179C RID: 6044 RVA: 0x000BAEE4 File Offset: 0x000B90E4
+		// (set) Token: 0x0600179D RID: 6045 RVA: 0x0000D735 File Offset: 0x0000B935
+		public unsafe float _starLayer3BloomFilterBoost
+		{
+			get
+			{
+				IntPtr intPtr = IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__starLayer3BloomFilterBoost);
+				return *intPtr;
+			}
+			set
+			{
+				*(IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__starLayer3BloomFilterBoost)) = value;
+			}
+		}
+
+		// Token: 0x170007F8 RID: 2040
+		// (get) Token: 0x0600179E RID: 6046 RVA: 0x000BAF0C File Offset: 0x000B910C
+		// (set) Token: 0x0600179F RID: 6047 RVA: 0x0000D750 File Offset: 0x0000B950
+		public unsafe Vector4 _starLayer3SpriteDimensions
+		{
+			get
+			{
+				IntPtr intPtr = IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__starLayer3SpriteDimensions);
+				return *intPtr;
+			}
+			set
+			{
+				*(IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__starLayer3SpriteDimensions)) = value;
+			}
+		}
+
+		// Token: 0x170007F9 RID: 2041
+		// (get) Token: 0x060017A0 RID: 6048 RVA: 0x000BAF34 File Offset: 0x000B9134
+		// (set) Token: 0x060017A1 RID: 6049 RVA: 0x0000D76B File Offset: 0x0000B96B
+		public unsafe int _starLayer3SpriteItemCount
+		{
+			get
+			{
+				IntPtr intPtr = IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__starLayer3SpriteItemCount);
+				return *intPtr;
+			}
+			set
+			{
+				*(IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__starLayer3SpriteItemCount)) = value;
+			}
+		}
+
+		// Token: 0x170007FA RID: 2042
+		// (get) Token: 0x060017A2 RID: 6050 RVA: 0x000BAF5C File Offset: 0x000B915C
+		// (set) Token: 0x060017A3 RID: 6051 RVA: 0x0000D786 File Offset: 0x0000B986
+		public unsafe float _starLayer3SpriteAnimationSpeed
+		{
+			get
+			{
+				IntPtr intPtr = IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__starLayer3SpriteAnimationSpeed);
+				return *intPtr;
+			}
+			set
+			{
+				*(IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__starLayer3SpriteAnimationSpeed)) = value;
+			}
+		}
+
+		// Token: 0x170007FB RID: 2043
+		// (get) Token: 0x060017A4 RID: 6052 RVA: 0x000BAF84 File Offset: 0x000B9184
+		// (set) Token: 0x060017A5 RID: 6053 RVA: 0x0000D7A1 File Offset: 0x0000B9A1
+		public unsafe Texture _moonTexture
+		{
+			get
+			{
+				IntPtr intPtr = IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__moonTexture);
+				IntPtr intPtr2 = *intPtr;
+				return (intPtr2 != 0) ? Il2CppObjectPool.Get<Texture>(intPtr2) : null;
+			}
+			set
+			{
+				IntPtr intPtr = IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IL2CPP.il2cpp_gc_wbarrier_set_field(intPtr, intPtr + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__moonTexture), IL2CPP.Il2CppObjectBaseToPtr(value));
+			}
+		}
+
+		// Token: 0x170007FC RID: 2044
+		// (get) Token: 0x060017A6 RID: 6054 RVA: 0x000BAFB4 File Offset: 0x000B91B4
+		// (set) Token: 0x060017A7 RID: 6055 RVA: 0x0000D7C0 File Offset: 0x0000B9C0
+		public unsafe float _moonRotationSpeed
+		{
+			get
+			{
+				IntPtr intPtr = IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__moonRotationSpeed);
+				return *intPtr;
+			}
+			set
+			{
+				*(IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__moonRotationSpeed)) = value;
+			}
+		}
+
+		// Token: 0x170007FD RID: 2045
+		// (get) Token: 0x060017A8 RID: 6056 RVA: 0x000BAFDC File Offset: 0x000B91DC
+		// (set) Token: 0x060017A9 RID: 6057 RVA: 0x0000D7DB File Offset: 0x0000B9DB
+		public unsafe Color _moonColor
+		{
+			get
+			{
+				IntPtr intPtr = IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__moonColor);
+				return *intPtr;
+			}
+			set
+			{
+				*(IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__moonColor)) = value;
+			}
+		}
+
+		// Token: 0x170007FE RID: 2046
+		// (get) Token: 0x060017AA RID: 6058 RVA: 0x000BB004 File Offset: 0x000B9204
+		// (set) Token: 0x060017AB RID: 6059 RVA: 0x0000D7F6 File Offset: 0x0000B9F6
+		public unsafe Vector3 _moonDirection
+		{
+			get
+			{
+				IntPtr intPtr = IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__moonDirection);
+				return *intPtr;
+			}
+			set
+			{
+				*(IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__moonDirection)) = value;
+			}
+		}
+
+		// Token: 0x170007FF RID: 2047
+		// (get) Token: 0x060017AC RID: 6060 RVA: 0x000BB02C File Offset: 0x000B922C
+		// (set) Token: 0x060017AD RID: 6061 RVA: 0x0000D811 File Offset: 0x0000BA11
+		public unsafe Matrix4x4 _moonWorldToLocalMatrix
+		{
+			get
+			{
+				IntPtr intPtr = IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__moonWorldToLocalMatrix);
+				return *intPtr;
+			}
+			set
+			{
+				*(IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__moonWorldToLocalMatrix)) = value;
+			}
+		}
+
+		// Token: 0x17000800 RID: 2048
+		// (get) Token: 0x060017AE RID: 6062 RVA: 0x000BB054 File Offset: 0x000B9254
+		// (set) Token: 0x060017AF RID: 6063 RVA: 0x0000D82C File Offset: 0x0000BA2C
+		public unsafe float _moonSize
+		{
+			get
+			{
+				IntPtr intPtr = IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__moonSize);
+				return *intPtr;
+			}
+			set
+			{
+				*(IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__moonSize)) = value;
+			}
+		}
+
+		// Token: 0x17000801 RID: 2049
+		// (get) Token: 0x060017B0 RID: 6064 RVA: 0x000BB07C File Offset: 0x000B927C
+		// (set) Token: 0x060017B1 RID: 6065 RVA: 0x0000D847 File Offset: 0x0000BA47
+		public unsafe float _moonEdgeFeathering
+		{
+			get
+			{
+				IntPtr intPtr = IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__moonEdgeFeathering);
+				return *intPtr;
+			}
+			set
+			{
+				*(IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__moonEdgeFeathering)) = value;
+			}
+		}
+
+		// Token: 0x17000802 RID: 2050
+		// (get) Token: 0x060017B2 RID: 6066 RVA: 0x000BB0A4 File Offset: 0x000B92A4
+		// (set) Token: 0x060017B3 RID: 6067 RVA: 0x0000D862 File Offset: 0x0000BA62
+		public unsafe float _moonBloomFilterBoost
+		{
+			get
+			{
+				IntPtr intPtr = IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__moonBloomFilterBoost);
+				return *intPtr;
+			}
+			set
+			{
+				*(IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__moonBloomFilterBoost)) = value;
+			}
+		}
+
+		// Token: 0x17000803 RID: 2051
+		// (get) Token: 0x060017B4 RID: 6068 RVA: 0x000BB0CC File Offset: 0x000B92CC
+		// (set) Token: 0x060017B5 RID: 6069 RVA: 0x0000D87D File Offset: 0x0000BA7D
+		public unsafe Vector4 _moonSpriteDimensions
+		{
+			get
+			{
+				IntPtr intPtr = IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__moonSpriteDimensions);
+				return *intPtr;
+			}
+			set
+			{
+				*(IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__moonSpriteDimensions)) = value;
+			}
+		}
+
+		// Token: 0x17000804 RID: 2052
+		// (get) Token: 0x060017B6 RID: 6070 RVA: 0x000BB0F4 File Offset: 0x000B92F4
+		// (set) Token: 0x060017B7 RID: 6071 RVA: 0x0000D898 File Offset: 0x0000BA98
+		public unsafe int _moonSpriteItemCount
+		{
+			get
+			{
+				IntPtr intPtr = IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__moonSpriteItemCount);
+				return *intPtr;
+			}
+			set
+			{
+				*(IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__moonSpriteItemCount)) = value;
+			}
+		}
+
+		// Token: 0x17000805 RID: 2053
+		// (get) Token: 0x060017B8 RID: 6072 RVA: 0x000BB11C File Offset: 0x000B931C
+		// (set) Token: 0x060017B9 RID: 6073 RVA: 0x0000D8B3 File Offset: 0x0000BAB3
+		public unsafe float _moonSpriteAnimationSpeed
+		{
+			get
+			{
+				IntPtr intPtr = IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__moonSpriteAnimationSpeed);
+				return *intPtr;
+			}
+			set
+			{
+				*(IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__moonSpriteAnimationSpeed)) = value;
+			}
+		}
+
+		// Token: 0x17000806 RID: 2054
+		// (get) Token: 0x060017BA RID: 6074 RVA: 0x000BB144 File Offset: 0x000B9344
+		// (set) Token: 0x060017BB RID: 6075 RVA: 0x0000D8CE File Offset: 0x0000BACE
+		public unsafe float _moonAlpha
+		{
+			get
+			{
+				IntPtr intPtr = IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__moonAlpha);
+				return *intPtr;
+			}
+			set
+			{
+				*(IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__moonAlpha)) = value;
+			}
+		}
+
+		// Token: 0x17000807 RID: 2055
+		// (get) Token: 0x060017BC RID: 6076 RVA: 0x000BB16C File Offset: 0x000B936C
+		// (set) Token: 0x060017BD RID: 6077 RVA: 0x0000D8E9 File Offset: 0x0000BAE9
+		public unsafe Texture _sunTexture
+		{
+			get
+			{
+				IntPtr intPtr = IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__sunTexture);
+				IntPtr intPtr2 = *intPtr;
+				return (intPtr2 != 0) ? Il2CppObjectPool.Get<Texture>(intPtr2) : null;
+			}
+			set
+			{
+				IntPtr intPtr = IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IL2CPP.il2cpp_gc_wbarrier_set_field(intPtr, intPtr + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__sunTexture), IL2CPP.Il2CppObjectBaseToPtr(value));
+			}
+		}
+
+		// Token: 0x17000808 RID: 2056
+		// (get) Token: 0x060017BE RID: 6078 RVA: 0x000BB19C File Offset: 0x000B939C
+		// (set) Token: 0x060017BF RID: 6079 RVA: 0x0000D908 File Offset: 0x0000BB08
+		public unsafe Color _sunColor
+		{
+			get
+			{
+				IntPtr intPtr = IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__sunColor);
+				return *intPtr;
+			}
+			set
+			{
+				*(IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__sunColor)) = value;
+			}
+		}
+
+		// Token: 0x17000809 RID: 2057
+		// (get) Token: 0x060017C0 RID: 6080 RVA: 0x000BB1C4 File Offset: 0x000B93C4
+		// (set) Token: 0x060017C1 RID: 6081 RVA: 0x0000D923 File Offset: 0x0000BB23
+		public unsafe float _sunRotationSpeed
+		{
+			get
+			{
+				IntPtr intPtr = IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__sunRotationSpeed);
+				return *intPtr;
+			}
+			set
+			{
+				*(IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__sunRotationSpeed)) = value;
+			}
+		}
+
+		// Token: 0x1700080A RID: 2058
+		// (get) Token: 0x060017C2 RID: 6082 RVA: 0x000BB1EC File Offset: 0x000B93EC
+		// (set) Token: 0x060017C3 RID: 6083 RVA: 0x0000D93E File Offset: 0x0000BB3E
+		public unsafe Vector3 _sunDirection
+		{
+			get
+			{
+				IntPtr intPtr = IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__sunDirection);
+				return *intPtr;
+			}
+			set
+			{
+				*(IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__sunDirection)) = value;
+			}
+		}
+
+		// Token: 0x1700080B RID: 2059
+		// (get) Token: 0x060017C4 RID: 6084 RVA: 0x000BB214 File Offset: 0x000B9414
+		// (set) Token: 0x060017C5 RID: 6085 RVA: 0x0000D959 File Offset: 0x0000BB59
+		public unsafe Matrix4x4 _sunWorldToLocalMatrix
+		{
+			get
+			{
+				IntPtr intPtr = IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__sunWorldToLocalMatrix);
+				return *intPtr;
+			}
+			set
+			{
+				*(IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__sunWorldToLocalMatrix)) = value;
+			}
+		}
+
+		// Token: 0x1700080C RID: 2060
+		// (get) Token: 0x060017C6 RID: 6086 RVA: 0x000BB23C File Offset: 0x000B943C
+		// (set) Token: 0x060017C7 RID: 6087 RVA: 0x0000D974 File Offset: 0x0000BB74
+		public unsafe float _sunSize
+		{
+			get
+			{
+				IntPtr intPtr = IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__sunSize);
+				return *intPtr;
+			}
+			set
+			{
+				*(IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__sunSize)) = value;
+			}
+		}
+
+		// Token: 0x1700080D RID: 2061
+		// (get) Token: 0x060017C8 RID: 6088 RVA: 0x000BB264 File Offset: 0x000B9464
+		// (set) Token: 0x060017C9 RID: 6089 RVA: 0x0000D98F File Offset: 0x0000BB8F
+		public unsafe float _sunEdgeFeathering
+		{
+			get
+			{
+				IntPtr intPtr = IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__sunEdgeFeathering);
+				return *intPtr;
+			}
+			set
+			{
+				*(IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__sunEdgeFeathering)) = value;
+			}
+		}
+
+		// Token: 0x1700080E RID: 2062
+		// (get) Token: 0x060017CA RID: 6090 RVA: 0x000BB28C File Offset: 0x000B948C
+		// (set) Token: 0x060017CB RID: 6091 RVA: 0x0000D9AA File Offset: 0x0000BBAA
+		public unsafe float _sunBloomFilterBoost
+		{
+			get
+			{
+				IntPtr intPtr = IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__sunBloomFilterBoost);
+				return *intPtr;
+			}
+			set
+			{
+				*(IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__sunBloomFilterBoost)) = value;
+			}
+		}
+
+		// Token: 0x1700080F RID: 2063
+		// (get) Token: 0x060017CC RID: 6092 RVA: 0x000BB2B4 File Offset: 0x000B94B4
+		// (set) Token: 0x060017CD RID: 6093 RVA: 0x0000D9C5 File Offset: 0x0000BBC5
+		public unsafe Vector4 _sunSpriteDimensions
+		{
+			get
+			{
+				IntPtr intPtr = IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__sunSpriteDimensions);
+				return *intPtr;
+			}
+			set
+			{
+				*(IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__sunSpriteDimensions)) = value;
+			}
+		}
+
+		// Token: 0x17000810 RID: 2064
+		// (get) Token: 0x060017CE RID: 6094 RVA: 0x000BB2DC File Offset: 0x000B94DC
+		// (set) Token: 0x060017CF RID: 6095 RVA: 0x0000D9E0 File Offset: 0x0000BBE0
+		public unsafe int _sunSpriteItemCount
+		{
+			get
+			{
+				IntPtr intPtr = IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__sunSpriteItemCount);
+				return *intPtr;
+			}
+			set
+			{
+				*(IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__sunSpriteItemCount)) = value;
+			}
+		}
+
+		// Token: 0x17000811 RID: 2065
+		// (get) Token: 0x060017D0 RID: 6096 RVA: 0x000BB304 File Offset: 0x000B9504
+		// (set) Token: 0x060017D1 RID: 6097 RVA: 0x0000D9FB File Offset: 0x0000BBFB
+		public unsafe float _sunSpriteAnimationSpeed
+		{
+			get
+			{
+				IntPtr intPtr = IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__sunSpriteAnimationSpeed);
+				return *intPtr;
+			}
+			set
+			{
+				*(IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__sunSpriteAnimationSpeed)) = value;
+			}
+		}
+
+		// Token: 0x17000812 RID: 2066
+		// (get) Token: 0x060017D2 RID: 6098 RVA: 0x000BB32C File Offset: 0x000B952C
+		// (set) Token: 0x060017D3 RID: 6099 RVA: 0x0000DA16 File Offset: 0x0000BC16
+		public unsafe float _sunAlpha
+		{
+			get
+			{
+				IntPtr intPtr = IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__sunAlpha);
+				return *intPtr;
+			}
+			set
+			{
+				*(IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__sunAlpha)) = value;
+			}
+		}
+
+		// Token: 0x17000813 RID: 2067
+		// (get) Token: 0x060017D4 RID: 6100 RVA: 0x000BB354 File Offset: 0x000B9554
+		// (set) Token: 0x060017D5 RID: 6101 RVA: 0x0000DA31 File Offset: 0x0000BC31
+		public unsafe float _cloudBegin
+		{
+			get
+			{
+				IntPtr intPtr = IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__cloudBegin);
+				return *intPtr;
+			}
+			set
+			{
+				*(IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__cloudBegin)) = value;
+			}
+		}
+
+		// Token: 0x17000814 RID: 2068
+		// (get) Token: 0x060017D6 RID: 6102 RVA: 0x000BB37C File Offset: 0x000B957C
+		// (set) Token: 0x060017D7 RID: 6103 RVA: 0x0000DA4C File Offset: 0x0000BC4C
+		public unsafe float _cloudTextureTiling
+		{
+			get
+			{
+				IntPtr intPtr = IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__cloudTextureTiling);
+				return *intPtr;
+			}
+			set
+			{
+				*(IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__cloudTextureTiling)) = value;
+			}
+		}
+
+		// Token: 0x17000815 RID: 2069
+		// (get) Token: 0x060017D8 RID: 6104 RVA: 0x000BB3A4 File Offset: 0x000B95A4
+		// (set) Token: 0x060017D9 RID: 6105 RVA: 0x0000DA67 File Offset: 0x0000BC67
+		public unsafe Color _cloudColor
+		{
+			get
+			{
+				IntPtr intPtr = IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__cloudColor);
+				return *intPtr;
+			}
+			set
+			{
+				*(IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__cloudColor)) = value;
+			}
+		}
+
+		// Token: 0x17000816 RID: 2070
+		// (get) Token: 0x060017DA RID: 6106 RVA: 0x000BB3CC File Offset: 0x000B95CC
+		// (set) Token: 0x060017DB RID: 6107 RVA: 0x0000DA82 File Offset: 0x0000BC82
+		public unsafe Texture _cloudTexture
+		{
+			get
+			{
+				IntPtr intPtr = IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__cloudTexture);
+				IntPtr intPtr2 = *intPtr;
+				return (intPtr2 != 0) ? Il2CppObjectPool.Get<Texture>(intPtr2) : null;
+			}
+			set
+			{
+				IntPtr intPtr = IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IL2CPP.il2cpp_gc_wbarrier_set_field(intPtr, intPtr + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__cloudTexture), IL2CPP.Il2CppObjectBaseToPtr(value));
+			}
+		}
+
+		// Token: 0x17000817 RID: 2071
+		// (get) Token: 0x060017DC RID: 6108 RVA: 0x000BB3FC File Offset: 0x000B95FC
+		// (set) Token: 0x060017DD RID: 6109 RVA: 0x0000DAA1 File Offset: 0x0000BCA1
+		public unsafe Texture _artCloudCustomTexture
+		{
+			get
+			{
+				IntPtr intPtr = IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__artCloudCustomTexture);
+				IntPtr intPtr2 = *intPtr;
+				return (intPtr2 != 0) ? Il2CppObjectPool.Get<Texture>(intPtr2) : null;
+			}
+			set
+			{
+				IntPtr intPtr = IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IL2CPP.il2cpp_gc_wbarrier_set_field(intPtr, intPtr + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__artCloudCustomTexture), IL2CPP.Il2CppObjectBaseToPtr(value));
+			}
+		}
+
+		// Token: 0x17000818 RID: 2072
+		// (get) Token: 0x060017DE RID: 6110 RVA: 0x000BB42C File Offset: 0x000B962C
+		// (set) Token: 0x060017DF RID: 6111 RVA: 0x0000DAC0 File Offset: 0x0000BCC0
+		public unsafe float _cloudDensity
+		{
+			get
+			{
+				IntPtr intPtr = IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__cloudDensity);
+				return *intPtr;
+			}
+			set
+			{
+				*(IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__cloudDensity)) = value;
+			}
+		}
+
+		// Token: 0x17000819 RID: 2073
+		// (get) Token: 0x060017E0 RID: 6112 RVA: 0x000BB454 File Offset: 0x000B9654
+		// (set) Token: 0x060017E1 RID: 6113 RVA: 0x0000DADB File Offset: 0x0000BCDB
+		public unsafe float _cloudSpeed
+		{
+			get
+			{
+				IntPtr intPtr = IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__cloudSpeed);
+				return *intPtr;
+			}
+			set
+			{
+				*(IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__cloudSpeed)) = value;
+			}
+		}
+
+		// Token: 0x1700081A RID: 2074
+		// (get) Token: 0x060017E2 RID: 6114 RVA: 0x000BB47C File Offset: 0x000B967C
+		// (set) Token: 0x060017E3 RID: 6115 RVA: 0x0000DAF6 File Offset: 0x0000BCF6
+		public unsafe float _cloudDirection
+		{
+			get
+			{
+				IntPtr intPtr = IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__cloudDirection);
+				return *intPtr;
+			}
+			set
+			{
+				*(IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__cloudDirection)) = value;
+			}
+		}
+
+		// Token: 0x1700081B RID: 2075
+		// (get) Token: 0x060017E4 RID: 6116 RVA: 0x000BB4A4 File Offset: 0x000B96A4
+		// (set) Token: 0x060017E5 RID: 6117 RVA: 0x0000DB11 File Offset: 0x0000BD11
+		public unsafe float _cloudHeight
+		{
+			get
+			{
+				IntPtr intPtr = IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__cloudHeight);
+				return *intPtr;
+			}
+			set
+			{
+				*(IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__cloudHeight)) = value;
+			}
+		}
+
+		// Token: 0x1700081C RID: 2076
+		// (get) Token: 0x060017E6 RID: 6118 RVA: 0x000BB4CC File Offset: 0x000B96CC
+		// (set) Token: 0x060017E7 RID: 6119 RVA: 0x0000DB2C File Offset: 0x0000BD2C
+		public unsafe Color _cloudColor1
+		{
+			get
+			{
+				IntPtr intPtr = IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__cloudColor1);
+				return *intPtr;
+			}
+			set
+			{
+				*(IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__cloudColor1)) = value;
+			}
+		}
+
+		// Token: 0x1700081D RID: 2077
+		// (get) Token: 0x060017E8 RID: 6120 RVA: 0x000BB4F4 File Offset: 0x000B96F4
+		// (set) Token: 0x060017E9 RID: 6121 RVA: 0x0000DB47 File Offset: 0x0000BD47
+		public unsafe Color _cloudColor2
+		{
+			get
+			{
+				IntPtr intPtr = IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__cloudColor2);
+				return *intPtr;
+			}
+			set
+			{
+				*(IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__cloudColor2)) = value;
+			}
+		}
+
+		// Token: 0x1700081E RID: 2078
+		// (get) Token: 0x060017EA RID: 6122 RVA: 0x000BB51C File Offset: 0x000B971C
+		// (set) Token: 0x060017EB RID: 6123 RVA: 0x0000DB62 File Offset: 0x0000BD62
+		public unsafe float _cloudFadePosition
+		{
+			get
+			{
+				IntPtr intPtr = IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__cloudFadePosition);
+				return *intPtr;
+			}
+			set
+			{
+				*(IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__cloudFadePosition)) = value;
+			}
+		}
+
+		// Token: 0x1700081F RID: 2079
+		// (get) Token: 0x060017EC RID: 6124 RVA: 0x000BB544 File Offset: 0x000B9744
+		// (set) Token: 0x060017ED RID: 6125 RVA: 0x0000DB7D File Offset: 0x0000BD7D
+		public unsafe float _cloudFadeAmount
+		{
+			get
+			{
+				IntPtr intPtr = IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__cloudFadeAmount);
+				return *intPtr;
+			}
+			set
+			{
+				*(IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__cloudFadeAmount)) = value;
+			}
+		}
+
+		// Token: 0x17000820 RID: 2080
+		// (get) Token: 0x060017EE RID: 6126 RVA: 0x000BB56C File Offset: 0x000B976C
+		// (set) Token: 0x060017EF RID: 6127 RVA: 0x0000DB98 File Offset: 0x0000BD98
+		public unsafe float _cloudAlpha
+		{
+			get
+			{
+				IntPtr intPtr = IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__cloudAlpha);
+				return *intPtr;
+			}
+			set
+			{
+				*(IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__cloudAlpha)) = value;
+			}
+		}
+
+		// Token: 0x17000821 RID: 2081
+		// (get) Token: 0x060017F0 RID: 6128 RVA: 0x000BB594 File Offset: 0x000B9794
+		// (set) Token: 0x060017F1 RID: 6129 RVA: 0x0000DBB3 File Offset: 0x0000BDB3
+		public unsafe Texture _cloudCubemap
+		{
+			get
+			{
+				IntPtr intPtr = IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__cloudCubemap);
+				IntPtr intPtr2 = *intPtr;
+				return (intPtr2 != 0) ? Il2CppObjectPool.Get<Texture>(intPtr2) : null;
+			}
+			set
+			{
+				IntPtr intPtr = IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IL2CPP.il2cpp_gc_wbarrier_set_field(intPtr, intPtr + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__cloudCubemap), IL2CPP.Il2CppObjectBaseToPtr(value));
+			}
+		}
+
+		// Token: 0x17000822 RID: 2082
+		// (get) Token: 0x060017F2 RID: 6130 RVA: 0x000BB5C4 File Offset: 0x000B97C4
+		// (set) Token: 0x060017F3 RID: 6131 RVA: 0x0000DBD2 File Offset: 0x0000BDD2
+		public unsafe float _cloudCubemapRotationSpeed
+		{
+			get
+			{
+				IntPtr intPtr = IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__cloudCubemapRotationSpeed);
+				return *intPtr;
+			}
+			set
+			{
+				*(IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__cloudCubemapRotationSpeed)) = value;
+			}
+		}
+
+		// Token: 0x17000823 RID: 2083
+		// (get) Token: 0x060017F4 RID: 6132 RVA: 0x000BB5EC File Offset: 0x000B97EC
+		// (set) Token: 0x060017F5 RID: 6133 RVA: 0x0000DBED File Offset: 0x0000BDED
+		public unsafe Texture _cloudCubemapDoubleLayerCustomTexture
+		{
+			get
+			{
+				IntPtr intPtr = IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__cloudCubemapDoubleLayerCustomTexture);
+				IntPtr intPtr2 = *intPtr;
+				return (intPtr2 != 0) ? Il2CppObjectPool.Get<Texture>(intPtr2) : null;
+			}
+			set
+			{
+				IntPtr intPtr = IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IL2CPP.il2cpp_gc_wbarrier_set_field(intPtr, intPtr + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__cloudCubemapDoubleLayerCustomTexture), IL2CPP.Il2CppObjectBaseToPtr(value));
+			}
+		}
+
+		// Token: 0x17000824 RID: 2084
+		// (get) Token: 0x060017F6 RID: 6134 RVA: 0x000BB61C File Offset: 0x000B981C
+		// (set) Token: 0x060017F7 RID: 6135 RVA: 0x0000DC0C File Offset: 0x0000BE0C
+		public unsafe float _cloudCubemapDoubleLayerRotationSpeed
+		{
+			get
+			{
+				IntPtr intPtr = IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__cloudCubemapDoubleLayerRotationSpeed);
+				return *intPtr;
+			}
+			set
+			{
+				*(IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__cloudCubemapDoubleLayerRotationSpeed)) = value;
+			}
+		}
+
+		// Token: 0x17000825 RID: 2085
+		// (get) Token: 0x060017F8 RID: 6136 RVA: 0x000BB644 File Offset: 0x000B9844
+		// (set) Token: 0x060017F9 RID: 6137 RVA: 0x0000DC27 File Offset: 0x0000BE27
+		public unsafe float _cloudCubemapDoubleLayerHeight
+		{
+			get
+			{
+				IntPtr intPtr = IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__cloudCubemapDoubleLayerHeight);
+				return *intPtr;
+			}
+			set
+			{
+				*(IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__cloudCubemapDoubleLayerHeight)) = value;
+			}
+		}
+
+		// Token: 0x17000826 RID: 2086
+		// (get) Token: 0x060017FA RID: 6138 RVA: 0x000BB66C File Offset: 0x000B986C
+		// (set) Token: 0x060017FB RID: 6139 RVA: 0x0000DC42 File Offset: 0x0000BE42
+		public unsafe Color _cloudCubemapDoubleLayerTintColor
+		{
+			get
+			{
+				IntPtr intPtr = IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__cloudCubemapDoubleLayerTintColor);
+				return *intPtr;
+			}
+			set
+			{
+				*(IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__cloudCubemapDoubleLayerTintColor)) = value;
+			}
+		}
+
+		// Token: 0x17000827 RID: 2087
+		// (get) Token: 0x060017FC RID: 6140 RVA: 0x000BB694 File Offset: 0x000B9894
+		// (set) Token: 0x060017FD RID: 6141 RVA: 0x0000DC5D File Offset: 0x0000BE5D
+		public unsafe Color _cloudCubemapTintColor
+		{
+			get
+			{
+				IntPtr intPtr = IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__cloudCubemapTintColor);
+				return *intPtr;
+			}
+			set
+			{
+				*(IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__cloudCubemapTintColor)) = value;
+			}
+		}
+
+		// Token: 0x17000828 RID: 2088
+		// (get) Token: 0x060017FE RID: 6142 RVA: 0x000BB6BC File Offset: 0x000B98BC
+		// (set) Token: 0x060017FF RID: 6143 RVA: 0x0000DC78 File Offset: 0x0000BE78
+		public unsafe float _cloudCubemapHeight
+		{
+			get
+			{
+				IntPtr intPtr = IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__cloudCubemapHeight);
+				return *intPtr;
+			}
+			set
+			{
+				*(IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__cloudCubemapHeight)) = value;
+			}
+		}
+
+		// Token: 0x17000829 RID: 2089
+		// (get) Token: 0x06001800 RID: 6144 RVA: 0x000BB6E4 File Offset: 0x000B98E4
+		// (set) Token: 0x06001801 RID: 6145 RVA: 0x0000DC93 File Offset: 0x0000BE93
+		public unsafe Texture _cloudCubemapNormalTexture
+		{
+			get
+			{
+				IntPtr intPtr = IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__cloudCubemapNormalTexture);
+				IntPtr intPtr2 = *intPtr;
+				return (intPtr2 != 0) ? Il2CppObjectPool.Get<Texture>(intPtr2) : null;
+			}
+			set
+			{
+				IntPtr intPtr = IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IL2CPP.il2cpp_gc_wbarrier_set_field(intPtr, intPtr + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__cloudCubemapNormalTexture), IL2CPP.Il2CppObjectBaseToPtr(value));
+			}
+		}
+
+		// Token: 0x1700082A RID: 2090
+		// (get) Token: 0x06001802 RID: 6146 RVA: 0x000BB714 File Offset: 0x000B9914
+		// (set) Token: 0x06001803 RID: 6147 RVA: 0x0000DCB2 File Offset: 0x0000BEB2
+		public unsafe Color _cloudCubemapNormalLitColor
+		{
+			get
+			{
+				IntPtr intPtr = IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__cloudCubemapNormalLitColor);
+				return *intPtr;
+			}
+			set
+			{
+				*(IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__cloudCubemapNormalLitColor)) = value;
+			}
+		}
+
+		// Token: 0x1700082B RID: 2091
+		// (get) Token: 0x06001804 RID: 6148 RVA: 0x000BB73C File Offset: 0x000B993C
+		// (set) Token: 0x06001805 RID: 6149 RVA: 0x0000DCCD File Offset: 0x0000BECD
+		public unsafe Color _cloudCubemapNormalShadowColor
+		{
+			get
+			{
+				IntPtr intPtr = IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__cloudCubemapNormalShadowColor);
+				return *intPtr;
+			}
+			set
+			{
+				*(IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__cloudCubemapNormalShadowColor)) = value;
+			}
+		}
+
+		// Token: 0x1700082C RID: 2092
+		// (get) Token: 0x06001806 RID: 6150 RVA: 0x000BB764 File Offset: 0x000B9964
+		// (set) Token: 0x06001807 RID: 6151 RVA: 0x0000DCE8 File Offset: 0x0000BEE8
+		public unsafe float _cloudCubemapNormalRotationSpeed
+		{
+			get
+			{
+				IntPtr intPtr = IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__cloudCubemapNormalRotationSpeed);
+				return *intPtr;
+			}
+			set
+			{
+				*(IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__cloudCubemapNormalRotationSpeed)) = value;
+			}
+		}
+
+		// Token: 0x1700082D RID: 2093
+		// (get) Token: 0x06001808 RID: 6152 RVA: 0x000BB78C File Offset: 0x000B998C
+		// (set) Token: 0x06001809 RID: 6153 RVA: 0x0000DD03 File Offset: 0x0000BF03
+		public unsafe float _cloudCubemapNormalHeight
+		{
+			get
+			{
+				IntPtr intPtr = IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__cloudCubemapNormalHeight);
+				return *intPtr;
+			}
+			set
+			{
+				*(IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__cloudCubemapNormalHeight)) = value;
+			}
+		}
+
+		// Token: 0x1700082E RID: 2094
+		// (get) Token: 0x0600180A RID: 6154 RVA: 0x000BB7B4 File Offset: 0x000B99B4
+		// (set) Token: 0x0600180B RID: 6155 RVA: 0x0000DD1E File Offset: 0x0000BF1E
+		public unsafe float _cloudCubemapNormalAmbientItensity
+		{
+			get
+			{
+				IntPtr intPtr = IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__cloudCubemapNormalAmbientItensity);
+				return *intPtr;
+			}
+			set
+			{
+				*(IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__cloudCubemapNormalAmbientItensity)) = value;
+			}
+		}
+
+		// Token: 0x1700082F RID: 2095
+		// (get) Token: 0x0600180C RID: 6156 RVA: 0x000BB7DC File Offset: 0x000B99DC
+		// (set) Token: 0x0600180D RID: 6157 RVA: 0x0000DD39 File Offset: 0x0000BF39
+		public unsafe Texture _cloudCubemapNormalDoubleLayerCustomTexture
+		{
+			get
+			{
+				IntPtr intPtr = IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__cloudCubemapNormalDoubleLayerCustomTexture);
+				IntPtr intPtr2 = *intPtr;
+				return (intPtr2 != 0) ? Il2CppObjectPool.Get<Texture>(intPtr2) : null;
+			}
+			set
+			{
+				IntPtr intPtr = IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IL2CPP.il2cpp_gc_wbarrier_set_field(intPtr, intPtr + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__cloudCubemapNormalDoubleLayerCustomTexture), IL2CPP.Il2CppObjectBaseToPtr(value));
+			}
+		}
+
+		// Token: 0x17000830 RID: 2096
+		// (get) Token: 0x0600180E RID: 6158 RVA: 0x000BB80C File Offset: 0x000B9A0C
+		// (set) Token: 0x0600180F RID: 6159 RVA: 0x0000DD58 File Offset: 0x0000BF58
+		public unsafe float _cloudCubemapNormalDoubleLayerRotationSpeed
+		{
+			get
+			{
+				IntPtr intPtr = IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__cloudCubemapNormalDoubleLayerRotationSpeed);
+				return *intPtr;
+			}
+			set
+			{
+				*(IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__cloudCubemapNormalDoubleLayerRotationSpeed)) = value;
+			}
+		}
+
+		// Token: 0x17000831 RID: 2097
+		// (get) Token: 0x06001810 RID: 6160 RVA: 0x000BB834 File Offset: 0x000B9A34
+		// (set) Token: 0x06001811 RID: 6161 RVA: 0x0000DD73 File Offset: 0x0000BF73
+		public unsafe float _cloudCubemapNormalDoubleLayerHeight
+		{
+			get
+			{
+				IntPtr intPtr = IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__cloudCubemapNormalDoubleLayerHeight);
+				return *intPtr;
+			}
+			set
+			{
+				*(IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__cloudCubemapNormalDoubleLayerHeight)) = value;
+			}
+		}
+
+		// Token: 0x17000832 RID: 2098
+		// (get) Token: 0x06001812 RID: 6162 RVA: 0x000BB85C File Offset: 0x000B9A5C
+		// (set) Token: 0x06001813 RID: 6163 RVA: 0x0000DD8E File Offset: 0x0000BF8E
+		public unsafe Color _cloudCubemapNormalDoubleLayerLitColor
+		{
+			get
+			{
+				IntPtr intPtr = IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__cloudCubemapNormalDoubleLayerLitColor);
+				return *intPtr;
+			}
+			set
+			{
+				*(IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__cloudCubemapNormalDoubleLayerLitColor)) = value;
+			}
+		}
+
+		// Token: 0x17000833 RID: 2099
+		// (get) Token: 0x06001814 RID: 6164 RVA: 0x000BB884 File Offset: 0x000B9A84
+		// (set) Token: 0x06001815 RID: 6165 RVA: 0x0000DDA9 File Offset: 0x0000BFA9
+		public unsafe Color _cloudCubemapNormalDoubleLayerShadowColor
+		{
+			get
+			{
+				IntPtr intPtr = IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__cloudCubemapNormalDoubleLayerShadowColor);
+				return *intPtr;
+			}
+			set
+			{
+				*(IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__cloudCubemapNormalDoubleLayerShadowColor)) = value;
+			}
+		}
+
+		// Token: 0x17000834 RID: 2100
+		// (get) Token: 0x06001816 RID: 6166 RVA: 0x000BB8AC File Offset: 0x000B9AAC
+		// (set) Token: 0x06001817 RID: 6167 RVA: 0x0000DDC4 File Offset: 0x0000BFC4
+		public unsafe Vector3 _cloudCubemapNormalLightDirection
+		{
+			get
+			{
+				IntPtr intPtr = IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__cloudCubemapNormalLightDirection);
+				return *intPtr;
+			}
+			set
+			{
+				*(IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__cloudCubemapNormalLightDirection)) = value;
+			}
+		}
+
+		// Token: 0x17000835 RID: 2101
+		// (get) Token: 0x06001818 RID: 6168 RVA: 0x000BB8D4 File Offset: 0x000B9AD4
+		// (set) Token: 0x06001819 RID: 6169 RVA: 0x0000DDDF File Offset: 0x0000BFDF
+		public unsafe Color _fogColor
+		{
+			get
+			{
+				IntPtr intPtr = IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__fogColor);
+				return *intPtr;
+			}
+			set
+			{
+				*(IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__fogColor)) = value;
+			}
+		}
+
+		// Token: 0x17000836 RID: 2102
+		// (get) Token: 0x0600181A RID: 6170 RVA: 0x000BB8FC File Offset: 0x000B9AFC
+		// (set) Token: 0x0600181B RID: 6171 RVA: 0x0000DDFA File Offset: 0x0000BFFA
+		public unsafe float _fogDensity
+		{
+			get
+			{
+				IntPtr intPtr = IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__fogDensity);
+				return *intPtr;
+			}
+			set
+			{
+				*(IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__fogDensity)) = value;
+			}
+		}
+
+		// Token: 0x17000837 RID: 2103
+		// (get) Token: 0x0600181C RID: 6172 RVA: 0x000BB924 File Offset: 0x000B9B24
+		// (set) Token: 0x0600181D RID: 6173 RVA: 0x0000DE15 File Offset: 0x0000C015
+		public unsafe float _fogHeight
+		{
+			get
+			{
+				IntPtr intPtr = IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__fogHeight);
+				return *intPtr;
+			}
+			set
+			{
+				*(IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(SkyMaterialController.NativeFieldInfoPtr__fogHeight)) = value;
+			}
+		}
+
+		// Token: 0x04000E7C RID: 3708
+		private static readonly IntPtr NativeFieldInfoPtr__skyboxMaterial;
+
+		// Token: 0x04000E7D RID: 3709
+		private static readonly IntPtr NativeFieldInfoPtr__skyColor;
+
+		// Token: 0x04000E7E RID: 3710
+		private static readonly IntPtr NativeFieldInfoPtr__skyMiddleColor;
+
+		// Token: 0x04000E7F RID: 3711
+		private static readonly IntPtr NativeFieldInfoPtr__horizonColor;
+
+		// Token: 0x04000E80 RID: 3712
+		private static readonly IntPtr NativeFieldInfoPtr__gradientFadeBegin;
+
+		// Token: 0x04000E81 RID: 3713
+		private static readonly IntPtr NativeFieldInfoPtr__gradientFadeLength;
+
+		// Token: 0x04000E82 RID: 3714
+		private static readonly IntPtr NativeFieldInfoPtr__skyMiddlePosition;
+
+		// Token: 0x04000E83 RID: 3715
+		private static readonly IntPtr NativeFieldInfoPtr__backgroundCubemap;
+
+		// Token: 0x04000E84 RID: 3716
+		private static readonly IntPtr NativeFieldInfoPtr__starFadeBegin;
+
+		// Token: 0x04000E85 RID: 3717
+		private static readonly IntPtr NativeFieldInfoPtr__starFadeLength;
+
+		// Token: 0x04000E86 RID: 3718
+		private static readonly IntPtr NativeFieldInfoPtr__horizonDistanceScale;
+
+		// Token: 0x04000E87 RID: 3719
+		private static readonly IntPtr NativeFieldInfoPtr__starBasicCubemap;
+
+		// Token: 0x04000E88 RID: 3720
+		private static readonly IntPtr NativeFieldInfoPtr__starBasicTwinkleSpeed;
+
+		// Token: 0x04000E89 RID: 3721
+		private static readonly IntPtr NativeFieldInfoPtr__starBasicTwinkleAmount;
+
+		// Token: 0x04000E8A RID: 3722
+		private static readonly IntPtr NativeFieldInfoPtr__starBasicOpacity;
+
+		// Token: 0x04000E8B RID: 3723
+		private static readonly IntPtr NativeFieldInfoPtr__starBasicTintColor;
+
+		// Token: 0x04000E8C RID: 3724
+		private static readonly IntPtr NativeFieldInfoPtr__starBasicExponent;
+
+		// Token: 0x04000E8D RID: 3725
+		private static readonly IntPtr NativeFieldInfoPtr__starBasicIntensity;
+
+		// Token: 0x04000E8E RID: 3726
+		private static readonly IntPtr NativeFieldInfoPtr__starLayer1Texture;
+
+		// Token: 0x04000E8F RID: 3727
+		private static readonly IntPtr NativeFieldInfoPtr__starLayer1DataTexture;
+
+		// Token: 0x04000E90 RID: 3728
+		private static readonly IntPtr NativeFieldInfoPtr__starLayer1Color;
+
+		// Token: 0x04000E91 RID: 3729
+		private static readonly IntPtr NativeFieldInfoPtr__starLayer1MaxRadius;
+
+		// Token: 0x04000E92 RID: 3730
+		private static readonly IntPtr NativeFieldInfoPtr__starLayer1TwinkleAmount;
+
+		// Token: 0x04000E93 RID: 3731
+		private static readonly IntPtr NativeFieldInfoPtr__starLayer1TwinkleSpeed;
+
+		// Token: 0x04000E94 RID: 3732
+		private static readonly IntPtr NativeFieldInfoPtr__starLayer1RotationSpeed;
+
+		// Token: 0x04000E95 RID: 3733
+		private static readonly IntPtr NativeFieldInfoPtr__starLayer1EdgeFeathering;
+
+		// Token: 0x04000E96 RID: 3734
+		private static readonly IntPtr NativeFieldInfoPtr__starLayer1BloomFilterBoost;
+
+		// Token: 0x04000E97 RID: 3735
+		private static readonly IntPtr NativeFieldInfoPtr__starLayer1SpriteDimensions;
+
+		// Token: 0x04000E98 RID: 3736
+		private static readonly IntPtr NativeFieldInfoPtr__starLayer1SpriteItemCount;
+
+		// Token: 0x04000E99 RID: 3737
+		private static readonly IntPtr NativeFieldInfoPtr__starLayer1SpriteAnimationSpeed;
+
+		// Token: 0x04000E9A RID: 3738
+		private static readonly IntPtr NativeFieldInfoPtr__starLayer2Texture;
+
+		// Token: 0x04000E9B RID: 3739
+		private static readonly IntPtr NativeFieldInfoPtr__starLayer2DataTexture;
+
+		// Token: 0x04000E9C RID: 3740
+		private static readonly IntPtr NativeFieldInfoPtr__starLayer2Color;
+
+		// Token: 0x04000E9D RID: 3741
+		private static readonly IntPtr NativeFieldInfoPtr__starLayer2MaxRadius;
+
+		// Token: 0x04000E9E RID: 3742
+		private static readonly IntPtr NativeFieldInfoPtr__starLayer2TwinkleAmount;
+
+		// Token: 0x04000E9F RID: 3743
+		private static readonly IntPtr NativeFieldInfoPtr__starLayer2TwinkleSpeed;
+
+		// Token: 0x04000EA0 RID: 3744
+		private static readonly IntPtr NativeFieldInfoPtr__starLayer2RotationSpeed;
+
+		// Token: 0x04000EA1 RID: 3745
+		private static readonly IntPtr NativeFieldInfoPtr__starLayer2EdgeFeathering;
+
+		// Token: 0x04000EA2 RID: 3746
+		private static readonly IntPtr NativeFieldInfoPtr__starLayer2BloomFilterBoost;
+
+		// Token: 0x04000EA3 RID: 3747
+		private static readonly IntPtr NativeFieldInfoPtr__starLayer2SpriteDimensions;
+
+		// Token: 0x04000EA4 RID: 3748
+		private static readonly IntPtr NativeFieldInfoPtr__starLayer2SpriteItemCount;
+
+		// Token: 0x04000EA5 RID: 3749
+		private static readonly IntPtr NativeFieldInfoPtr__starLayer2SpriteAnimationSpeed;
+
+		// Token: 0x04000EA6 RID: 3750
+		private static readonly IntPtr NativeFieldInfoPtr__starLayer3Texture;
+
+		// Token: 0x04000EA7 RID: 3751
+		private static readonly IntPtr NativeFieldInfoPtr__starLayer3DataTexture;
+
+		// Token: 0x04000EA8 RID: 3752
+		private static readonly IntPtr NativeFieldInfoPtr__starLayer3Color;
+
+		// Token: 0x04000EA9 RID: 3753
+		private static readonly IntPtr NativeFieldInfoPtr__starLayer3MaxRadius;
+
+		// Token: 0x04000EAA RID: 3754
+		private static readonly IntPtr NativeFieldInfoPtr__starLayer3TwinkleAmount;
+
+		// Token: 0x04000EAB RID: 3755
+		private static readonly IntPtr NativeFieldInfoPtr__starLayer3TwinkleSpeed;
+
+		// Token: 0x04000EAC RID: 3756
+		private static readonly IntPtr NativeFieldInfoPtr__starLayer3RotationSpeed;
+
+		// Token: 0x04000EAD RID: 3757
+		private static readonly IntPtr NativeFieldInfoPtr__starLayer3EdgeFeathering;
+
+		// Token: 0x04000EAE RID: 3758
+		private static readonly IntPtr NativeFieldInfoPtr__starLayer3BloomFilterBoost;
+
+		// Token: 0x04000EAF RID: 3759
+		private static readonly IntPtr NativeFieldInfoPtr__starLayer3SpriteDimensions;
+
+		// Token: 0x04000EB0 RID: 3760
+		private static readonly IntPtr NativeFieldInfoPtr__starLayer3SpriteItemCount;
+
+		// Token: 0x04000EB1 RID: 3761
+		private static readonly IntPtr NativeFieldInfoPtr__starLayer3SpriteAnimationSpeed;
+
+		// Token: 0x04000EB2 RID: 3762
+		private static readonly IntPtr NativeFieldInfoPtr__moonTexture;
+
+		// Token: 0x04000EB3 RID: 3763
+		private static readonly IntPtr NativeFieldInfoPtr__moonRotationSpeed;
+
+		// Token: 0x04000EB4 RID: 3764
+		private static readonly IntPtr NativeFieldInfoPtr__moonColor;
+
+		// Token: 0x04000EB5 RID: 3765
+		private static readonly IntPtr NativeFieldInfoPtr__moonDirection;
+
+		// Token: 0x04000EB6 RID: 3766
+		private static readonly IntPtr NativeFieldInfoPtr__moonWorldToLocalMatrix;
+
+		// Token: 0x04000EB7 RID: 3767
+		private static readonly IntPtr NativeFieldInfoPtr__moonSize;
+
+		// Token: 0x04000EB8 RID: 3768
+		private static readonly IntPtr NativeFieldInfoPtr__moonEdgeFeathering;
+
+		// Token: 0x04000EB9 RID: 3769
+		private static readonly IntPtr NativeFieldInfoPtr__moonBloomFilterBoost;
+
+		// Token: 0x04000EBA RID: 3770
+		private static readonly IntPtr NativeFieldInfoPtr__moonSpriteDimensions;
+
+		// Token: 0x04000EBB RID: 3771
+		private static readonly IntPtr NativeFieldInfoPtr__moonSpriteItemCount;
+
+		// Token: 0x04000EBC RID: 3772
+		private static readonly IntPtr NativeFieldInfoPtr__moonSpriteAnimationSpeed;
+
+		// Token: 0x04000EBD RID: 3773
+		private static readonly IntPtr NativeFieldInfoPtr__moonAlpha;
+
+		// Token: 0x04000EBE RID: 3774
+		private static readonly IntPtr NativeFieldInfoPtr__sunTexture;
+
+		// Token: 0x04000EBF RID: 3775
+		private static readonly IntPtr NativeFieldInfoPtr__sunColor;
+
+		// Token: 0x04000EC0 RID: 3776
+		private static readonly IntPtr NativeFieldInfoPtr__sunRotationSpeed;
+
+		// Token: 0x04000EC1 RID: 3777
+		private static readonly IntPtr NativeFieldInfoPtr__sunDirection;
+
+		// Token: 0x04000EC2 RID: 3778
+		private static readonly IntPtr NativeFieldInfoPtr__sunWorldToLocalMatrix;
+
+		// Token: 0x04000EC3 RID: 3779
+		private static readonly IntPtr NativeFieldInfoPtr__sunSize;
+
+		// Token: 0x04000EC4 RID: 3780
+		private static readonly IntPtr NativeFieldInfoPtr__sunEdgeFeathering;
+
+		// Token: 0x04000EC5 RID: 3781
+		private static readonly IntPtr NativeFieldInfoPtr__sunBloomFilterBoost;
+
+		// Token: 0x04000EC6 RID: 3782
+		private static readonly IntPtr NativeFieldInfoPtr__sunSpriteDimensions;
+
+		// Token: 0x04000EC7 RID: 3783
+		private static readonly IntPtr NativeFieldInfoPtr__sunSpriteItemCount;
+
+		// Token: 0x04000EC8 RID: 3784
+		private static readonly IntPtr NativeFieldInfoPtr__sunSpriteAnimationSpeed;
+
+		// Token: 0x04000EC9 RID: 3785
+		private static readonly IntPtr NativeFieldInfoPtr__sunAlpha;
+
+		// Token: 0x04000ECA RID: 3786
+		private static readonly IntPtr NativeFieldInfoPtr__cloudBegin;
+
+		// Token: 0x04000ECB RID: 3787
+		private static readonly IntPtr NativeFieldInfoPtr__cloudTextureTiling;
+
+		// Token: 0x04000ECC RID: 3788
+		private static readonly IntPtr NativeFieldInfoPtr__cloudColor;
+
+		// Token: 0x04000ECD RID: 3789
+		private static readonly IntPtr NativeFieldInfoPtr__cloudTexture;
+
+		// Token: 0x04000ECE RID: 3790
+		private static readonly IntPtr NativeFieldInfoPtr__artCloudCustomTexture;
+
+		// Token: 0x04000ECF RID: 3791
+		private static readonly IntPtr NativeFieldInfoPtr__cloudDensity;
+
+		// Token: 0x04000ED0 RID: 3792
+		private static readonly IntPtr NativeFieldInfoPtr__cloudSpeed;
+
+		// Token: 0x04000ED1 RID: 3793
+		private static readonly IntPtr NativeFieldInfoPtr__cloudDirection;
+
+		// Token: 0x04000ED2 RID: 3794
+		private static readonly IntPtr NativeFieldInfoPtr__cloudHeight;
+
+		// Token: 0x04000ED3 RID: 3795
+		private static readonly IntPtr NativeFieldInfoPtr__cloudColor1;
+
+		// Token: 0x04000ED4 RID: 3796
+		private static readonly IntPtr NativeFieldInfoPtr__cloudColor2;
+
+		// Token: 0x04000ED5 RID: 3797
+		private static readonly IntPtr NativeFieldInfoPtr__cloudFadePosition;
+
+		// Token: 0x04000ED6 RID: 3798
+		private static readonly IntPtr NativeFieldInfoPtr__cloudFadeAmount;
+
+		// Token: 0x04000ED7 RID: 3799
+		private static readonly IntPtr NativeFieldInfoPtr__cloudAlpha;
+
+		// Token: 0x04000ED8 RID: 3800
+		private static readonly IntPtr NativeFieldInfoPtr__cloudCubemap;
+
+		// Token: 0x04000ED9 RID: 3801
+		private static readonly IntPtr NativeFieldInfoPtr__cloudCubemapRotationSpeed;
+
+		// Token: 0x04000EDA RID: 3802
+		private static readonly IntPtr NativeFieldInfoPtr__cloudCubemapDoubleLayerCustomTexture;
+
+		// Token: 0x04000EDB RID: 3803
+		private static readonly IntPtr NativeFieldInfoPtr__cloudCubemapDoubleLayerRotationSpeed;
+
+		// Token: 0x04000EDC RID: 3804
+		private static readonly IntPtr NativeFieldInfoPtr__cloudCubemapDoubleLayerHeight;
+
+		// Token: 0x04000EDD RID: 3805
+		private static readonly IntPtr NativeFieldInfoPtr__cloudCubemapDoubleLayerTintColor;
+
+		// Token: 0x04000EDE RID: 3806
+		private static readonly IntPtr NativeFieldInfoPtr__cloudCubemapTintColor;
+
+		// Token: 0x04000EDF RID: 3807
+		private static readonly IntPtr NativeFieldInfoPtr__cloudCubemapHeight;
+
+		// Token: 0x04000EE0 RID: 3808
+		private static readonly IntPtr NativeFieldInfoPtr__cloudCubemapNormalTexture;
+
+		// Token: 0x04000EE1 RID: 3809
+		private static readonly IntPtr NativeFieldInfoPtr__cloudCubemapNormalLitColor;
+
+		// Token: 0x04000EE2 RID: 3810
+		private static readonly IntPtr NativeFieldInfoPtr__cloudCubemapNormalShadowColor;
+
+		// Token: 0x04000EE3 RID: 3811
+		private static readonly IntPtr NativeFieldInfoPtr__cloudCubemapNormalRotationSpeed;
+
+		// Token: 0x04000EE4 RID: 3812
+		private static readonly IntPtr NativeFieldInfoPtr__cloudCubemapNormalHeight;
+
+		// Token: 0x04000EE5 RID: 3813
+		private static readonly IntPtr NativeFieldInfoPtr__cloudCubemapNormalAmbientItensity;
+
+		// Token: 0x04000EE6 RID: 3814
+		private static readonly IntPtr NativeFieldInfoPtr__cloudCubemapNormalDoubleLayerCustomTexture;
+
+		// Token: 0x04000EE7 RID: 3815
+		private static readonly IntPtr NativeFieldInfoPtr__cloudCubemapNormalDoubleLayerRotationSpeed;
+
+		// Token: 0x04000EE8 RID: 3816
+		private static readonly IntPtr NativeFieldInfoPtr__cloudCubemapNormalDoubleLayerHeight;
+
+		// Token: 0x04000EE9 RID: 3817
+		private static readonly IntPtr NativeFieldInfoPtr__cloudCubemapNormalDoubleLayerLitColor;
+
+		// Token: 0x04000EEA RID: 3818
+		private static readonly IntPtr NativeFieldInfoPtr__cloudCubemapNormalDoubleLayerShadowColor;
+
+		// Token: 0x04000EEB RID: 3819
+		private static readonly IntPtr NativeFieldInfoPtr__cloudCubemapNormalLightDirection;
+
+		// Token: 0x04000EEC RID: 3820
+		private static readonly IntPtr NativeFieldInfoPtr__fogColor;
+
+		// Token: 0x04000EED RID: 3821
+		private static readonly IntPtr NativeFieldInfoPtr__fogDensity;
+
+		// Token: 0x04000EEE RID: 3822
+		private static readonly IntPtr NativeFieldInfoPtr__fogHeight;
+
+		// Token: 0x04000EEF RID: 3823
+		private static readonly IntPtr NativeMethodInfoPtr_get_SkyboxMaterial_Public_get_Material_0;
+
+		// Token: 0x04000EF0 RID: 3824
+		private static readonly IntPtr NativeMethodInfoPtr_set_SkyboxMaterial_Public_set_Void_Material_0;
+
+		// Token: 0x04000EF1 RID: 3825
+		private static readonly IntPtr NativeMethodInfoPtr_get_SkyColor_Public_get_Color_0;
+
+		// Token: 0x04000EF2 RID: 3826
+		private static readonly IntPtr NativeMethodInfoPtr_set_SkyColor_Public_set_Void_Color_0;
+
+		// Token: 0x04000EF3 RID: 3827
+		private static readonly IntPtr NativeMethodInfoPtr_get_SkyMiddleColor_Public_get_Color_0;
+
+		// Token: 0x04000EF4 RID: 3828
+		private static readonly IntPtr NativeMethodInfoPtr_set_SkyMiddleColor_Public_set_Void_Color_0;
+
+		// Token: 0x04000EF5 RID: 3829
+		private static readonly IntPtr NativeMethodInfoPtr_get_HorizonColor_Public_get_Color_0;
+
+		// Token: 0x04000EF6 RID: 3830
+		private static readonly IntPtr NativeMethodInfoPtr_set_HorizonColor_Public_set_Void_Color_0;
+
+		// Token: 0x04000EF7 RID: 3831
+		private static readonly IntPtr NativeMethodInfoPtr_get_GradientFadeBegin_Public_get_Single_0;
+
+		// Token: 0x04000EF8 RID: 3832
+		private static readonly IntPtr NativeMethodInfoPtr_set_GradientFadeBegin_Public_set_Void_Single_0;
+
+		// Token: 0x04000EF9 RID: 3833
+		private static readonly IntPtr NativeMethodInfoPtr_get_GradientFadeLength_Public_get_Single_0;
+
+		// Token: 0x04000EFA RID: 3834
+		private static readonly IntPtr NativeMethodInfoPtr_set_GradientFadeLength_Public_set_Void_Single_0;
+
+		// Token: 0x04000EFB RID: 3835
+		private static readonly IntPtr NativeMethodInfoPtr_get_SkyMiddlePosition_Public_get_Single_0;
+
+		// Token: 0x04000EFC RID: 3836
+		private static readonly IntPtr NativeMethodInfoPtr_set_SkyMiddlePosition_Public_set_Void_Single_0;
+
+		// Token: 0x04000EFD RID: 3837
+		private static readonly IntPtr NativeMethodInfoPtr_get_BackgroundCubemap_Public_get_Cubemap_0;
+
+		// Token: 0x04000EFE RID: 3838
+		private static readonly IntPtr NativeMethodInfoPtr_set_BackgroundCubemap_Public_set_Void_Cubemap_0;
+
+		// Token: 0x04000EFF RID: 3839
+		private static readonly IntPtr NativeMethodInfoPtr_get_StarFadeBegin_Public_get_Single_0;
+
+		// Token: 0x04000F00 RID: 3840
+		private static readonly IntPtr NativeMethodInfoPtr_set_StarFadeBegin_Public_set_Void_Single_0;
+
+		// Token: 0x04000F01 RID: 3841
+		private static readonly IntPtr NativeMethodInfoPtr_get_StarFadeLength_Public_get_Single_0;
+
+		// Token: 0x04000F02 RID: 3842
+		private static readonly IntPtr NativeMethodInfoPtr_set_StarFadeLength_Public_set_Void_Single_0;
+
+		// Token: 0x04000F03 RID: 3843
+		private static readonly IntPtr NativeMethodInfoPtr_get_HorizonDistanceScale_Public_get_Single_0;
+
+		// Token: 0x04000F04 RID: 3844
+		private static readonly IntPtr NativeMethodInfoPtr_set_HorizonDistanceScale_Public_set_Void_Single_0;
+
+		// Token: 0x04000F05 RID: 3845
+		private static readonly IntPtr NativeMethodInfoPtr_get_StarBasicCubemap_Public_get_Texture_0;
+
+		// Token: 0x04000F06 RID: 3846
+		private static readonly IntPtr NativeMethodInfoPtr_set_StarBasicCubemap_Public_set_Void_Texture_0;
+
+		// Token: 0x04000F07 RID: 3847
+		private static readonly IntPtr NativeMethodInfoPtr_get_StarBasicTwinkleSpeed_Public_get_Single_0;
+
+		// Token: 0x04000F08 RID: 3848
+		private static readonly IntPtr NativeMethodInfoPtr_set_StarBasicTwinkleSpeed_Public_set_Void_Single_0;
+
+		// Token: 0x04000F09 RID: 3849
+		private static readonly IntPtr NativeMethodInfoPtr_get_StarBasicTwinkleAmount_Public_get_Single_0;
+
+		// Token: 0x04000F0A RID: 3850
+		private static readonly IntPtr NativeMethodInfoPtr_set_StarBasicTwinkleAmount_Public_set_Void_Single_0;
+
+		// Token: 0x04000F0B RID: 3851
+		private static readonly IntPtr NativeMethodInfoPtr_get_StarBasicOpacity_Public_get_Single_0;
+
+		// Token: 0x04000F0C RID: 3852
+		private static readonly IntPtr NativeMethodInfoPtr_set_StarBasicOpacity_Public_set_Void_Single_0;
+
+		// Token: 0x04000F0D RID: 3853
+		private static readonly IntPtr NativeMethodInfoPtr_get_StarBasicTintColor_Public_get_Color_0;
+
+		// Token: 0x04000F0E RID: 3854
+		private static readonly IntPtr NativeMethodInfoPtr_set_StarBasicTintColor_Public_set_Void_Color_0;
+
+		// Token: 0x04000F0F RID: 3855
+		private static readonly IntPtr NativeMethodInfoPtr_get_StarBasicExponent_Public_get_Single_0;
+
+		// Token: 0x04000F10 RID: 3856
+		private static readonly IntPtr NativeMethodInfoPtr_set_StarBasicExponent_Public_set_Void_Single_0;
+
+		// Token: 0x04000F11 RID: 3857
+		private static readonly IntPtr NativeMethodInfoPtr_get_StarBasicIntensity_Public_get_Single_0;
+
+		// Token: 0x04000F12 RID: 3858
+		private static readonly IntPtr NativeMethodInfoPtr_set_StarBasicIntensity_Public_set_Void_Single_0;
+
+		// Token: 0x04000F13 RID: 3859
+		private static readonly IntPtr NativeMethodInfoPtr_get_StarLayer1Texture_Public_get_Texture_0;
+
+		// Token: 0x04000F14 RID: 3860
+		private static readonly IntPtr NativeMethodInfoPtr_set_StarLayer1Texture_Public_set_Void_Texture_0;
+
+		// Token: 0x04000F15 RID: 3861
+		private static readonly IntPtr NativeMethodInfoPtr_get_StarLayer1DataTexture_Public_get_Texture2D_0;
+
+		// Token: 0x04000F16 RID: 3862
+		private static readonly IntPtr NativeMethodInfoPtr_set_StarLayer1DataTexture_Public_set_Void_Texture2D_0;
+
+		// Token: 0x04000F17 RID: 3863
+		private static readonly IntPtr NativeMethodInfoPtr_get_StarLayer1Color_Public_get_Color_0;
+
+		// Token: 0x04000F18 RID: 3864
+		private static readonly IntPtr NativeMethodInfoPtr_set_StarLayer1Color_Public_set_Void_Color_0;
+
+		// Token: 0x04000F19 RID: 3865
+		private static readonly IntPtr NativeMethodInfoPtr_get_StarLayer1MaxRadius_Public_get_Single_0;
+
+		// Token: 0x04000F1A RID: 3866
+		private static readonly IntPtr NativeMethodInfoPtr_set_StarLayer1MaxRadius_Public_set_Void_Single_0;
+
+		// Token: 0x04000F1B RID: 3867
+		private static readonly IntPtr NativeMethodInfoPtr_get_StarLayer1TwinkleAmount_Public_get_Single_0;
+
+		// Token: 0x04000F1C RID: 3868
+		private static readonly IntPtr NativeMethodInfoPtr_set_StarLayer1TwinkleAmount_Public_set_Void_Single_0;
+
+		// Token: 0x04000F1D RID: 3869
+		private static readonly IntPtr NativeMethodInfoPtr_get_StarLayer1TwinkleSpeed_Public_get_Single_0;
+
+		// Token: 0x04000F1E RID: 3870
+		private static readonly IntPtr NativeMethodInfoPtr_set_StarLayer1TwinkleSpeed_Public_set_Void_Single_0;
+
+		// Token: 0x04000F1F RID: 3871
+		private static readonly IntPtr NativeMethodInfoPtr_get_StarLayer1RotationSpeed_Public_get_Single_0;
+
+		// Token: 0x04000F20 RID: 3872
+		private static readonly IntPtr NativeMethodInfoPtr_set_StarLayer1RotationSpeed_Public_set_Void_Single_0;
+
+		// Token: 0x04000F21 RID: 3873
+		private static readonly IntPtr NativeMethodInfoPtr_get_StarLayer1EdgeFeathering_Public_get_Single_0;
+
+		// Token: 0x04000F22 RID: 3874
+		private static readonly IntPtr NativeMethodInfoPtr_set_StarLayer1EdgeFeathering_Public_set_Void_Single_0;
+
+		// Token: 0x04000F23 RID: 3875
+		private static readonly IntPtr NativeMethodInfoPtr_get_StarLayer1BloomFilterBoost_Public_get_Single_0;
+
+		// Token: 0x04000F24 RID: 3876
+		private static readonly IntPtr NativeMethodInfoPtr_set_StarLayer1BloomFilterBoost_Public_set_Void_Single_0;
+
+		// Token: 0x04000F25 RID: 3877
+		private static readonly IntPtr NativeMethodInfoPtr_SetStarLayer1SpriteDimensions_Public_Void_Int32_Int32_0;
+
+		// Token: 0x04000F26 RID: 3878
+		private static readonly IntPtr NativeMethodInfoPtr_GetStarLayer1SpriteDimensions_Public_Vector2_0;
+
+		// Token: 0x04000F27 RID: 3879
+		private static readonly IntPtr NativeMethodInfoPtr_get_StarLayer1SpriteItemCount_Public_get_Int32_0;
+
+		// Token: 0x04000F28 RID: 3880
+		private static readonly IntPtr NativeMethodInfoPtr_set_StarLayer1SpriteItemCount_Public_set_Void_Int32_0;
+
+		// Token: 0x04000F29 RID: 3881
+		private static readonly IntPtr NativeMethodInfoPtr_get_StarLayer1SpriteAnimationSpeed_Public_get_Single_0;
+
+		// Token: 0x04000F2A RID: 3882
+		private static readonly IntPtr NativeMethodInfoPtr_set_StarLayer1SpriteAnimationSpeed_Public_set_Void_Single_0;
+
+		// Token: 0x04000F2B RID: 3883
+		private static readonly IntPtr NativeMethodInfoPtr_get_StarLayer2Texture_Public_get_Texture_0;
+
+		// Token: 0x04000F2C RID: 3884
+		private static readonly IntPtr NativeMethodInfoPtr_set_StarLayer2Texture_Public_set_Void_Texture_0;
+
+		// Token: 0x04000F2D RID: 3885
+		private static readonly IntPtr NativeMethodInfoPtr_get_StarLayer2DataTexture_Public_get_Texture2D_0;
+
+		// Token: 0x04000F2E RID: 3886
+		private static readonly IntPtr NativeMethodInfoPtr_set_StarLayer2DataTexture_Public_set_Void_Texture2D_0;
+
+		// Token: 0x04000F2F RID: 3887
+		private static readonly IntPtr NativeMethodInfoPtr_get_StarLayer2Color_Public_get_Color_0;
+
+		// Token: 0x04000F30 RID: 3888
+		private static readonly IntPtr NativeMethodInfoPtr_set_StarLayer2Color_Public_set_Void_Color_0;
+
+		// Token: 0x04000F31 RID: 3889
+		private static readonly IntPtr NativeMethodInfoPtr_get_StarLayer2MaxRadius_Public_get_Single_0;
+
+		// Token: 0x04000F32 RID: 3890
+		private static readonly IntPtr NativeMethodInfoPtr_set_StarLayer2MaxRadius_Public_set_Void_Single_0;
+
+		// Token: 0x04000F33 RID: 3891
+		private static readonly IntPtr NativeMethodInfoPtr_get_StarLayer2TwinkleAmount_Public_get_Single_0;
+
+		// Token: 0x04000F34 RID: 3892
+		private static readonly IntPtr NativeMethodInfoPtr_set_StarLayer2TwinkleAmount_Public_set_Void_Single_0;
+
+		// Token: 0x04000F35 RID: 3893
+		private static readonly IntPtr NativeMethodInfoPtr_get_StarLayer2TwinkleSpeed_Public_get_Single_0;
+
+		// Token: 0x04000F36 RID: 3894
+		private static readonly IntPtr NativeMethodInfoPtr_set_StarLayer2TwinkleSpeed_Public_set_Void_Single_0;
+
+		// Token: 0x04000F37 RID: 3895
+		private static readonly IntPtr NativeMethodInfoPtr_get_StarLayer2RotationSpeed_Public_get_Single_0;
+
+		// Token: 0x04000F38 RID: 3896
+		private static readonly IntPtr NativeMethodInfoPtr_set_StarLayer2RotationSpeed_Public_set_Void_Single_0;
+
+		// Token: 0x04000F39 RID: 3897
+		private static readonly IntPtr NativeMethodInfoPtr_get_StarLayer2EdgeFeathering_Public_get_Single_0;
+
+		// Token: 0x04000F3A RID: 3898
+		private static readonly IntPtr NativeMethodInfoPtr_set_StarLayer2EdgeFeathering_Public_set_Void_Single_0;
+
+		// Token: 0x04000F3B RID: 3899
+		private static readonly IntPtr NativeMethodInfoPtr_get_StarLayer2BloomFilterBoost_Public_get_Single_0;
+
+		// Token: 0x04000F3C RID: 3900
+		private static readonly IntPtr NativeMethodInfoPtr_set_StarLayer2BloomFilterBoost_Public_set_Void_Single_0;
+
+		// Token: 0x04000F3D RID: 3901
+		private static readonly IntPtr NativeMethodInfoPtr_SetStarLayer2SpriteDimensions_Public_Void_Int32_Int32_0;
+
+		// Token: 0x04000F3E RID: 3902
+		private static readonly IntPtr NativeMethodInfoPtr_GetStarLayer2SpriteDimensions_Public_Vector2_0;
+
+		// Token: 0x04000F3F RID: 3903
+		private static readonly IntPtr NativeMethodInfoPtr_get_StarLayer2SpriteItemCount_Public_get_Int32_0;
+
+		// Token: 0x04000F40 RID: 3904
+		private static readonly IntPtr NativeMethodInfoPtr_set_StarLayer2SpriteItemCount_Public_set_Void_Int32_0;
+
+		// Token: 0x04000F41 RID: 3905
+		private static readonly IntPtr NativeMethodInfoPtr_get_StarLayer2SpriteAnimationSpeed_Public_get_Single_0;
+
+		// Token: 0x04000F42 RID: 3906
+		private static readonly IntPtr NativeMethodInfoPtr_set_StarLayer2SpriteAnimationSpeed_Public_set_Void_Single_0;
+
+		// Token: 0x04000F43 RID: 3907
+		private static readonly IntPtr NativeMethodInfoPtr_get_StarLayer3Texture_Public_get_Texture_0;
+
+		// Token: 0x04000F44 RID: 3908
+		private static readonly IntPtr NativeMethodInfoPtr_set_StarLayer3Texture_Public_set_Void_Texture_0;
+
+		// Token: 0x04000F45 RID: 3909
+		private static readonly IntPtr NativeMethodInfoPtr_get_StarLayer3DataTexture_Public_get_Texture2D_0;
+
+		// Token: 0x04000F46 RID: 3910
+		private static readonly IntPtr NativeMethodInfoPtr_set_StarLayer3DataTexture_Public_set_Void_Texture2D_0;
+
+		// Token: 0x04000F47 RID: 3911
+		private static readonly IntPtr NativeMethodInfoPtr_get_StarLayer3Color_Public_get_Color_0;
+
+		// Token: 0x04000F48 RID: 3912
+		private static readonly IntPtr NativeMethodInfoPtr_set_StarLayer3Color_Public_set_Void_Color_0;
+
+		// Token: 0x04000F49 RID: 3913
+		private static readonly IntPtr NativeMethodInfoPtr_get_StarLayer3MaxRadius_Public_get_Single_0;
+
+		// Token: 0x04000F4A RID: 3914
+		private static readonly IntPtr NativeMethodInfoPtr_set_StarLayer3MaxRadius_Public_set_Void_Single_0;
+
+		// Token: 0x04000F4B RID: 3915
+		private static readonly IntPtr NativeMethodInfoPtr_get_StarLayer3TwinkleAmount_Public_get_Single_0;
+
+		// Token: 0x04000F4C RID: 3916
+		private static readonly IntPtr NativeMethodInfoPtr_set_StarLayer3TwinkleAmount_Public_set_Void_Single_0;
+
+		// Token: 0x04000F4D RID: 3917
+		private static readonly IntPtr NativeMethodInfoPtr_get_StarLayer3TwinkleSpeed_Public_get_Single_0;
+
+		// Token: 0x04000F4E RID: 3918
+		private static readonly IntPtr NativeMethodInfoPtr_set_StarLayer3TwinkleSpeed_Public_set_Void_Single_0;
+
+		// Token: 0x04000F4F RID: 3919
+		private static readonly IntPtr NativeMethodInfoPtr_get_StarLayer3RotationSpeed_Public_get_Single_0;
+
+		// Token: 0x04000F50 RID: 3920
+		private static readonly IntPtr NativeMethodInfoPtr_set_StarLayer3RotationSpeed_Public_set_Void_Single_0;
+
+		// Token: 0x04000F51 RID: 3921
+		private static readonly IntPtr NativeMethodInfoPtr_get_StarLayer3EdgeFeathering_Public_get_Single_0;
+
+		// Token: 0x04000F52 RID: 3922
+		private static readonly IntPtr NativeMethodInfoPtr_set_StarLayer3EdgeFeathering_Public_set_Void_Single_0;
+
+		// Token: 0x04000F53 RID: 3923
+		private static readonly IntPtr NativeMethodInfoPtr_get_StarLayer3BloomFilterBoost_Public_get_Single_0;
+
+		// Token: 0x04000F54 RID: 3924
+		private static readonly IntPtr NativeMethodInfoPtr_set_StarLayer3BloomFilterBoost_Public_set_Void_Single_0;
+
+		// Token: 0x04000F55 RID: 3925
+		private static readonly IntPtr NativeMethodInfoPtr_SetStarLayer3SpriteDimensions_Public_Void_Int32_Int32_0;
+
+		// Token: 0x04000F56 RID: 3926
+		private static readonly IntPtr NativeMethodInfoPtr_GetStarLayer3SpriteDimensions_Public_Vector2_0;
+
+		// Token: 0x04000F57 RID: 3927
+		private static readonly IntPtr NativeMethodInfoPtr_get_StarLayer3SpriteItemCount_Public_get_Int32_0;
+
+		// Token: 0x04000F58 RID: 3928
+		private static readonly IntPtr NativeMethodInfoPtr_set_StarLayer3SpriteItemCount_Public_set_Void_Int32_0;
+
+		// Token: 0x04000F59 RID: 3929
+		private static readonly IntPtr NativeMethodInfoPtr_get_StarLayer3SpriteAnimationSpeed_Public_get_Single_0;
+
+		// Token: 0x04000F5A RID: 3930
+		private static readonly IntPtr NativeMethodInfoPtr_set_StarLayer3SpriteAnimationSpeed_Public_set_Void_Single_0;
+
+		// Token: 0x04000F5B RID: 3931
+		private static readonly IntPtr NativeMethodInfoPtr_get_MoonTexture_Public_get_Texture_0;
+
+		// Token: 0x04000F5C RID: 3932
+		private static readonly IntPtr NativeMethodInfoPtr_set_MoonTexture_Public_set_Void_Texture_0;
+
+		// Token: 0x04000F5D RID: 3933
+		private static readonly IntPtr NativeMethodInfoPtr_get_MoonRotationSpeed_Public_get_Single_0;
+
+		// Token: 0x04000F5E RID: 3934
+		private static readonly IntPtr NativeMethodInfoPtr_set_MoonRotationSpeed_Public_set_Void_Single_0;
+
+		// Token: 0x04000F5F RID: 3935
+		private static readonly IntPtr NativeMethodInfoPtr_get_MoonColor_Public_get_Color_0;
+
+		// Token: 0x04000F60 RID: 3936
+		private static readonly IntPtr NativeMethodInfoPtr_set_MoonColor_Public_set_Void_Color_0;
+
+		// Token: 0x04000F61 RID: 3937
+		private static readonly IntPtr NativeMethodInfoPtr_get_MoonDirection_Public_get_Vector3_0;
+
+		// Token: 0x04000F62 RID: 3938
+		private static readonly IntPtr NativeMethodInfoPtr_set_MoonDirection_Public_set_Void_Vector3_0;
+
+		// Token: 0x04000F63 RID: 3939
+		private static readonly IntPtr NativeMethodInfoPtr_get_MoonWorldToLocalMatrix_Public_get_Matrix4x4_0;
+
+		// Token: 0x04000F64 RID: 3940
+		private static readonly IntPtr NativeMethodInfoPtr_set_MoonWorldToLocalMatrix_Public_set_Void_Matrix4x4_0;
+
+		// Token: 0x04000F65 RID: 3941
+		private static readonly IntPtr NativeMethodInfoPtr_get_MoonSize_Public_get_Single_0;
+
+		// Token: 0x04000F66 RID: 3942
+		private static readonly IntPtr NativeMethodInfoPtr_set_MoonSize_Public_set_Void_Single_0;
+
+		// Token: 0x04000F67 RID: 3943
+		private static readonly IntPtr NativeMethodInfoPtr_get_MoonEdgeFeathering_Public_get_Single_0;
+
+		// Token: 0x04000F68 RID: 3944
+		private static readonly IntPtr NativeMethodInfoPtr_set_MoonEdgeFeathering_Public_set_Void_Single_0;
+
+		// Token: 0x04000F69 RID: 3945
+		private static readonly IntPtr NativeMethodInfoPtr_get_MoonBloomFilterBoost_Public_get_Single_0;
+
+		// Token: 0x04000F6A RID: 3946
+		private static readonly IntPtr NativeMethodInfoPtr_set_MoonBloomFilterBoost_Public_set_Void_Single_0;
+
+		// Token: 0x04000F6B RID: 3947
+		private static readonly IntPtr NativeMethodInfoPtr_SetMoonSpriteDimensions_Public_Void_Int32_Int32_0;
+
+		// Token: 0x04000F6C RID: 3948
+		private static readonly IntPtr NativeMethodInfoPtr_GetMoonSpriteDimensions_Public_Vector2_0;
+
+		// Token: 0x04000F6D RID: 3949
+		private static readonly IntPtr NativeMethodInfoPtr_get_MoonSpriteItemCount_Public_get_Int32_0;
+
+		// Token: 0x04000F6E RID: 3950
+		private static readonly IntPtr NativeMethodInfoPtr_set_MoonSpriteItemCount_Public_set_Void_Int32_0;
+
+		// Token: 0x04000F6F RID: 3951
+		private static readonly IntPtr NativeMethodInfoPtr_get_MoonSpriteAnimationSpeed_Public_get_Single_0;
+
+		// Token: 0x04000F70 RID: 3952
+		private static readonly IntPtr NativeMethodInfoPtr_set_MoonSpriteAnimationSpeed_Public_set_Void_Single_0;
+
+		// Token: 0x04000F71 RID: 3953
+		private static readonly IntPtr NativeMethodInfoPtr_get_MoonAlpha_Public_get_Single_0;
+
+		// Token: 0x04000F72 RID: 3954
+		private static readonly IntPtr NativeMethodInfoPtr_set_MoonAlpha_Public_set_Void_Single_0;
+
+		// Token: 0x04000F73 RID: 3955
+		private static readonly IntPtr NativeMethodInfoPtr_get_SunTexture_Public_get_Texture_0;
+
+		// Token: 0x04000F74 RID: 3956
+		private static readonly IntPtr NativeMethodInfoPtr_set_SunTexture_Public_set_Void_Texture_0;
+
+		// Token: 0x04000F75 RID: 3957
+		private static readonly IntPtr NativeMethodInfoPtr_get_SunColor_Public_get_Color_0;
+
+		// Token: 0x04000F76 RID: 3958
+		private static readonly IntPtr NativeMethodInfoPtr_set_SunColor_Public_set_Void_Color_0;
+
+		// Token: 0x04000F77 RID: 3959
+		private static readonly IntPtr NativeMethodInfoPtr_get_SunRotationSpeed_Public_get_Single_0;
+
+		// Token: 0x04000F78 RID: 3960
+		private static readonly IntPtr NativeMethodInfoPtr_set_SunRotationSpeed_Public_set_Void_Single_0;
+
+		// Token: 0x04000F79 RID: 3961
+		private static readonly IntPtr NativeMethodInfoPtr_get_SunDirection_Public_get_Vector3_0;
+
+		// Token: 0x04000F7A RID: 3962
+		private static readonly IntPtr NativeMethodInfoPtr_set_SunDirection_Public_set_Void_Vector3_0;
+
+		// Token: 0x04000F7B RID: 3963
+		private static readonly IntPtr NativeMethodInfoPtr_get_SunWorldToLocalMatrix_Public_get_Matrix4x4_0;
+
+		// Token: 0x04000F7C RID: 3964
+		private static readonly IntPtr NativeMethodInfoPtr_set_SunWorldToLocalMatrix_Public_set_Void_Matrix4x4_0;
+
+		// Token: 0x04000F7D RID: 3965
+		private static readonly IntPtr NativeMethodInfoPtr_get_SunSize_Public_get_Single_0;
+
+		// Token: 0x04000F7E RID: 3966
+		private static readonly IntPtr NativeMethodInfoPtr_set_SunSize_Public_set_Void_Single_0;
+
+		// Token: 0x04000F7F RID: 3967
+		private static readonly IntPtr NativeMethodInfoPtr_get_SunEdgeFeathering_Public_get_Single_0;
+
+		// Token: 0x04000F80 RID: 3968
+		private static readonly IntPtr NativeMethodInfoPtr_set_SunEdgeFeathering_Public_set_Void_Single_0;
+
+		// Token: 0x04000F81 RID: 3969
+		private static readonly IntPtr NativeMethodInfoPtr_get_SunBloomFilterBoost_Public_get_Single_0;
+
+		// Token: 0x04000F82 RID: 3970
+		private static readonly IntPtr NativeMethodInfoPtr_set_SunBloomFilterBoost_Public_set_Void_Single_0;
+
+		// Token: 0x04000F83 RID: 3971
+		private static readonly IntPtr NativeMethodInfoPtr_SetSunSpriteDimensions_Public_Void_Int32_Int32_0;
+
+		// Token: 0x04000F84 RID: 3972
+		private static readonly IntPtr NativeMethodInfoPtr_GetSunSpriteDimensions_Public_Vector2_0;
+
+		// Token: 0x04000F85 RID: 3973
+		private static readonly IntPtr NativeMethodInfoPtr_get_SunSpriteItemCount_Public_get_Int32_0;
+
+		// Token: 0x04000F86 RID: 3974
+		private static readonly IntPtr NativeMethodInfoPtr_set_SunSpriteItemCount_Public_set_Void_Int32_0;
+
+		// Token: 0x04000F87 RID: 3975
+		private static readonly IntPtr NativeMethodInfoPtr_get_SunSpriteAnimationSpeed_Public_get_Single_0;
+
+		// Token: 0x04000F88 RID: 3976
+		private static readonly IntPtr NativeMethodInfoPtr_set_SunSpriteAnimationSpeed_Public_set_Void_Single_0;
+
+		// Token: 0x04000F89 RID: 3977
+		private static readonly IntPtr NativeMethodInfoPtr_get_SunAlpha_Public_get_Single_0;
+
+		// Token: 0x04000F8A RID: 3978
+		private static readonly IntPtr NativeMethodInfoPtr_set_SunAlpha_Public_set_Void_Single_0;
+
+		// Token: 0x04000F8B RID: 3979
+		private static readonly IntPtr NativeMethodInfoPtr_get_CloudBegin_Public_get_Single_0;
+
+		// Token: 0x04000F8C RID: 3980
+		private static readonly IntPtr NativeMethodInfoPtr_set_CloudBegin_Public_set_Void_Single_0;
+
+		// Token: 0x04000F8D RID: 3981
+		private static readonly IntPtr NativeMethodInfoPtr_get_CloudTextureTiling_Public_get_Single_0;
+
+		// Token: 0x04000F8E RID: 3982
+		private static readonly IntPtr NativeMethodInfoPtr_set_CloudTextureTiling_Public_set_Void_Single_0;
+
+		// Token: 0x04000F8F RID: 3983
+		private static readonly IntPtr NativeMethodInfoPtr_get_CloudColor_Public_get_Color_0;
+
+		// Token: 0x04000F90 RID: 3984
+		private static readonly IntPtr NativeMethodInfoPtr_set_CloudColor_Public_set_Void_Color_0;
+
+		// Token: 0x04000F91 RID: 3985
+		private static readonly IntPtr NativeMethodInfoPtr_get_CloudTexture_Public_get_Texture_0;
+
+		// Token: 0x04000F92 RID: 3986
+		private static readonly IntPtr NativeMethodInfoPtr_set_CloudTexture_Public_set_Void_Texture_0;
+
+		// Token: 0x04000F93 RID: 3987
+		private static readonly IntPtr NativeMethodInfoPtr_get_ArtCloudCustomTexture_Public_get_Texture_0;
+
+		// Token: 0x04000F94 RID: 3988
+		private static readonly IntPtr NativeMethodInfoPtr_set_ArtCloudCustomTexture_Public_set_Void_Texture_0;
+
+		// Token: 0x04000F95 RID: 3989
+		private static readonly IntPtr NativeMethodInfoPtr_get_CloudDensity_Public_get_Single_0;
+
+		// Token: 0x04000F96 RID: 3990
+		private static readonly IntPtr NativeMethodInfoPtr_set_CloudDensity_Public_set_Void_Single_0;
+
+		// Token: 0x04000F97 RID: 3991
+		private static readonly IntPtr NativeMethodInfoPtr_get_CloudSpeed_Public_get_Single_0;
+
+		// Token: 0x04000F98 RID: 3992
+		private static readonly IntPtr NativeMethodInfoPtr_set_CloudSpeed_Public_set_Void_Single_0;
+
+		// Token: 0x04000F99 RID: 3993
+		private static readonly IntPtr NativeMethodInfoPtr_get_CloudDirection_Public_get_Single_0;
+
+		// Token: 0x04000F9A RID: 3994
+		private static readonly IntPtr NativeMethodInfoPtr_set_CloudDirection_Public_set_Void_Single_0;
+
+		// Token: 0x04000F9B RID: 3995
+		private static readonly IntPtr NativeMethodInfoPtr_get_CloudHeight_Public_get_Single_0;
+
+		// Token: 0x04000F9C RID: 3996
+		private static readonly IntPtr NativeMethodInfoPtr_set_CloudHeight_Public_set_Void_Single_0;
+
+		// Token: 0x04000F9D RID: 3997
+		private static readonly IntPtr NativeMethodInfoPtr_get_CloudColor1_Public_get_Color_0;
+
+		// Token: 0x04000F9E RID: 3998
+		private static readonly IntPtr NativeMethodInfoPtr_set_CloudColor1_Public_set_Void_Color_0;
+
+		// Token: 0x04000F9F RID: 3999
+		private static readonly IntPtr NativeMethodInfoPtr_get_CloudColor2_Public_get_Color_0;
+
+		// Token: 0x04000FA0 RID: 4000
+		private static readonly IntPtr NativeMethodInfoPtr_set_CloudColor2_Public_set_Void_Color_0;
+
+		// Token: 0x04000FA1 RID: 4001
+		private static readonly IntPtr NativeMethodInfoPtr_get_CloudFadePosition_Public_get_Single_0;
+
+		// Token: 0x04000FA2 RID: 4002
+		private static readonly IntPtr NativeMethodInfoPtr_set_CloudFadePosition_Public_set_Void_Single_0;
+
+		// Token: 0x04000FA3 RID: 4003
+		private static readonly IntPtr NativeMethodInfoPtr_get_CloudFadeAmount_Public_get_Single_0;
+
+		// Token: 0x04000FA4 RID: 4004
+		private static readonly IntPtr NativeMethodInfoPtr_set_CloudFadeAmount_Public_set_Void_Single_0;
+
+		// Token: 0x04000FA5 RID: 4005
+		private static readonly IntPtr NativeMethodInfoPtr_get_CloudAlpha_Public_get_Single_0;
+
+		// Token: 0x04000FA6 RID: 4006
+		private static readonly IntPtr NativeMethodInfoPtr_set_CloudAlpha_Public_set_Void_Single_0;
+
+		// Token: 0x04000FA7 RID: 4007
+		private static readonly IntPtr NativeMethodInfoPtr_get_CloudCubemap_Public_get_Texture_0;
+
+		// Token: 0x04000FA8 RID: 4008
+		private static readonly IntPtr NativeMethodInfoPtr_set_CloudCubemap_Public_set_Void_Texture_0;
+
+		// Token: 0x04000FA9 RID: 4009
+		private static readonly IntPtr NativeMethodInfoPtr_get_CloudCubemapRotationSpeed_Public_get_Single_0;
+
+		// Token: 0x04000FAA RID: 4010
+		private static readonly IntPtr NativeMethodInfoPtr_set_CloudCubemapRotationSpeed_Public_set_Void_Single_0;
+
+		// Token: 0x04000FAB RID: 4011
+		private static readonly IntPtr NativeMethodInfoPtr_get_CloudCubemapDoubleLayerCustomTexture_Public_get_Texture_0;
+
+		// Token: 0x04000FAC RID: 4012
+		private static readonly IntPtr NativeMethodInfoPtr_set_CloudCubemapDoubleLayerCustomTexture_Public_set_Void_Texture_0;
+
+		// Token: 0x04000FAD RID: 4013
+		private static readonly IntPtr NativeMethodInfoPtr_get_CloudCubemapDoubleLayerRotationSpeed_Public_get_Single_0;
+
+		// Token: 0x04000FAE RID: 4014
+		private static readonly IntPtr NativeMethodInfoPtr_set_CloudCubemapDoubleLayerRotationSpeed_Public_set_Void_Single_0;
+
+		// Token: 0x04000FAF RID: 4015
+		private static readonly IntPtr NativeMethodInfoPtr_get_CloudCubemapDoubleLayerHeight_Public_get_Single_0;
+
+		// Token: 0x04000FB0 RID: 4016
+		private static readonly IntPtr NativeMethodInfoPtr_set_CloudCubemapDoubleLayerHeight_Public_set_Void_Single_0;
+
+		// Token: 0x04000FB1 RID: 4017
+		private static readonly IntPtr NativeMethodInfoPtr_get_CloudCubemapDoubleLayerTintColor_Public_get_Color_0;
+
+		// Token: 0x04000FB2 RID: 4018
+		private static readonly IntPtr NativeMethodInfoPtr_set_CloudCubemapDoubleLayerTintColor_Public_set_Void_Color_0;
+
+		// Token: 0x04000FB3 RID: 4019
+		private static readonly IntPtr NativeMethodInfoPtr_get_CloudCubemapTintColor_Public_get_Color_0;
+
+		// Token: 0x04000FB4 RID: 4020
+		private static readonly IntPtr NativeMethodInfoPtr_set_CloudCubemapTintColor_Public_set_Void_Color_0;
+
+		// Token: 0x04000FB5 RID: 4021
+		private static readonly IntPtr NativeMethodInfoPtr_get_CloudCubemapHeight_Public_get_Single_0;
+
+		// Token: 0x04000FB6 RID: 4022
+		private static readonly IntPtr NativeMethodInfoPtr_set_CloudCubemapHeight_Public_set_Void_Single_0;
+
+		// Token: 0x04000FB7 RID: 4023
+		private static readonly IntPtr NativeMethodInfoPtr_get_CloudCubemapNormalTexture_Public_get_Texture_0;
+
+		// Token: 0x04000FB8 RID: 4024
+		private static readonly IntPtr NativeMethodInfoPtr_set_CloudCubemapNormalTexture_Public_set_Void_Texture_0;
+
+		// Token: 0x04000FB9 RID: 4025
+		private static readonly IntPtr NativeMethodInfoPtr_get_CloudCubemapNormalLitColor_Public_get_Color_0;
+
+		// Token: 0x04000FBA RID: 4026
+		private static readonly IntPtr NativeMethodInfoPtr_set_CloudCubemapNormalLitColor_Public_set_Void_Color_0;
+
+		// Token: 0x04000FBB RID: 4027
+		private static readonly IntPtr NativeMethodInfoPtr_get_CloudCubemapNormalShadowColor_Public_get_Color_0;
+
+		// Token: 0x04000FBC RID: 4028
+		private static readonly IntPtr NativeMethodInfoPtr_set_CloudCubemapNormalShadowColor_Public_set_Void_Color_0;
+
+		// Token: 0x04000FBD RID: 4029
+		private static readonly IntPtr NativeMethodInfoPtr_get_CloudCubemapNormalRotationSpeed_Public_get_Single_0;
+
+		// Token: 0x04000FBE RID: 4030
+		private static readonly IntPtr NativeMethodInfoPtr_set_CloudCubemapNormalRotationSpeed_Public_set_Void_Single_0;
+
+		// Token: 0x04000FBF RID: 4031
+		private static readonly IntPtr NativeMethodInfoPtr_get_CloudCubemapNormalHeight_Public_get_Single_0;
+
+		// Token: 0x04000FC0 RID: 4032
+		private static readonly IntPtr NativeMethodInfoPtr_set_CloudCubemapNormalHeight_Public_set_Void_Single_0;
+
+		// Token: 0x04000FC1 RID: 4033
+		private static readonly IntPtr NativeMethodInfoPtr_get_CloudCubemapNormalAmbientIntensity_Public_get_Single_0;
+
+		// Token: 0x04000FC2 RID: 4034
+		private static readonly IntPtr NativeMethodInfoPtr_set_CloudCubemapNormalAmbientIntensity_Public_set_Void_Single_0;
+
+		// Token: 0x04000FC3 RID: 4035
+		private static readonly IntPtr NativeMethodInfoPtr_get_CloudCubemapNormalDoubleLayerCustomTexture_Public_get_Texture_0;
+
+		// Token: 0x04000FC4 RID: 4036
+		private static readonly IntPtr NativeMethodInfoPtr_set_CloudCubemapNormalDoubleLayerCustomTexture_Public_set_Void_Texture_0;
+
+		// Token: 0x04000FC5 RID: 4037
+		private static readonly IntPtr NativeMethodInfoPtr_get_CloudCubemapNormalDoubleLayerRotationSpeed_Public_get_Single_0;
+
+		// Token: 0x04000FC6 RID: 4038
+		private static readonly IntPtr NativeMethodInfoPtr_set_CloudCubemapNormalDoubleLayerRotationSpeed_Public_set_Void_Single_0;
+
+		// Token: 0x04000FC7 RID: 4039
+		private static readonly IntPtr NativeMethodInfoPtr_get_CloudCubemapNormalDoubleLayerHeight_Public_get_Single_0;
+
+		// Token: 0x04000FC8 RID: 4040
+		private static readonly IntPtr NativeMethodInfoPtr_set_CloudCubemapNormalDoubleLayerHeight_Public_set_Void_Single_0;
+
+		// Token: 0x04000FC9 RID: 4041
+		private static readonly IntPtr NativeMethodInfoPtr_get_CloudCubemapNormalDoubleLayerLitColor_Public_get_Color_0;
+
+		// Token: 0x04000FCA RID: 4042
+		private static readonly IntPtr NativeMethodInfoPtr_set_CloudCubemapNormalDoubleLayerLitColor_Public_set_Void_Color_0;
+
+		// Token: 0x04000FCB RID: 4043
+		private static readonly IntPtr NativeMethodInfoPtr_get_CloudCubemapNormalDoubleLayerShadowColor_Public_get_Color_0;
+
+		// Token: 0x04000FCC RID: 4044
+		private static readonly IntPtr NativeMethodInfoPtr_set_CloudCubemapNormalDoubleLayerShadowColor_Public_set_Void_Color_0;
+
+		// Token: 0x04000FCD RID: 4045
+		private static readonly IntPtr NativeMethodInfoPtr_get_CloudCubemapNormalLightDirection_Public_get_Vector3_0;
+
+		// Token: 0x04000FCE RID: 4046
+		private static readonly IntPtr NativeMethodInfoPtr_set_CloudCubemapNormalLightDirection_Public_set_Void_Vector3_0;
+
+		// Token: 0x04000FCF RID: 4047
+		private static readonly IntPtr NativeMethodInfoPtr_get_FogColor_Public_get_Color_0;
+
+		// Token: 0x04000FD0 RID: 4048
+		private static readonly IntPtr NativeMethodInfoPtr_set_FogColor_Public_set_Void_Color_0;
+
+		// Token: 0x04000FD1 RID: 4049
+		private static readonly IntPtr NativeMethodInfoPtr_get_FogDensity_Public_get_Single_0;
+
+		// Token: 0x04000FD2 RID: 4050
+		private static readonly IntPtr NativeMethodInfoPtr_set_FogDensity_Public_set_Void_Single_0;
+
+		// Token: 0x04000FD3 RID: 4051
+		private static readonly IntPtr NativeMethodInfoPtr_get_FogHeight_Public_get_Single_0;
+
+		// Token: 0x04000FD4 RID: 4052
+		private static readonly IntPtr NativeMethodInfoPtr_set_FogHeight_Public_set_Void_Single_0;
+
+		// Token: 0x04000FD5 RID: 4053
+		private static readonly IntPtr NativeMethodInfoPtr_ApplyGradientValuesOnMaterial_Private_Void_0;
+
+		// Token: 0x04000FD6 RID: 4054
+		private static readonly IntPtr NativeMethodInfoPtr_ApplyStarFadeValuesOnMaterial_Private_Void_0;
+
+		// Token: 0x04000FD7 RID: 4055
+		private static readonly IntPtr NativeMethodInfoPtr__ctor_Public_Void_0;
+	}
+}
